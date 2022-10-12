@@ -1,0 +1,935 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Atoms/Avatar All Sizes 1`] = `
+<div
+  style="display: flex; gap: 5px; align-items: flex-end;"
+>
+  <img
+    alt="Generic user avatar"
+    class="sc-bczRLJ jTiyEB"
+    src="[object Object]"
+  />
+  <img
+    alt="Generic user avatar"
+    class="sc-bczRLJ iiKaKd"
+    src="[object Object]"
+  />
+  <img
+    alt="Generic user avatar"
+    class="sc-bczRLJ faoBuZ"
+    src="[object Object]"
+  />
+</div>
+`;
+
+exports[`Storyshots Atoms/Avatar Different Images 1`] = `
+<div
+  style="display: flex; gap: 5px; align-items: flex-end;"
+>
+  <img
+    alt="Generic user avatar"
+    class="sc-bczRLJ jTiyEB"
+    src="[object Object]"
+  />
+  <img
+    alt="fallback user avatar"
+    class="sc-bczRLJ jTiyEB"
+    src="[object Object]"
+  />
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Block Button 1`] = `
+<div
+  style="margin: 1em; display: flex; gap: 20px;"
+>
+  <div
+    style="max-width: 200px; width: 100%;"
+  >
+    <button
+      class="sc-gKXOVf fniigE"
+      type="button"
+    >
+      Block Button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Large Outline Buttons 1`] = `
+<div
+  style="margin: 1em; display: flex; gap: 20px;"
+>
+  <button
+    class="sc-gKXOVf gtYloj"
+    type="button"
+  >
+    Primary
+  </button>
+  <button
+    class="sc-gKXOVf hBSFbn"
+    type="button"
+  >
+    Secondary
+  </button>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Large Standard Buttons 1`] = `
+<div
+  style="margin: 1em; display: flex; gap: 20px;"
+>
+  <button
+    class="sc-gKXOVf izxOdu"
+    type="button"
+  >
+    Primary
+  </button>
+  <button
+    class="sc-gKXOVf jIiwqq"
+    type="button"
+  >
+    Secondary
+  </button>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Menu Button Example 1`] = `
+<div
+  style="margin: 1em; display: flex; gap: 20px;"
+>
+  <button
+    class="sc-jSMfEi lbdIHa"
+  >
+    <svg
+      fill="none"
+      height="20px"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 24 24"
+      width="20px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
+        fill="currentColor"
+      />
+      <path
+        d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z"
+        fill="currentColor"
+      />
+      <path
+        d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Outline Buttons 1`] = `
+<div
+  style="margin: 1em; display: flex; gap: 20px;"
+>
+  <button
+    class="sc-gKXOVf hzSiGC"
+    type="button"
+  >
+    Primary
+  </button>
+  <button
+    class="sc-gKXOVf eKRXNa"
+    type="button"
+  >
+    Secondary
+  </button>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Small Outline Buttons 1`] = `
+<div
+  style="margin: 1em; display: flex; gap: 20px;"
+>
+  <button
+    class="sc-gKXOVf heVumT"
+    type="button"
+  >
+    Primary
+  </button>
+  <button
+    class="sc-gKXOVf cXGLBX"
+    type="button"
+  >
+    Secondary
+  </button>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Small Standard Buttons 1`] = `
+<div
+  style="margin: 1em; display: flex; gap: 20px;"
+>
+  <button
+    class="sc-gKXOVf huRhkK"
+    type="button"
+  >
+    Primary
+  </button>
+  <button
+    class="sc-gKXOVf dDjuzi"
+    type="button"
+  >
+    Secondary
+  </button>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Standard Buttons 1`] = `
+<div
+  style="margin: 1em; display: flex; gap: 20px;"
+>
+  <button
+    class="sc-gKXOVf hFSmnz"
+    type="button"
+  >
+    Primary
+  </button>
+  <button
+    class="sc-gKXOVf krurin"
+    type="button"
+  >
+    Secondary
+  </button>
+</div>
+`;
+
+exports[`Storyshots Atoms/Checkbox Checkbox Example 1`] = `
+<div
+  class="sc-ftvSup dQtUYe"
+>
+  <input
+    class="sc-iBkjds cQmwHP"
+    type="checkbox"
+  />
+</div>
+`;
+
+exports[`Storyshots Atoms/Checkbox Checkbox With Label 1`] = `
+<div
+  class="sc-ftvSup dQtUYe"
+>
+  <input
+    class="sc-iBkjds cQmwHP"
+    type="checkbox"
+  />
+  <span>
+    Checkbox with label
+  </span>
+</div>
+`;
+
+exports[`Storyshots Atoms/Input Input All Size 1`] = `
+<div
+  style="display: flex; flex-direction: column; gap: 30px;"
+>
+  <div
+    style="display: flex; flex-direction: column; gap: 30px;"
+  >
+    <input
+      class="sc-papXJ chRxwD"
+      placeholder="This is normal input"
+    />
+    <input
+      class="sc-papXJ chbPTo"
+      placeholder="This is big input"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Input Input Example 1`] = `
+<div
+  style="display: flex; flex-direction: column; gap: 30px;"
+>
+  <input
+    class="sc-papXJ chRxwD"
+  />
+</div>
+`;
+
+exports[`Storyshots Atoms/Input Input Text Variants 1`] = `
+<div
+  style="display: flex; flex-direction: column; gap: 30px;"
+>
+  <input
+    class="sc-papXJ chRxwD"
+    placeholder="Plain text input"
+    type="text"
+  />
+  <input
+    class="sc-papXJ chRxwD"
+    placeholder="Plain password input"
+    type="password"
+  />
+  <input
+    class="sc-papXJ chRxwD"
+    placeholder="Plain email input"
+    type="email"
+  />
+  <textarea
+    class="sc-jqUVSM jJkzSs"
+    placeholder="Join the discussion"
+    rows="1"
+  />
+</div>
+`;
+
+exports[`Storyshots Atoms/Link All Variants 1`] = `
+<div
+  style="display: flex; flex-direction: column; gap: 10px;"
+>
+  <a
+    class="sc-kDDrLX hKnGRA"
+    href="/#"
+  >
+    Classic link
+  </a>
+  <a
+    class="sc-kDDrLX hKnGRA"
+    href="/#"
+    variant="text"
+  >
+    Text link
+  </a>
+  <a
+    class="sc-crXcEl jNSWcN login-link"
+    href="/login"
+  >
+    <span>
+      Login
+    </span>
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      style="transform: rotate(180deg);"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Atoms/Loading icons Loading Icons 1`] = `
+<div
+  style="display: flex; gap: 30px;"
+>
+  <svg
+    aria-busy="true"
+    aria-label="progress-bar-loading"
+    class=""
+    data-testid="progress-bar-svg"
+    height="80"
+    preserveAspectRatio="xMidYMid"
+    role="status"
+    viewBox="0 0 100 100"
+    width="80"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <clippath
+        height="100"
+        id="lds-progress-cpid-5009611b8a418"
+        ng-attr-id="{{config.cpid}}"
+        width="100"
+        x="0"
+        y="0"
+      >
+        <rect
+          height="100"
+          width="66.6667"
+          x="0"
+          y="0"
+        >
+          <animate
+            attributeName="width"
+            begin="0s"
+            calcMode="linear"
+            dur="1"
+            keyTimes="0;0.5;1"
+            repeatCount="indefinite"
+            values="0;100;100"
+          />
+          <animate
+            attributeName="x"
+            begin="0s"
+            calcMode="linear"
+            dur="1"
+            keyTimes="0;0.5;1"
+            repeatCount="indefinite"
+            values="0;0;100"
+          />
+        </rect>
+      </clippath>
+    </defs>
+    <path
+      d="M82,63H18c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h64c7.2,0,13,5.8,13,13v0C95,57.2,89.2,63,82,63z"
+      fill="none"
+      ng-attr-stroke="{{config.c1}}"
+      stroke="#DFDFDF"
+      stroke-width="2.7928"
+    />
+    <path
+      clip-path="url(#lds-progress-cpid-5009611b8a418)"
+      d="M81.3,58.7H18.7c-4.8,0-8.7-3.9-8.7-8.7v0c0-4.8,3.9-8.7,8.7-8.7h62.7c4.8,0,8.7,3.9,8.7,8.7v0C90,54.8,86.1,58.7,81.3,58.7z"
+      fill="#007BFF"
+      ng-attr-clip-path="url(#{{config.cpid}})"
+      ng-attr-fill="{{config.c2}}"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Molecules/Article Preview Article Preview Small Example 1`] = `
+<div
+  class="sc-fnykZs jGWEyE"
+>
+  <h5>
+    Hello world
+  </h5>
+  <p>
+    Hello there
+  </p>
+</div>
+`;
+
+exports[`Storyshots Molecules/Comment Comment Example 1`] = `
+<div
+  class="sc-bjUoiL hBxEyQ comment"
+>
+  <img
+    alt="fallback user avatar"
+    class="sc-bczRLJ jTiyEB"
+    src="[object Object]"
+  />
+  <h5
+    class="comment__author"
+  >
+    Linda Lynn
+  </h5>
+  <span
+    class="comment__time-diff label"
+  >
+    10 days ago
+  </span>
+  <p
+    class="comment__text"
+  >
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quibusdam qui autem libero consequuntur tenetur eveniet recusandae aliquam obcaecati. Consequatur perferendis id, dolorem quae unde recusandae ad deleniti obcaecati similique?
+  </p>
+  <div
+    class="sc-fEOsli gOcKds comment__voting-counter"
+  >
+    <span
+      data-testid="reactionCounter"
+    >
+      0
+    </span>
+    <button
+      aria-label="vote-up"
+    >
+      <svg
+        fill="currentColor"
+        height="100%"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z"
+          />
+        </g>
+      </svg>
+    </button>
+    <button
+      aria-label="vote-down"
+    >
+      <svg
+        fill="currentColor"
+        height="100%"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"
+          />
+        </g>
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Create comment Create Comment Example 1`] = `
+<form
+  class="sc-idiyUo krnAHI"
+>
+  <img
+    alt="fallback user avatar"
+    class="sc-bczRLJ jTiyEB"
+    src="[object Object]"
+  />
+  <textarea
+    class="sc-gKXOVf iDKVHB"
+    name="comment"
+    placeholder="Join the discussion"
+    rows="1"
+  />
+  <span
+    class="label"
+  />
+</form>
+`;
+
+exports[`Storyshots Molecules/Input with label Input With Label Types 1`] = `
+<div
+  style="display: flex; flex-direction: column; gap: 20px;"
+>
+  <div
+    class="sc-hHLeRK kcMzFr"
+  >
+    <label>
+      Username
+    </label>
+    <input
+      class="sc-papXJ chRxwD"
+      placeholder="Enter your name"
+      value="hello"
+    />
+  </div>
+  <div
+    class="sc-hHLeRK kcMzFr"
+  >
+    <label>
+      Email
+    </label>
+    <input
+      class="sc-papXJ chRxwD"
+      placeholder="me@example.com"
+      value=""
+    />
+  </div>
+  <div
+    class="sc-hHLeRK kcMzFr"
+  >
+    <label>
+      Password
+    </label>
+    <input
+      class="sc-papXJ chRxwD"
+      placeholder="Enter your password"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Mobile Menu Mobile Menu Example 1`] = `
+<div
+  class="sc-dmRaPn qIHjm mobile-menu"
+  data-testid="mobileMenu"
+>
+  <div
+    class="mobile-menu__help-div"
+  >
+    <button
+      class="sc-fLlhyt hZfcNm"
+    >
+      <svg
+        fill="currentColor"
+        height="20px"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="20px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3,3 L21,21 M3,21 L21,3"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </button>
+    <nav
+      class="sc-kgflAQ iaxkzp"
+    >
+      <a
+        class="sc-kDDrLX sc-iqcoie hKnGRA lktAIT"
+        href="/recent-articles"
+      >
+        Recent articles
+      </a>
+      <a
+        class="sc-kDDrLX sc-iqcoie hKnGRA lktAIT"
+        href="/recent-articles"
+      >
+        About
+      </a>
+    </nav>
+    <a
+      class="sc-crXcEl jNSWcN login-link"
+      href="/login"
+    >
+      <span>
+        Login
+      </span>
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        style="transform: rotate(180deg);"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms/Related Articles section Related Articles Section 1`] = `
+<div
+  class="sc-kLLXSd cDYkZj"
+>
+  <h3>
+    Related Articles
+  </h3>
+  <div
+    class="related-articles__articles"
+  >
+    <div
+      class="sc-dIouRR icdYpU"
+    >
+      <h5>
+        Wet vs. Dry Cat Food: Which is Better?
+      </h5>
+      <p>
+        A cat's whiskers — or vibrissae — are a well-honed sensory tool that helps a cat see in the dark and steer clear of hungry predators. Whiskers are highly ...
+      </p>
+    </div>
+    <div
+      class="sc-dIouRR icdYpU"
+    >
+      <h5>
+        How Much Wet Food Should I Feed My Cat?
+      </h5>
+      <p>
+        If you aren’t sure how much wet food you should feed your cat, Purina’s expert nutritionists can help. Plus, they offer guidance on food safety and provide ser...
+      </p>
+    </div>
+    <div
+      class="sc-dIouRR icdYpU"
+    >
+      <h5>
+        Do Cats Drink Water? Cat Hydration & Dehydration Prevention
+      </h5>
+      <p>
+        Do cats drink water? Yes, like humans and many other animals, cats need water to survive. Many cats don’t drink as much as they should, though. Find out w...
+      </p>
+    </div>
+    <div
+      class="sc-dIouRR icdYpU"
+    >
+      <h5>
+        What Is the Difference Between Natural and Organic Cat Food?
+      </h5>
+      <p>
+        If you prefer your own diet to be natural or organic, you’re probably considering feeding your cat a natural or organic cat food, too. What’s the difference betw...
+      </p>
+    </div>
+    <div
+      class="sc-dIouRR icdYpU"
+    >
+      <h5>
+        Why Do Cats Have Whiskers?
+      </h5>
+      <p>
+        A cat's whiskers — or vibrissae — are a well-honed sensory tool that helps a cat see in the dark and steer clear of hungry predators. Whiskers are highly sensitive tactile hairs that grow in patterns on a cat's muzzle, a...
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
+<header
+  class="sc-gicCDI dgVNYz TopNavbar"
+>
+  <div
+    class="TopNavbar__container"
+  >
+    <div
+      class="TopNavbar__sub-container"
+    >
+      <img
+        alt="cat logo"
+        height="40px"
+        src="[object Object]"
+      />
+       
+      <nav
+        class="sc-ezWOiH ipDzXI"
+      >
+        <a
+          class="sc-iBkjds ckJfUM"
+          href="/recent-articles"
+          variant="classic"
+        >
+          Recent Articles
+        </a>
+        <a
+          class="sc-iBkjds ckJfUM"
+          href="/about"
+          variant="classic"
+        >
+          About
+        </a>
+      </nav>
+    </div>
+    <a
+      class="sc-papXJ kEYlnR login-link"
+      href="/login"
+    >
+      <span>
+        Login
+      </span>
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        style="transform: rotate(180deg);"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </a>
+  </div>
+</header>
+`;
+
+exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
+<header
+  class="sc-gicCDI dlxMCX TopNavbar"
+>
+  <div
+    class="TopNavbar__container"
+  >
+    <img
+      alt="cat logo"
+      height="40px"
+      src="[object Object]"
+    />
+    <button
+      class="sc-gsnTZi gVjGgF"
+    >
+      <svg
+        fill="none"
+        height="20px"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="20px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
+          fill="currentColor"
+        />
+        <path
+          d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z"
+          fill="currentColor"
+        />
+        <path
+          d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <div
+      class="sc-hHLeRK hxnZIO mobile-menu"
+      data-testid="mobileMenu"
+    >
+      <div
+        class="mobile-menu__help-div"
+      >
+        <button
+          class="sc-kgflAQ bwVzSn"
+        >
+          <svg
+            fill="currentColor"
+            height="20px"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="20px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3,3 L21,21 M3,21 L21,3"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <nav
+          class="sc-dmRaPn gTNfHn"
+        >
+          <a
+            class="sc-iBkjds sc-ftvSup clPWNA kFmPTR"
+            href="/recent-articles"
+          >
+            Recent articles
+          </a>
+          <a
+            class="sc-iBkjds sc-ftvSup clPWNA kFmPTR"
+            href="/recent-articles"
+          >
+            About
+          </a>
+        </nav>
+        <a
+          class="sc-papXJ kEYlnR login-link"
+          href="/login"
+        >
+          <span>
+            Login
+          </span>
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            style="transform: rotate(180deg);"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
+<header
+  class="sc-gicCDI dgVNYz TopNavbar"
+>
+  <div
+    class="TopNavbar__container"
+  >
+    <img
+      alt="cat logo"
+      height="40px"
+      src="[object Object]"
+    />
+    <div
+      class="TopNavbar__sub-container"
+    >
+      <nav
+        class="sc-ezWOiH ipDzXI"
+      >
+        <a
+          class="sc-iBkjds ckJfUM"
+          href="/recent-articles"
+          variant="classic"
+        >
+          Recent Articles
+        </a>
+        <a
+          class="sc-iBkjds ckJfUM"
+          href="/about"
+          variant="classic"
+        >
+          About
+        </a>
+      </nav>
+      <a
+        class="sc-papXJ kEYlnR login-link"
+        href="/login"
+      >
+        <span>
+          Login
+        </span>
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          style="transform: rotate(180deg);"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+`;
