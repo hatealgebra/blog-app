@@ -3,6 +3,7 @@ import Button from "./Button";
 import { action } from "@storybook/addon-actions";
 import { ComponentMeta } from "@storybook/react";
 import MenuButton from "./MenuButton";
+import ButtonSort from "./ButtonSort";
 
 export const StandardButtons = () => (
   <>
@@ -116,6 +117,15 @@ export const BlockButton = () => (
 
 export const MenuButtonExample = () => (
   <MenuButton onClick={() => action("Menu button clicked!")} />
+);
+
+export const SortButtonAllVariants = () => (
+  <>
+    <ButtonSort dispatchSort={action("Clicked")}>Article Title</ButtonSort>
+    <ButtonSort dispatchSort={action("Clicked")} isActive>
+      Article Title Active
+    </ButtonSort>
+  </>
 );
 
 export default {

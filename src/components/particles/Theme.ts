@@ -55,6 +55,6 @@ export default {
     tablet: `@media only screen and (min-width: ${MOBILE}px)`,
     landscapeTablet: `@media only screen and (min-width: ${LANDSCAPE_TABLET}px)`,
     laptop: `@media only screen and (min-width: ${LAPTOP}px)`,
-    desktopMedia: `@media only screen and (min-width: ${DESKTOP}px)`,
+    desktop: `@media only screen and (min-width: ${DESKTOP}px)`,
   },
 };

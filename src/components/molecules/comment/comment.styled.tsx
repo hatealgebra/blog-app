@@ -36,13 +36,11 @@ export const StyledCommentContainer = styled.div`
   grid-template-rows: auto 1fr auto;
   grid-template-columns: auto auto 1fr;
   column-gap: 10px;
+  row-gap: 5px;
   justify-items: flex-start;
   align-items: center;
-  grid-template-areas:
-    "avatar author timestamp"
-    ". text text"
-    ". counter counter";
   max-width: 650px;
+  grid-template-areas: "avatar author timestamp" "text text text" ". . counter";
 
   img {
     grid-area: avatar;
@@ -60,9 +58,24 @@ export const StyledCommentContainer = styled.div`
     }
     &__text {
       grid-area: text;
+      margin-top: 1.4em;
     }
     &__voting-counter {
       grid-area: counter;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoint.tablet} {
+    row-gap: 0;
+    grid-template-areas:
+      "avatar author timestamp"
+      ". text text"
+      ". counter counter";
+
+    .comment {
+      &__text {
+        margin-top: 0px;
+      }
     }
   }
 `;

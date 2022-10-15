@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 export const StyledCreateCommentForm = styled.form`
   display: grid;
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 10px;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
   max-width: 600px;

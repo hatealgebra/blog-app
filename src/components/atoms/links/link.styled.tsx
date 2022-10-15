@@ -1,9 +1,19 @@
 import React from "react";
 
-import { Link } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
+import { ButtonProps } from "../button/Button";
+import StyledButton from "../button/button.styled";
 
-const StyledLink = styled(Link)<{ variant?: "classic" | "text" }>`
+export const ButtonLink = styled(StyledButton).attrs<
+  ButtonProps & { to: string }
+>(() => ({
+  as: GatsbyLink,
+}))`
+  text-decoration: none;
+`;
+
+const StyledLink = styled(GatsbyLink)<{ variant?: "classic" | "text" }>`
   color: ${({ variant }) => (variant === "classic" ? "black" : "auto")};
   text-decoration: none;
   &:hover {
@@ -17,7 +27,7 @@ export const MobileMenuLink = styled(StyledLink)`
   color: black;
 `;
 
-export const StyledLoginLink = styled(Link)`
+export const StyledLoginLink = styled(GatsbyLink)`
   display: inline-flex;
   align-items: center;
   gap: 3px;

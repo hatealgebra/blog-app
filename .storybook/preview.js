@@ -4,6 +4,8 @@ import { addDecorator } from "@storybook/react";
 // import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import { ThemeProvider } from "styled-components";
 import { initialize, mswDecorator } from "msw-storybook-addon";
+import { Provider } from "react-redux";
+import store from "../src/store/store";
 
 import themeDefault from "../src/components/particles/Theme";
 import GlobalStyle from "../src/components/particles/GlobalStyle";
@@ -25,19 +27,19 @@ global.__BASE_PATH__ = "/";
 window.___navigate = (pathname) => {
   action("NavigateTo:")(pathname);
 };
+
 initialize();
-addDecorator(mswDecorator);
 // decorators
 // FIXME: Does not work with themesProvider
 // addDecorator(withThemesProvider([themeDefault]), ThemeProvider);
-
+addDecorator(mswDecorator);
 addDecorator((Story) => (
-  <>
+  <Provider store={store}>
     <ThemeProvider theme={themeDefault}>
       <GlobalStyle />
       <Story />
     </ThemeProvider>
-  </>
+  </Provider>
 ));
 
 export const parameters = {

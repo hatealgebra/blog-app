@@ -2,6 +2,19 @@ import styled, { css } from "styled-components";
 import { ButtonProps } from "./Button";
 import { MenuButtonProps } from "./MenuButton";
 
+export const StyledButtonSort = styled.button<{
+  isActive?: boolean;
+}>`
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.color.primary : theme.color.black};
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+`;
+
 export const MenuButtonContainer = styled.button<MenuButtonProps>`
   display: flex;
   place-content: center;

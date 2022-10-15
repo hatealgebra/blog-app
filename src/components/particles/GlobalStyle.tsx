@@ -10,10 +10,10 @@ const GlobalStyle = createGlobalStyle`
 body{
     height: 100%; width: 100%;
     font-family: ${Theme.fonts.mainFont};
-    font-size: 95%;
+    font-size: 100%;
 
     ${Theme.breakpoint.laptop}{
-        font-size: 100%;
+        font-size: 110%;
     }
  
 }

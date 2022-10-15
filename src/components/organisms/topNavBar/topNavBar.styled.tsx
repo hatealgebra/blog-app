@@ -21,7 +21,6 @@ const StyledTopNav = styled.header<TopNavBarProps>`
   .TopNavbar {
     &__container {
       display: flex;
-      max-width: 900px;
       width: 100%;
       margin: 0 auto;
       justify-content: space-between;

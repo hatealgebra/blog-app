@@ -15,4 +15,6 @@ export const CenterContainer = styled.div`
   width: 100%;
 `;
 
-export const StyledArticleFeed = styled.div``;
+export const StyledArticleFeed = styled.div`
+  max-width: 800px;
+`;

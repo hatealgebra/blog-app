@@ -13,16 +13,18 @@ import {
 const ArticleFeed = ({
   isLoading,
   items,
-}: components["schemas"]["ArticleList"] & { isLoading: boolean }) => {
+}: components["schemas"]["ArticleList"] & {
+  isLoading: "loading" | "idle";
+}) => {
   return (
     <StyledArticleFeed className="article-feed">
       <h1 className="article-feed__heading">Recent articles</h1>
       <div className="article-feed__articles">
-        {isLoading ? (
+        {isLoading === "loading" ? (
           <CenterContainer>
             <ProgressBar />
           </CenterContainer>
-        ) : items!.length === 0 ? (
+        ) : items === undefined ? (
           <CenterContainer>
             <h3>No Articles to show</h3>
           </CenterContainer>

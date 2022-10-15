@@ -4,7 +4,11 @@ export enum navLinks {
   LOGIN = "/login",
   REGISTER = "/register",
   MY_ARTICLES = "/admin/my-article",
+}
+export enum ADMIN_LINKS {
+  MY_ARTICLES = "/admin/my-articles",
   CREATE_ARTICLE = "/admin/create-article",
+  EDIT_ARTICLE = "/admin/edit-article",
 }
 
 export enum BREAKPOINTS {
@@ -15,3 +19,7 @@ export enum BREAKPOINTS {
 }
 
 export const BASE_API_URL = "https://fullstack.exercise.applifting.cz";
+
+export enum articleFeedActions {
+  GET_ARTICLES = "articleFeed/getArticles",
+}

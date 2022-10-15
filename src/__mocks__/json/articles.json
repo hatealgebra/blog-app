@@ -1,5 +1,10 @@
 {
-  "data": [
+  "pagination": {
+    "offset": 0,
+    "limit": 0,
+    "total": 0
+  },
+  "items": [
     {
       "articleId": "Hh3131k232",
       "title": "Wet vs. Dry Cat Food: Which is Better?",
@@ -8,7 +13,7 @@
       "lastUpdatedAt": 1012548476,
       "imageId": null,
       "content": "l",
-      "comments": [{}, {}, {}]
+      "comments": [{}, {}, {}, {}]
     },
     {
       "articleId": "jfajifojij123e213",
@@ -18,7 +23,7 @@
       "lastUpdatedAt": 1466053641,
       "imageId": null,
       "content": "l",
-      "comments": [{}, {}, {}]
+      "comments": [{}]
     },
     {
       "articleId": "313k21j32kj",
@@ -28,7 +33,7 @@
       "published": 1364817377,
       "imageId": null,
       "content": "l",
-      "comments": [{}, {}, {}]
+      "comments": []
     },
     {
       "articleId": "132313jj",
@@ -38,7 +43,7 @@
       "published": 1262170916,
       "imageId": null,
       "content": "l",
-      "comments": [{}, {}, {}]
+      "comments": [{}, {}, {}, {}, {}]
     },
     {
       "articleId": "31233k",

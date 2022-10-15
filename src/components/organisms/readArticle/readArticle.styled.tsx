@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
-export const ReadArticleContent = styled.article``;
+export const ReadArticleContent = styled.div``;
 
-export const ReadArticleContainer = styled.div`
+export const ReadArticleContainer = styled.article`
   display: grid;
-  padding: 20px 2%;
-  max-width: 800px;
   border-bottom: 1px solid ${({ theme }) => theme.color.mono200};
-  padding: 30px 0;
 
   img {
     width: 100%;
@@ -22,9 +19,14 @@ export const ReadArticleContainer = styled.div`
       text-transform: capitalize;
     }
     &__markdown {
-      padding: 30px 0 50px 0;
+      padding: 10px 0;
       p {
         line-height: 1.6em;
+        font-size: 100%;
+
+        ${({ theme }) => theme.breakpoint.laptop} {
+          font-size: 110%;
+        }
       }
     }
   }

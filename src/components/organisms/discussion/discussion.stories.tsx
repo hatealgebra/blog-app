@@ -1,11 +1,11 @@
 import React from "react";
 import Discussion from "./Discussion";
 
-// const commentsMock = [{
-//     id:
-// }]
+import articleMockJSON from "../../../__mocks__/json/article.mock.json";
 
-// export const PostDiscussion = () => <Discussion commments={} />
+export const DiscussionExample = () => (
+  <Discussion comments={articleMockJSON.comments} />
+);
 
 export default {
   title: "Organisms/Discussion",

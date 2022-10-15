@@ -54,10 +54,12 @@ export const StyledArticleRow = styled.div`
 `;
 
 export const StyledArticlePreviewSmall = styled.div`
-  max-width: 400px;
-
+  max-width: 600px;
   h5 {
     margin: 0;
+  }
+  p {
+    font-size: ${({ theme }) => theme.typography.size.label};
   }
 `;
 
