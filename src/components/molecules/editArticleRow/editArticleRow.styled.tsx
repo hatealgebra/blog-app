@@ -10,8 +10,8 @@ export const StyledIconButton = styled.button`
 
 export const StyledEditArticleRow = styled.tr`
   width: 100%;
-  padding: 7px;
-  border-bottom: 1px solid black;
+  line-height: 2.5em;
+  border-bottom: 2px solid ${({ theme }) => theme.color.border};
 
   td,
   th {
@@ -20,6 +20,7 @@ export const StyledEditArticleRow = styled.tr`
     text-overflow: ellipsis;
     max-width: 0;
     text-align: left;
+    padding: 0 5px;
   }
   button {
     padding-left: 0px;
@@ -48,6 +49,10 @@ export const StyledEditArticleRow = styled.tr`
   }
 
   ${({ theme }) => theme.breakpoint.tablet} {
+    td,
+    th {
+      padding: 10px;
+    }
     .edit-article {
       &__checkbox {
         width: 5%;

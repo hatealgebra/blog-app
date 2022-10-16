@@ -21,8 +21,6 @@ const MyArticlesTable = () => {
   const articles = useAppSelector(selectMyArticlesItems);
   const dispatch = useAppDispatch();
 
-  console.log(articles);
-
   React.useEffect(() => {
     dispatch(getMyArticles(ADMIN_CONFIG.API_KEY));
   }, []);

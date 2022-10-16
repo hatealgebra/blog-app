@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledArticlesTable = styled.table`
   table-layout: fixed;
   border-spacing: 0px 10px;
+  border-collapse: collapse;
   padding: 0;
   margin: 0;
 

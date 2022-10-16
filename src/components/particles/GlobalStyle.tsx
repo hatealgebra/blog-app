@@ -13,7 +13,7 @@ body{
     font-size: 100%;
 
     ${Theme.breakpoint.laptop}{
-        font-size: 110%;
+        font-size: 105%;
     }
  
 }
