@@ -24,7 +24,6 @@ const UploadImage = ({ image, setImage }: UploadImageProps) => {
   const resetImage = () => setImage(null);
 
   React.useEffect(() => {
-    console.log("called");
     if (image !== null) {
       const objectURL = URL.createObjectURL(image);
       setImagePreview(objectURL);

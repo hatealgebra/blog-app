@@ -1,14 +1,9 @@
-import { ADMIN_CONFIG } from "../services/admin";
-import { login } from "../services/userHandling";
+import { USER_CONFIG } from "../services/userConfig";
+import { login } from "../services/user/userPOST";
 
-const loginUser = async (email: string, pwd: string) => {
-  try {
-    const response = login(email, pwd, ADMIN_CONFIG.API_KEY);
-    console.log(response);
-  } catch (e) {
-    console.log(e);
-    return false;
-  }
+const loginUserHelper = async (email: string, pwd: string) => {
+  const response = await login(email, pwd, USER_CONFIG.API_KEY);
+  return response.data;
 };
 
-export default loginUser;
+export default loginUserHelper;

@@ -4,7 +4,7 @@ import StyledButton from "./button.styled";
 const Button = ({
   variant = "standard",
   size = "md",
-  colorTheme = "primary",
+  colortheme = "primary",
   children,
   isBlock,
   type = "button",
@@ -15,7 +15,7 @@ const Button = ({
       onClick={onClick}
       variant={variant}
       size={size}
-      colorTheme={colorTheme}
+      colortheme={colortheme}
       isBlock={isBlock}
       type={type}
     >
@@ -25,7 +25,7 @@ const Button = ({
 };
 
 export interface ButtonProps {
-  colorTheme?: "primary" | "secondary";
+  colortheme?: "primary" | "secondary";
   variant?: "standard" | "outline" | "block";
   onClick?: (e?: React.MouseEvent<HTMLElement> | MouseEvent) => void;
   children: any;

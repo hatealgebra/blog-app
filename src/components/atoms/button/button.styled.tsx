@@ -36,17 +36,17 @@ const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   width: ${({ isBlock }) => (isBlock ? "100%" : "fit-content")};
   font-weight: 300;
-  color: ${({ variant, colorTheme, theme }) =>
-    variant === "outline" ? colorTheme && theme.color[colorTheme] : "white"};
+  color: ${({ variant, colortheme, theme }) =>
+    variant === "outline" ? colortheme && theme.color[colortheme] : "white"};
   border: 1px solid
-    ${({ colorTheme, theme }) => colorTheme && theme.color[colorTheme]};
+    ${({ colortheme, theme }) => colortheme && theme.color[colortheme]};
   border-radius: 4px;
   text-transform: capitalize;
   cursor: pointer;
-  background-color: ${({ colorTheme, variant, theme }) =>
+  background-color: ${({ colortheme, variant, theme }) =>
     variant === "outline"
       ? "transparent"
-      : colorTheme && theme.color[colorTheme]};
+      : colortheme && theme.color[colortheme]};
   ${({ size, theme }) => {
     if (size === "lg") {
       return css`

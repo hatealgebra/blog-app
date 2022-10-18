@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { FormEvent } from "react";
-import loginUser from "../../../helpers/login.helper";
-import { ADMIN_CONFIG } from "../../../services/admin";
+import loginUserHelper from "../../../helpers/login.helper";
+import { USER_CONFIG } from "../../../services/userConfig";
+import { getArticles } from "../../../services/articles/articlesGET";
+import { registration } from "../../../services/user/userPOST";
 import { emailValidation, pwdValidation } from "../../../utils/regex.utils";
 import Button from "../../atoms/button/Button";
 import InputWithLabel from "../../molecules/inputWithLabel/InputWithLabel";
@@ -12,16 +14,23 @@ const LoginForm = () => {
   const [pwd, setPwd] = React.useState("");
   const [validation, setValidation] = React.useState("");
 
-  const onSubmit = (e: FormEvent, email: string, pwd: string) => {
+  const onSubmit = async (e: FormEvent, email: string, pwd: string) => {
     e.preventDefault();
     const emailTrim = email.trim();
     const pwdTrim = pwd.trim();
     if (emailTrim.length === 0 || !emailValidation(emailTrim)) {
-      setValidation(LoginFormValidation.INVALID_EMAIL);
+      return setValidation(LoginFormValidation.INVALID_EMAIL);
     } else if (!pwdValidation(pwdTrim)) {
-      setValidation(LoginFormValidation.EMPTY_PASSWORD);
+      return setValidation(LoginFormValidation.EMPTY_PASSWORD);
+    } else if (emailValidation(emailTrim) && pwdValidation(pwdTrim)) {
+      try {
+        const { access_token } = await loginUserHelper(emailTrim, pwdTrim);
+        setValidation(LoginFormValidation.CORRECT_LOGIN);
+      } catch (e) {
+        setValidation(LoginFormValidation.INCORRECT_LOGIN);
+      }
     } else {
-      loginUser(emailTrim, pwdTrim);
+      return setValidation(LoginFormValidation.UNEXPECTED_ERROR);
     }
   };
 
@@ -53,6 +62,8 @@ enum LoginFormValidation {
   EMAIL_NOT_FOUND = "Login with this email does not exist.",
   EMPTY_PASSWORD = "Password field is empty. Please check it",
   INCORRECT_LOGIN = "Incorrect login.",
+  UNEXPECTED_ERROR = "Unexpected error.",
+  CORRECT_LOGIN = "",
 }
 
 export default LoginForm;

@@ -5,11 +5,12 @@ import styled from "styled-components";
 import { ButtonProps } from "../button/Button";
 import StyledButton from "../button/button.styled";
 
-export const ButtonLink = styled(StyledButton).attrs<
-  ButtonProps & { to: string }
->(() => ({
+export const ButtonLink = styled(StyledButton).attrs<{
+  colortheme: "primary" | "secondary";
+  to: string;
+}>(() => ({
   as: GatsbyLink,
-}))`
+}))<{ colortheme: "primary" | "secondary"; to: string }>`
   text-decoration: none;
 `;
 

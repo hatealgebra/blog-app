@@ -1,15 +1,13 @@
 import React from "react";
-import AdminHeading from "../../adminHeading/AdminHeading";
+import createArticleSubmit from "../../../helpers/createArticleSubmit.helper";
+
+import CreateNewArticleForm from "../../organisms/publishArticleForm/PublishArticleForm";
 import PageTemplate from "../../templates/Page.template";
 
 const CreateNewArticlePage = () => {
   return (
     <PageTemplate>
-      <AdminHeading
-        heading="Create new article"
-        buttonText="Publish article"
-        onClick={() => console.log("hy")}
-      />
+      <CreateNewArticleForm onSubmit={createArticleSubmit} />
     </PageTemplate>
   );
 };

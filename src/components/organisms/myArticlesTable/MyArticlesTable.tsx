@@ -1,6 +1,6 @@
 import React from "react";
+import { USER_CONFIG } from "../../../services/userConfig";
 
-import { ADMIN_CONFIG } from "../../../services/admin";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { selectMyArticlesItems } from "../../../store/slices/myArticles.slice";
 import { getMyArticles } from "../../../store/thunks/articles.thunk";
@@ -22,7 +22,7 @@ const MyArticlesTable = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
-    dispatch(getMyArticles(ADMIN_CONFIG.API_KEY));
+    dispatch(getMyArticles(USER_CONFIG.API_KEY));
   }, []);
 
   return (

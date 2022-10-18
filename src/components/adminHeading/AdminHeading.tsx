@@ -7,17 +7,17 @@ const AdminHeading = ({
   heading,
   to,
   buttonText,
-  onClick,
+  isFormPage,
 }: AdminHeadingProps) => {
   return (
     <StyledMyArticlesHeading>
       <h1>{heading}</h1>
       {to && (
-        <ButtonLink colorTheme="primary" to={to}>
+        <ButtonLink colortheme="primary" to={to}>
           {buttonText}
         </ButtonLink>
       )}
-      {onClick && <Button onClick={onClick}>{buttonText}</Button>}
+      {isFormPage && <Button type="submit">{buttonText}</Button>}
     </StyledMyArticlesHeading>
   );
 };
@@ -26,7 +26,7 @@ interface AdminHeadingProps {
   heading: string;
   buttonText: string;
   to?: string;
-  onClick?: () => void;
+  isFormPage?: boolean;
 }
 
 export default AdminHeading;

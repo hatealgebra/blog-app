@@ -12,11 +12,11 @@ export const NonFormPageContainer = styled.div<{ isArticle?: boolean }>`
   max-width: 1600px;
   height: 100%;
   width: 100%;
-  margin: 50px auto;
+  margin: 15px auto;
 
   ${({ theme }) => theme.breakpoint.laptop} {
     ${({ isArticle }) =>
-      isArticle ? "margin: 20px auto;" : "margin: 100px auto;"}
+      isArticle ? "margin: 15px auto;" : "margin: 40px auto;"}
   }
 `;
 
