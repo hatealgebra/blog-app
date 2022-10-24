@@ -7,7 +7,7 @@ import StyledLink from "../../atoms/links/link.styled";
 import { navLinks } from "../../../utils/contants";
 import LoginLink from "../../atoms/links/LoginLink";
 
-const { RECENT_ARTICLES, ABOUT } = navLinks;
+const { INDEX, ABOUT } = navLinks;
 
 const TopNavBar = ({ variant }: TopNavBarProps) => {
   const [isMenuOpen, setMenuOpen] = React.useState(false);
@@ -47,7 +47,7 @@ const TopNavBar = ({ variant }: TopNavBarProps) => {
 const CatLogo = () => <img src={catLogo} alt="cat logo" height="40px" />;
 const TopNavBarLinks = () => (
   <StyledTopNavLinks>
-    <StyledLink variant="classic" to={RECENT_ARTICLES}>
+    <StyledLink variant="classic" to={INDEX}>
       Recent Articles
     </StyledLink>
     <StyledLink variant="classic" to={ABOUT}>

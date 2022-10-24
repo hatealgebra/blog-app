@@ -12,12 +12,13 @@ const InputWithLabel = ({
 }: InputWithLabelProps) => {
   return (
     <StyledInputWithLabel>
-      <label>{label}</label>
+      <label htmlFor={label}>{label}</label>
       <StyledTextInput
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         type={type}
+        id={label}
       />
     </StyledInputWithLabel>
   );

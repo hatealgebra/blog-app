@@ -1,5 +1,5 @@
 import React from "react";
-import { setupTest } from "../../utils/testing.utils";
+import { setupTest } from "../../../utils/testing.utils";
 import AdminHeading from "./AdminHeading";
 
 describe("Interactivity test", () => {

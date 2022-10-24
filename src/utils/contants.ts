@@ -1,5 +1,5 @@
 export enum navLinks {
-  RECENT_ARTICLES = "/recent-articles",
+  INDEX = "/",
   ABOUT = "/about",
   LOGIN = "/login",
   REGISTER = "/register",
@@ -19,7 +19,3 @@ export enum BREAKPOINTS {
 }
 
 export const BASE_API_URL = "https://fullstack.exercise.applifting.cz";
-
-export enum articleFeedActions {
-  GET_ARTICLES = "articleFeed/getArticles",
-}

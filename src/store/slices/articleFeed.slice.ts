@@ -3,7 +3,7 @@ import { Console } from "console";
 
 import { components } from "../../types";
 import type { RootState } from "../store";
-import { getArticles } from "../thunks/articles.thunk";
+import { getArticlesFeedThunk } from "../thunks/articles.thunk";
 
 const initialState = {
   status: "idle",
@@ -20,15 +20,14 @@ export const articleFeedSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getArticles.pending, (state) => {
+    builder.addCase(getArticlesFeedThunk.pending, (state) => {
       state.status = "loading";
     });
-    builder.addCase(getArticles.fulfilled, (state, { payload }) => {
-      console.log(payload);
+    builder.addCase(getArticlesFeedThunk.fulfilled, (state, { payload }) => {
       state.status = "idle";
       state.data = payload;
     });
-    builder.addCase(getArticles.rejected, (state, { payload }) => {
+    builder.addCase(getArticlesFeedThunk.rejected, (state, { payload }) => {
       state.error = true;
       state.status = "idle";
       state.data = initialState.data;
@@ -37,10 +36,14 @@ export const articleFeedSlice = createSlice({
 });
 
 export const selectArticleFeedItems = (state: RootState) =>
-  state.articleFeed.data.items;
+  state.reducer.articleFeed.data.items;
 export const selectArticleFeedStatus = (state: RootState) =>
-  state.articleFeed.status;
+  state.reducer.articleFeed.status;
 export const selectArticleFeedError = (state: RootState) =>
-  state.articleFeed.error;
+  state.reducer.articleFeed.error;
+
+export enum articleFeedActions {
+  GET_ARTICLES = "articleFeed/getArticlesFeedThunk",
+}
 
 export default articleFeedSlice.reducer;

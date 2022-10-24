@@ -1,11 +1,11 @@
 import React from "react";
-import { USER_CONFIG } from "../../../services/userConfig";
+import { USER_CONFIG } from "../../../services/services.config";
 
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { selectMyArticlesItems } from "../../../store/slices/myArticles.slice";
 import { getMyArticles } from "../../../store/thunks/articles.thunk";
 import { ADMIN_LINKS } from "../../../utils/contants";
-import AdminHeading from "../../adminHeading/AdminHeading";
+import AdminHeading from "../../molecules/adminHeading/AdminHeading";
 import Button from "../../atoms/button/Button";
 import EditArticleRow from "../../molecules/editArticleRow/EditArticleRow";
 import EditArticleRowButtons from "../../molecules/editArticleRow/EditArticleRowButtons";

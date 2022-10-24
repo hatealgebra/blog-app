@@ -1,6 +1,7 @@
-import React, { Dispatch, FormEvent } from "react";
+import React from "react";
 import Avatar from "../../atoms/avatar/Avatar";
 import Button from "../../atoms/button/Button";
+import { ErrorText } from "../../atoms/errorText/error.styled";
 import { StyledTextArea } from "../../atoms/input/input.styled";
 import { StyledCreateCommentForm } from "./createComment.styled";
 
@@ -11,7 +12,10 @@ const CreateComment = ({ dispatch, avatar }: CreateCommentProps) => {
     FormValidation.PASSED
   );
 
-  const onSubmit = (e: FormEvent, dispatch: void) => {
+  const onSubmit = (
+    e: React.FormEvent,
+    dispatch: React.Dispatch<React.SetStateAction<string>>
+  ) => {
     e.preventDefault();
     if (textAreaValue.length < 25) {
       setFormHandling(FormValidation.EMPTY);
@@ -42,19 +46,19 @@ const CreateComment = ({ dispatch, avatar }: CreateCommentProps) => {
         onChange={(e) => setTextAreaValue(e.target.value)}
       />
       {isActive && <Button type="submit">Send comment</Button>}
-      <span className="label">{formHandling}</span>
+      <ErrorText>{formHandling}</ErrorText>
     </StyledCreateCommentForm>
   );
 };
 
 export enum FormValidation {
-  EMPTY = "*Comment is empty or too short. Min. length of the text should be 25 characters.",
-  TOO_LONG = "*Comment is too long. Maximum is 250 characters.",
+  EMPTY = "* Comment is empty or too short. Min. length of the text should be 25 characters.",
+  TOO_LONG = "* Comment is too long. Maximum is 250 characters.",
   PASSED = "",
 }
 
 interface CreateCommentProps {
-  dispatch: void;
+  dispatch: React.Dispatch<React.SetStateAction<string>>;
   avatar?: string;
 }
 

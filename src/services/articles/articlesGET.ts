@@ -1,11 +1,12 @@
 import axios from "axios";
 
 import { BASE_API_URL } from "../../utils/contants";
+import { API_KEY } from "../services.config";
 
-export const getArticles = (apiKey: string, acessToken: string) => {
-  return axios({
+export const callGetArticles = async () => {
+  return await axios({
     method: "get",
     url: `${BASE_API_URL}/articles`,
-    headers: { "X-API-KEY": apiKey, Authorization: acessToken },
+    headers: { "X-API-KEY": API_KEY },
   });
 };

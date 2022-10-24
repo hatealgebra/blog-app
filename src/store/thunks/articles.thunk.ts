@@ -1,28 +1,26 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { listAllArticles } from "../../services/articles/articlesGET";
-import { articleFeedActions } from "../../utils/contants";
+import { callGetArticles } from "../../services/articles/articlesGET";
+import { articleFeedActions } from "../slices/articleFeed.slice";
 
-const { GET_ARTICLES } = articleFeedActions;
-
-export const getArticles = createAsyncThunk(
-  GET_ARTICLES,
-  async (apiKey: string, thunkAPI) => {
+export const getArticlesFeedThunk = createAsyncThunk(
+  "articleFeed/getArticlesFeedThunk",
+  async (_, thunkAPI) => {
     try {
-      const response = await listAllArticles(apiKey);
+      const response = await callGetArticles();
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
     }
   }
 );
-export const getMyArticles = createAsyncThunk(
-  GET_ARTICLES,
-  async (apiKey: string, thunkAPI) => {
-    try {
-      const response = await listAllArticles(apiKey);
-      return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e);
-    }
-  }
-);
+// export const getMyArticles = createAsyncThunk(
+//   GET_ARTICLES,
+//   async (apiKey: string, thunkAPI) => {
+//     try {
+//       const response = await getArticles(apiKey);
+//       return response.data;
+//     } catch (e) {
+//       return thunkAPI.rejectWithValue(e);
+//     }
+//   }
+// );

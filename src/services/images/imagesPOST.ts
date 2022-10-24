@@ -4,13 +4,18 @@ import { BASE_API_URL } from "../../utils/contants";
 
 export const postImage = (
   imageFile: File,
-  apiKey: string
+  apiKey: string,
+  acessToken: string
   //   accessToken: string
 ) => {
-  return axios<paths["/images"]>({
-    method: "post",
-    url: `${BASE_API_URL}/articles`,
-    headers: { "X-API-KEY": apiKey, "Authorization": },
-    data: { content: imageFile },
-  });
+  try {
+    return axios<paths["/images"]>({
+      method: "post",
+      url: `${BASE_API_URL}/articles`,
+      headers: { "X-API-KEY": apiKey, Authorization: acessToken },
+      data: { content: imageFile },
+    });
+  } catch (e) {
+    return e;
+  }
 };

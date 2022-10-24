@@ -2,7 +2,6 @@ import React from "react";
 
 import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
-import { ButtonProps } from "../button/Button";
 import StyledButton from "../button/button.styled";
 
 export const ButtonLink = styled(StyledButton).attrs<{

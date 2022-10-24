@@ -2,9 +2,8 @@ import React from "react";
 import randomize from "randomatic";
 import { EPublishArticleErrors } from "../components/organisms/publishArticleForm/PublishArticleForm";
 import { postImage } from "../services/images/imagesPOST";
-import { ADMIN_CONFIG } from "../services/admin";
 
-const checkCreateArticleFormInput: TFormHandling = (
+export const checkCreateArticleFormInput: TFormHandling = (
   title,
   markdownContent,
   imageFile,
@@ -16,26 +15,31 @@ const checkCreateArticleFormInput: TFormHandling = (
     MARKDOWN_EMPY,
     MARKDOWN_TOO_SHORT,
     UNEXPECTED_ERROR,
+    PASSED,
   } = EPublishArticleErrors;
   if (title === "") {
     setFormError(TITLE_EMPTY);
     return false;
-  } else if (imageFile === null) {
-    setFormError(IMAGE_EMPTY);
   } else if (markdownContent === "") {
     setFormError(MARKDOWN_EMPY);
+    return false;
   } else if (markdownContent.length < 250) {
     setFormError(MARKDOWN_TOO_SHORT);
+    return false;
+  } else if (imageFile === null) {
+    setFormError(IMAGE_EMPTY);
+    return false;
   } else if (
     title !== "" &&
     imageFile !== null &&
     markdownContent.length >= 250
   ) {
+    setFormError(PASSED);
     return true;
   } else {
     setFormError(UNEXPECTED_ERROR);
+    return false;
   }
-  return false;
 };
 
 const createArticleSubmit = (
@@ -43,7 +47,9 @@ const createArticleSubmit = (
   title: string,
   markdownContent: string,
   imageFile: File | null,
-  setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>
+  setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>,
+  apiKey: string,
+  acessToken: string
 ): void => {
   e.preventDefault();
   const randomId = randomize("Aa0!", 20);
@@ -62,9 +68,9 @@ const createArticleSubmit = (
     imageFile,
     setFormError
   );
-  // console.log(postImage(imageFile, ADMIN_CONFIG.API_KEY));
   if (formHandling) {
     try {
+      console.log(postImage(imageFile!, apiKey, acessToken));
     } catch (e) {}
   }
 };

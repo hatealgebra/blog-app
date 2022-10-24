@@ -1,11 +1,12 @@
 import React from "react";
-import createArticleSubmit from "../../../helpers/createArticleSubmit.helper";
-import AdminHeading from "../../adminHeading/AdminHeading";
+import AdminHeading from "../../molecules/adminHeading/AdminHeading";
 import MarkdownEditor from "../../atoms/markdownEditor/MarkdownEditor";
 import InputWithLabel from "../../molecules/inputWithLabel/InputWithLabel";
 import UploadImage from "../../molecules/uploadImage/UploadImage";
 import { StyledPublishArticleForm } from "./publishArticleForm.styled";
+import { ErrorText } from "../../atoms/errorText/error.styled";
 
+// TODO: BETTER ERROR HANDLING, make formError object instead basic string
 const PublishArticleForm = ({
   titleValue,
   markdownContentValue,
@@ -23,6 +24,8 @@ const PublishArticleForm = ({
     EPublishArticleErrors.PASSED
   );
 
+  console.log(formError);
+
   return (
     <StyledPublishArticleForm
       onSubmit={(e) =>
@@ -34,15 +37,35 @@ const PublishArticleForm = ({
         buttonText="Publish article"
         isFormPage
       />
-      <InputWithLabel
-        label="Article title"
-        value={title}
-        onChange={setTitle}
-        placeholder="My new article"
-      />
-      <UploadImage image={imageFile} setImage={setImageFile} />
-      <MarkdownEditor value={markdownContent} onChange={setMarkdownContent} />
-      <span className="label"></span>
+      <div>
+        <InputWithLabel
+          label="Article title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="My new article"
+        />
+        <ErrorText>
+          {formError === EPublishArticleErrors.TITLE_EMPTY &&
+            EPublishArticleErrors.TITLE_EMPTY}
+        </ErrorText>
+      </div>
+      <div>
+        <UploadImage image={imageFile} setImage={setImageFile} />
+        <ErrorText>
+          {formError === EPublishArticleErrors.IMAGE_EMPTY &&
+            EPublishArticleErrors.IMAGE_EMPTY}
+        </ErrorText>
+      </div>
+      <div>
+        <MarkdownEditor value={markdownContent} onChange={setMarkdownContent} />
+        <ErrorText>
+          {formError === EPublishArticleErrors.MARKDOWN_EMPY
+            ? EPublishArticleErrors.MARKDOWN_EMPY
+            : formError === EPublishArticleErrors.MARKDOWN_TOO_SHORT
+            ? EPublishArticleErrors.MARKDOWN_TOO_SHORT
+            : ""}
+        </ErrorText>
+      </div>
     </StyledPublishArticleForm>
   );
 };
@@ -61,12 +84,12 @@ export interface PublistArticleFormProps {
 }
 
 export enum EPublishArticleErrors {
-  TITLE_EMPTY = "Title cannot be empty!",
-  IMAGE_EMPTY = "Image is mandatory. Please, choose and upload the image.",
-  MARKDOWN_EMPY = "Content cannot be empty!",
-  MARKDOWN_TOO_SHORT = "Content is too short. Atleast 250 chars are needed",
+  TITLE_EMPTY = "* Title cannot be empty!",
+  IMAGE_EMPTY = "* Image is mandatory. Please, choose and upload the image.",
+  MARKDOWN_EMPY = "* Content cannot be empty!",
+  MARKDOWN_TOO_SHORT = "* Content is too short. Atleast 250 chars are needed",
+  UNEXPECTED_ERROR = "* Sorry, but there was unexpected error. Please contact our support team!",
   PASSED = "",
-  UNEXPECTED_ERROR = "Sorry, but there was unexpected error. Please contact our support team!",
 }
 
 export default PublishArticleForm;

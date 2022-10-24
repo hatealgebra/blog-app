@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../atoms/button/Button";
-import { ButtonLink } from "../atoms/links/link.styled";
+import Button from "../../atoms/button/Button";
+import { ButtonLink } from "../../atoms/links/link.styled";
 import { StyledMyArticlesHeading } from "./adminHeading.styled";
 
 const AdminHeading = ({
