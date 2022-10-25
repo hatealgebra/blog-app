@@ -1,7 +1,6 @@
 import React from "react";
-import randomize from "randomatic";
 import { EPublishArticleErrors } from "../components/organisms/publishArticleForm/PublishArticleForm";
-import { postImage } from "../services/images/imagesPOST";
+import { uploadImage } from "../services/imagesServices";
 
 export const checkCreateArticleFormInput: TFormHandling = (
   title,
@@ -42,17 +41,15 @@ export const checkCreateArticleFormInput: TFormHandling = (
   }
 };
 
-const createArticleSubmit = (
+const createArticleSubmit = async (
   e: React.FormEvent,
   title: string,
   markdownContent: string,
   imageFile: File | null,
   setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>,
-  apiKey: string,
-  acessToken: string
-): void => {
+  access_token: string
+): Promise<void> => {
   e.preventDefault();
-  const randomId = randomize("Aa0!", 20);
   const trimmedTitle = title;
   const trimmedMarkdownContent = markdownContent;
   const perex = trimmedMarkdownContent
@@ -60,17 +57,19 @@ const createArticleSubmit = (
     .splice(0, 160)
     .concat("...")
     .join("");
-
-  const dateTimeNow = new Date().toLocaleString();
   const formHandling = checkCreateArticleFormInput(
     trimmedTitle,
     trimmedMarkdownContent,
     imageFile,
     setFormError
   );
+  const imageResponse = await uploadImage(
+    imageFile!,
+    "8556bc8c-5bcc-49c1-89d4-667eee2d3a6e"
+  );
+  console.log(imageResponse);
   if (formHandling) {
     try {
-      console.log(postImage(imageFile!, apiKey, acessToken));
     } catch (e) {}
   }
 };

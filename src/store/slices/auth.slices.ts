@@ -26,7 +26,7 @@ export const authSlice = createSlice({
     });
     builder.addCase(postLoginThunk.fulfilled, (state, { payload }) => {
       state.status = "idle";
-      state.data = payload;
+      state.data.acessToken = payload;
     });
     builder.addCase(postLoginThunk.rejected, (state, { payload }) => {
       console.log("failed");

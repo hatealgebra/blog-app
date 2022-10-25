@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { callGetArticles } from "../../services/articles/articlesGET";
+import { listArticles } from "../../services/articlesOperations";
 import { articleFeedActions } from "../slices/articleFeed.slice";
 
 export const getArticlesFeedThunk = createAsyncThunk(
   "articleFeed/getArticlesFeedThunk",
   async (_, thunkAPI) => {
     try {
-      const response = await callGetArticles();
+      const response = await listArticles();
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e);

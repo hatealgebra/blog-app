@@ -5,6 +5,9 @@ import InputWithLabel from "../../molecules/inputWithLabel/InputWithLabel";
 import UploadImage from "../../molecules/uploadImage/UploadImage";
 import { StyledPublishArticleForm } from "./publishArticleForm.styled";
 import { ErrorText } from "../../atoms/errorText/error.styled";
+import { useAppSelector } from "../../../store/hooks";
+import { selectAuthToken } from "../../../store/slices/auth.slices";
+import { access } from "fs";
 
 // TODO: BETTER ERROR HANDLING, make formError object instead basic string
 const PublishArticleForm = ({
@@ -23,14 +26,20 @@ const PublishArticleForm = ({
   const [formError, setFormError] = React.useState<EPublishArticleErrors>(
     EPublishArticleErrors.PASSED
   );
-
-  console.log(formError);
+  const { access_token } = useAppSelector(selectAuthToken);
 
   return (
     <StyledPublishArticleForm
-      onSubmit={(e) =>
-        onSubmit(e, title, markdownContent, imageFile, setFormError)
-      }
+      onSubmit={(e) => {
+        onSubmit(
+          e,
+          title,
+          markdownContent,
+          imageFile,
+          setFormError,
+          access_token!
+        );
+      }}
     >
       <AdminHeading
         heading="Create new article"
@@ -79,7 +88,8 @@ export interface PublistArticleFormProps {
     title: string,
     markdownContent: string,
     imageFile: File | null,
-    setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>
+    setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>,
+    acessToken: string
   ) => void;
 }
 

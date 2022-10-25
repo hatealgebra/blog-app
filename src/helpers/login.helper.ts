@@ -1,5 +1,5 @@
 import { API_KEY } from "../services/services.config";
-import { callPostLogin } from "../services/user/userPOST";
+import { loginPOST } from "../services/authServices";
 import { emailValidation, pwdValidation } from "../utils/regex.utils";
 
 const authSubmit = async (
@@ -17,7 +17,7 @@ const authSubmit = async (
     setFormError(ELoginFormValidation.EMPTY_PASSWORD);
   } else if (emailValidation(emailTrim) && pwdValidation(pwdTrim)) {
     try {
-      const response = await callPostLogin(emailTrim, pwdTrim);
+      const response = await loginPOST(emailTrim, pwdTrim);
       setFormError(ELoginFormValidation.CORRECT_LOGIN);
       return response.data;
     } catch (e) {
