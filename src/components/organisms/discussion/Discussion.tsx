@@ -8,20 +8,20 @@ import {
   StyledDiscussionComments,
 } from "./discussion.styled";
 
+// FIXME: Date-time to timestamp to get the string
 const Discussion = ({ comments }: DiscussionProps) => {
-  const timestampNow = Date.now();
   return (
     <StyledDiscussion className="discussion">
-      <CreateComment dispatch={console.log("add comment")} />
+      <CreateComment dispatch={() => console.log("add comment")} />
       <StyledDiscussionComments>
-        {comments.map((comment) => {
+        {comments.map((comment, i) => {
           const { author, postedAt, score, content, articleId } = comment;
-          const postedAtString = timeDifference(timestampNow / 1000, postedAt);
           return (
             <Comment
+              key={`${articleId}-${i}`}
               articleId={articleId}
               author={author}
-              postedAt={postedAtString}
+              postedAt={postedAt}
               score={score}
               content={content}
             ></Comment>

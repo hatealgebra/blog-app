@@ -17,5 +17,3 @@ export enum BREAKPOINTS {
   LAPTOP = 992,
   DESKTOP = 1200,
 }
-
-export const BASE_API_URL = "https://fullstack.exercise.applifting.cz";

@@ -1,9 +1,9 @@
 import React from "react";
 import RelatedArticles from "./RelatedArticles";
-import relatedArticlesJSON from "../../../__mocks__/json/articles.json";
+import relatedArticlesJSON from "../../../__mocks__/responses/articlesResponse.mock.json";
 
 export const RelatedArticlesSection = () => (
-  <RelatedArticles articles={relatedArticlesJSON.data} />
+  <RelatedArticles articles={relatedArticlesJSON.items} />
 );
 
 export default {

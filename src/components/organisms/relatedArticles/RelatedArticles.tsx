@@ -4,7 +4,6 @@ import ArticlePreviewSmall from "../../molecules/articlePreview/ArticlePreviewSm
 import { RelatedArticlesContainer } from "./relatedArticles.styled";
 
 const RelatedArticles = ({ articles }: RelatedArticlesProps) => {
-  console.log(articles);
   return (
     <RelatedArticlesContainer className="related-articles">
       <h3>Related Articles</h3>

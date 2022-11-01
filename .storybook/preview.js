@@ -9,6 +9,7 @@ import store from "../src/store/store";
 
 import themeDefault from "../src/components/particles/Theme";
 import GlobalStyle from "../src/components/particles/GlobalStyle";
+import AxiosInterceptor from "../src/components/particles/AxiosInterceptor";
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -36,8 +37,10 @@ addDecorator(mswDecorator);
 addDecorator((Story) => (
   <Provider store={store}>
     <ThemeProvider theme={themeDefault}>
-      <GlobalStyle />
-      <Story />
+      <AxiosInterceptor>
+        <GlobalStyle />
+        <Story />
+      </AxiosInterceptor>
     </ThemeProvider>
   </Provider>
 ));

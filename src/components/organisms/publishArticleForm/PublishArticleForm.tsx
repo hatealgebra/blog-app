@@ -7,7 +7,6 @@ import { StyledPublishArticleForm } from "./publishArticleForm.styled";
 import { ErrorText } from "../../atoms/errorText/error.styled";
 import { useAppSelector } from "../../../store/hooks";
 import { selectAuthToken } from "../../../store/slices/auth.slices";
-import { access } from "fs";
 
 // TODO: BETTER ERROR HANDLING, make formError object instead basic string
 const PublishArticleForm = ({
@@ -26,18 +25,18 @@ const PublishArticleForm = ({
   const [formError, setFormError] = React.useState<EPublishArticleErrors>(
     EPublishArticleErrors.PASSED
   );
-  const { access_token } = useAppSelector(selectAuthToken);
 
   return (
     <StyledPublishArticleForm
       onSubmit={(e) => {
+        e.preventDefault();
         onSubmit(
           e,
           title,
           markdownContent,
           imageFile,
           setFormError,
-          access_token!
+          "jdiaifjijijajifjiaji"
         );
       }}
     >
@@ -89,7 +88,7 @@ export interface PublistArticleFormProps {
     markdownContent: string,
     imageFile: File | null,
     setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>,
-    acessToken: string
+    access_token: string | undefined
   ) => void;
 }
 

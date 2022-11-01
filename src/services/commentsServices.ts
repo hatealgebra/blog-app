@@ -1,6 +1,5 @@
 import axios from "axios";
-import { BASE_API_URL } from "../utils/contants";
-import { API_KEY } from "./services.config";
+import { appLiftingAxios, appLiftingAxiosProtected } from "./services.config";
 
 export const createComment = async (
   author: string,
@@ -8,14 +7,8 @@ export const createComment = async (
   access_token: string
 ) => {
   try {
-    return await axios({
-      method: "post",
-      url: `${BASE_API_URL}/comments`,
-      headers: { Authorization: access_token, "X-API-KEY": API_KEY },
-      data: {
-        author,
-        content,
-      },
+    return appLiftingAxios.post("/comments", {
+      headers: { Authorization: access_token, data: { author, content } },
     });
   } catch (e) {
     throw e;
@@ -24,26 +17,14 @@ export const createComment = async (
 
 export const voteUp = async (commentId: string) => {
   try {
-    return await axios({
-      method: "post",
-      url: `${BASE_API_URL}/${commentId}/vote/up`,
-      headers: {
-        "X-API-KEY": API_KEY,
-      },
-    });
+    return appLiftingAxiosProtected.post(`${commentId}/vote/up`);
   } catch (e) {
     throw e;
   }
 };
 export const voteDown = async (commentId: string) => {
   try {
-    return await axios({
-      method: "post",
-      url: `${BASE_API_URL}/${commentId}/vote/down`,
-      headers: {
-        "X-API-KEY": API_KEY,
-      },
-    });
+    return appLiftingAxiosProtected.post(`${commentId}/vote/down`);
   } catch (e) {
     throw e;
   }

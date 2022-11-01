@@ -2,7 +2,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 
 import articleFeedReducer from "./slices/articleFeed.slice";
-import myArticleReducer from "./slices/myArticles.slice";
 import authReducer from "./slices/auth.slices";
 
 // REDUX-PERSIST

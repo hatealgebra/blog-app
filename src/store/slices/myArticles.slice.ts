@@ -23,23 +23,23 @@ export const myArticlesSlice = createSlice({
   name: "myArticles",
   initialState,
   reducers: {
-    sortMyArticles: (state, { payload }) => {
-      if (payload === ESortByOptions.ORIGINAL) {
-        state.data.nowSort = state.data.originalSort;
-      } else {
-        state.data.nowSort.items = [...state.data.originalSort.items].sort(
-          (a, b) => {
-            if (a[payload] > b[payload]) {
-              return 1;
-            } else if (a[payload] < b[payload]) {
-              return -1;
-            } else {
-              return 0;
-            }
-          }
-        );
-      }
-    },
+    // sortMyArticles: (state, { payload }) => {
+    //   if (payload === ESortByOptions.ORIGINAL) {
+    //     state.data.nowSort = state.data.originalSort;
+    //   // } else {
+    //   //   state.data.nowSort.items = [...state.data.originalSort.items.sort(
+    //   //     (a, b) => {
+    //   //       if (a[payload] > b[payload]) {
+    //   //         return 1;
+    //   //       } else if (a[payload] < b[payload]) {
+    //   //         return -1;
+    //   //       } else {
+    //   //         return 0;
+    //   //       }
+    //   //     }
+    //   //   )
+    //   // }
+    // }
   },
   extraReducers: (builder) => {
     builder.addCase(getMyArticles.pending, (state) => {

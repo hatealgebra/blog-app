@@ -1,7 +1,7 @@
 import React, { FormEvent } from "react";
 import userEvent from "@testing-library/user-event";
 
-import { setupTest } from "../../../utils/testing.utils";
+import { setupTestWithStore } from "../../../utils/testing.utils";
 import CreateNewArticleForm, {
   EPublishArticleErrors,
 } from "./PublishArticleForm";
@@ -22,9 +22,8 @@ describe("Create new article suite", () => {
   });
 
   beforeAll(() => {
-    const { getByRole, getAllByRole, getByLabelText, getByTestId } = setupTest(
-      <PublishArticleForm onSubmit={mockFn} />
-    );
+    const { getByRole, getAllByRole, getByLabelText, getByTestId } =
+      setupTestWithStore(<PublishArticleForm onSubmit={mockFn} />);
     titleInput = getByLabelText("Article title");
     imageFileInput = getByTestId("image-uploader");
     mdInput = getAllByRole("textbox")[0];

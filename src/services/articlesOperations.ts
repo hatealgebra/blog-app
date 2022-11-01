@@ -1,16 +1,10 @@
 import axios from "axios";
-import { operations } from "../types";
 
-import { BASE_API_URL } from "../utils/contants";
-import { API_KEY } from "./services.config";
+import { appLiftingAxiosProtected } from "./services.config";
 
 export const listArticles = async () => {
   try {
-    return await axios<operations["listArticles"]>({
-      method: "get",
-      url: `${BASE_API_URL}/articles`,
-      headers: { "X-API-KEY": API_KEY },
-    });
+    return await appLiftingAxiosProtected.get("/articles");
   } catch (e) {
     throw e;
   }
@@ -24,17 +18,10 @@ export const createArticle = async (
   access_token: string
 ) => {
   try {
-    return await axios<operations["createArticle"]>({
-      method: "post",
-      url: `${BASE_API_URL}/articles`,
-      headers: { "X-API-KEY": API_KEY, Authorization: access_token },
-      data: {
-        title,
-        perex,
-        imageId,
-        content,
-      },
+    const response = await appLiftingAxiosProtected.post("/articles", {
+      data: { title, perex, imageId, content },
     });
+    console.log(response);
   } catch (e) {
     throw e;
   }
@@ -42,13 +29,8 @@ export const createArticle = async (
 
 export const getArticle = async (articleId: string, access_token: string) => {
   try {
-    return await axios<operations["getArticle"]>({
-      method: "get",
-      url: `${BASE_API_URL}/${articleId}`,
-      headers: {
-        Authorization: access_token,
-        "X-API-KEY": API_KEY,
-      },
+    return await appLiftingAxiosProtected.get(`/${articleId}`, {
+      headers: { Authorization: access_token },
     });
   } catch (e) {
     throw e;
@@ -60,10 +42,8 @@ export const deleteArticle = async (
   access_token: string
 ) => {
   try {
-    return await axios<operations["deleteArticle"]>({
-      method: "delete",
-      url: `${BASE_API_URL}/${articleId}`,
-      headers: { "X-API-KEY": API_KEY, Authorization: access_token },
+    return await appLiftingAxiosProtected.delete(`/${articleId}`, {
+      headers: { Authorization: access_token },
     });
   } catch (e) {
     throw e;
@@ -75,10 +55,8 @@ export const updateArticle = async (
   access_token: string
 ) => {
   try {
-    return await axios<operations["updateArticle"]>({
-      method: "patch",
-      url: `${BASE_API_URL}/${articleId}`,
-      headers: { "X-API-KEY": API_KEY, Authorization: access_token },
+    return await appLiftingAxiosProtected.patch(`/${articleId}`, {
+      headers: { Authorization: access_token },
     });
   } catch (e) {
     throw e;

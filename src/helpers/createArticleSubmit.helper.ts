@@ -1,6 +1,9 @@
 import React from "react";
 import { EPublishArticleErrors } from "../components/organisms/publishArticleForm/PublishArticleForm";
+import { createArticle } from "../services/articlesOperations";
 import { uploadImage } from "../services/imagesServices";
+import { useAppSelector } from "../store/hooks";
+import { selectAuthToken } from "../store/slices/auth.slices";
 
 export const checkCreateArticleFormInput: TFormHandling = (
   title,
@@ -49,7 +52,6 @@ const createArticleSubmit = async (
   setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>,
   access_token: string
 ): Promise<void> => {
-  e.preventDefault();
   const trimmedTitle = title;
   const trimmedMarkdownContent = markdownContent;
   const perex = trimmedMarkdownContent
@@ -61,16 +63,23 @@ const createArticleSubmit = async (
     trimmedTitle,
     trimmedMarkdownContent,
     imageFile,
-    setFormError
+    setFormError,
+    access_token
   );
-  const imageResponse = await uploadImage(
-    imageFile!,
-    "8556bc8c-5bcc-49c1-89d4-667eee2d3a6e"
-  );
-  console.log(imageResponse);
+
   if (formHandling) {
     try {
-    } catch (e) {}
+      const imageResponse = await uploadImage(imageFile!);
+      // createArticle(
+      //   trimmedTitle,
+      //   perex,
+      //   imageResponse.data.imageId,
+      //   trimmedMarkdownContent,
+      //   access_token!
+      // );
+    } catch (e) {
+      console.log(e);
+    }
   }
 };
 
@@ -78,7 +87,8 @@ type TFormHandling = (
   title: string,
   markdownContent: string,
   imageFile: File | null,
-  setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>
+  setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>,
+  access_token: string | undefined
 ) => boolean | void;
 
 export default createArticleSubmit;

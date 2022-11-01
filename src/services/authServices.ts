@@ -1,6 +1,5 @@
 import axios from "axios";
-import { BASE_API_URL } from "../utils/contants";
-import { API_KEY } from "./services.config";
+import { API_KEY, BASE_API_URL } from "./services.config";
 
 export const loginPOST = async (username: string, password: string) => {
   try {

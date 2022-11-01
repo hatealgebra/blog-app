@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Console } from "console";
 
 import { components } from "../../types";
 import type { RootState } from "../store";

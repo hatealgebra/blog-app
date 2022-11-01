@@ -4,8 +4,8 @@ import LoginLink from "./LoginLink";
 
 export const AllVariants = () => (
   <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-    <Link to="#">Classic link</Link>
-    <Link variant="text" to="#">
+    <Link to="/#">Classic link</Link>
+    <Link variant="text" to="/#">
       Text link
     </Link>
     <LoginLink />

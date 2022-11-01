@@ -1,9 +1,9 @@
 import React from "react";
-import { USER_CONFIG } from "../../../services/services.config";
+import { API_KEY, USER_CONFIG } from "../../../services/services.config";
 
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { selectMyArticlesItems } from "../../../store/slices/myArticles.slice";
-import { getMyArticles } from "../../../store/thunks/articles.thunk";
+import { getArticlesFeedThunk } from "../../../store/thunks/articles.thunk";
 import { ADMIN_LINKS } from "../../../utils/contants";
 import AdminHeading from "../../molecules/adminHeading/AdminHeading";
 import Button from "../../atoms/button/Button";
@@ -22,7 +22,7 @@ const MyArticlesTable = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
-    dispatch(getMyArticles(USER_CONFIG.API_KEY));
+    dispatch(getArticlesFeedThunk());
   }, []);
 
   return (

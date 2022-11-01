@@ -21,10 +21,10 @@ const MobileMenu = ({ isOpen, setClose }: MobileMenuProps) => {
           <GrClose size="20px" width={10} />
         </MobileMenuCloseButton>
         <MobileMenuNav>
-          <MobileMenuLink to={navLinks.RECENT_ARTICLES}>
+          <MobileMenuLink to={navLinks.MY_ARTICLES}>
             Recent articles
           </MobileMenuLink>
-          <MobileMenuLink to={navLinks.RECENT_ARTICLES}>About</MobileMenuLink>
+          <MobileMenuLink to={navLinks.MY_ARTICLES}>About</MobileMenuLink>
         </MobileMenuNav>
         <LoginLink />
       </div>

@@ -1,18 +1,23 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const PageTemplateBaseStyling = css`
+  height: 100%:
+  width: 100%;
+  margin: 15px auto;
+`;
 
 export const FormContainerTemplate = styled.div`
   display: grid;
   place-content: center;
-  height: 100%;
-  width: 100%;
+  ${PageTemplateBaseStyling};
 `;
 
 export const NonFormPageContainer = styled.div<{ isArticle?: boolean }>`
   max-width: 1600px;
   height: 100%;
   width: 100%;
-  margin: 15px auto;
+  ${PageTemplateBaseStyling};
 
   ${({ theme }) => theme.breakpoint.laptop} {
     ${({ isArticle }) =>

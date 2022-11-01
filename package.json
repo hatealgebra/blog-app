@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit",
     "storybook": "NODE_ENV=production start-storybook -p 6006 -s static",
     "build-storybook": "NODE_ENV=production build-storybook -s static",
-    "test": "jest --watchAll"
+    "test": "TZ=UTC jest --watchAll"
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.5.12",

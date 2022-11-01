@@ -1,4 +1,7 @@
+import axios from "axios";
+
 // PWD Applifting123
+export const BASE_API_URL = "https://fullstack.exercise.applifting.cz";
 export const API_KEY = "719b7164-ccbf-49a1-a33e-c9056e22805e";
 
 export enum USER_CONFIG {
@@ -7,3 +10,14 @@ export enum USER_CONFIG {
   LAST_USED_AT = "",
   NAME = "contact@pavel-vondra.com",
 }
+
+export const appLiftingAxios = axios.create({
+  baseURL: BASE_API_URL,
+});
+
+export const appLiftingAxiosProtected = axios.create({
+  baseURL: BASE_API_URL,
+  headers: {
+    "X-API-KEY": API_KEY,
+  },
+});

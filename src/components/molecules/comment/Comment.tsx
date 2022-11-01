@@ -14,12 +14,14 @@ const Comment = ({
   content,
 }: components["schemas"]["Comment"]) => {
   const [counterValue, setCounterValue] = React.useState(score);
-
+  const timestampNow = Date.now();
   return (
     <StyledCommentContainer className="comment">
       <Avatar size="lg" />
       <h5 className="comment__author">{author}</h5>
-      <span className="comment__time-diff label">{postedAt}</span>
+      <span className="comment__time-diff label">
+        {timeDifference(timestampNow, postedAt!)}
+      </span>
       <p className="comment__text">{content}</p>
       <StyledCommentCounter>
         <span data-testid="reactionCounter">

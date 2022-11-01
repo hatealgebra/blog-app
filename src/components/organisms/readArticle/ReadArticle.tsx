@@ -13,13 +13,18 @@ const ReadArticle = ({
   createdAt,
   content,
 }: components["schemas"]["ArticleDetail"] & { author: string }) => {
+  const articlePublishedFormat = new Date(createdAt!)
+    .toLocaleString()
+    .split(" ")
+    .slice(0, -1)
+    .join(" ");
   return (
     <ReadArticleContainer className="read-article">
       <h1>{title}</h1>
       <div className="read-article__base-info label">
         <span>{author}</span>
         <span>•</span>
-        <span>{createdAt}</span>
+        <span>{articlePublishedFormat}</span>
       </div>
       <img src={britishCat} alt={`${title} image`} />
       <ReadArticleContent className="read-article__markdown">

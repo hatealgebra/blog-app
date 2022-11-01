@@ -6,7 +6,6 @@ import {
   selectArticleFeedItems,
   selectArticleFeedStatus,
 } from "../store/slices/articleFeed.slice";
-import { selectAuthTenant, selectAuthToken } from "../store/slices/auth.slices";
 import { getArticlesFeedThunk } from "../store/thunks/articles.thunk";
 
 const IndexPage = () => {

@@ -1,37 +1,38 @@
-import axios from "axios";
-import { BASE_API_URL } from "../utils/contants";
-import { API_KEY } from "./services.config";
+import {
+  API_KEY,
+  appLiftingAxios,
+  appLiftingAxiosProtected,
+} from "./services.config";
 
-export const uploadImage = async (image: File, access_token: string) => {
+export const uploadImage = async (imageFile: File) => {
+  let bodyFormData = new FormData();
+  bodyFormData.append("image", imageFile);
   try {
-    return await axios({
-      method: "post",
-      url: `${BASE_API_URL}/images`,
-      headers: { Authorization: access_token, "X-API-KEY": API_KEY },
-      data: { image },
+    const response = await appLiftingAxiosProtected.post("/images", imageFile, {
+      headers: { "content-type": "multipart/form-data" },
     });
+    return response;
   } catch (e) {
+    console.log(e);
     throw e;
   }
 };
 
 export const showImage = async (imageId: string) => {
   try {
-    return await axios({
-      method: "get",
-      url: `${BASE_API_URL}/${imageId}`,
-    });
+    return await appLiftingAxios.get(`/${imageId}`);
   } catch (e) {
     throw e;
   }
 };
 
-export const deleteImage = async (imageId: string, access_token: string) => {
+export const deleteImage = async (
+  imageId: string,
+  access_token: string | undefined
+) => {
   try {
-    return await axios({
-      method: "delete",
-      url: `${BASE_API_URL}/${imageId}`,
-      headers: { Authorization: access_token, "X-API-KEY": API_KEY },
+    return appLiftingAxiosProtected.delete(`/${imageId}`, {
+      headers: { Authorization: access_token },
     });
   } catch (e) {
     throw e;

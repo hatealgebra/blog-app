@@ -3,18 +3,20 @@
  */
 export const timeDifference = (
   timestampNow: EpochTimeStamp,
-  timestampComment: EpochTimeStamp
+  dateCreated: string
 ) => {
-  if (timestampNow < timestampComment) {
+  const nowDate = new Date(timestampNow);
+  const commentDate = new Date(dateCreated);
+
+  if (nowDate < commentDate) {
     return "undefined";
   }
-  const newDate = new Date(timestampNow * 1000);
-  const commentDate = new Date(timestampComment * 1000);
-  const yearDifference = newDate.getFullYear() - commentDate.getFullYear();
-  const monthDifference = newDate.getMonth() - commentDate.getMonth();
-  const daysDifference = newDate.getDate() - commentDate.getDate();
-  const hoursDifference = newDate.getHours() - commentDate.getHours();
-  const minsDifference = newDate.getMinutes() - commentDate.getMinutes();
+
+  const yearDifference = nowDate.getFullYear() - commentDate.getFullYear();
+  const monthDifference = nowDate.getMonth() - commentDate.getMonth();
+  const daysDifference = nowDate.getDate() - commentDate.getDate();
+  const hoursDifference = nowDate.getHours() - commentDate.getHours();
+  const minsDifference = nowDate.getMinutes() - commentDate.getMinutes();
 
   if (yearDifference > 0) {
     return `${yearDifference} year${(yearDifference > 1 && "s") || ""} ago`;
