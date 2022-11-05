@@ -1,6 +1,10 @@
 import axios from "axios";
 
-import { appLiftingAxiosProtected } from "./services.config";
+import {
+  API_KEY,
+  appLiftingAxiosProtected,
+  BASE_API_URL,
+} from "./services.config";
 
 export const listArticles = async () => {
   try {
@@ -17,20 +21,36 @@ export const createArticle = async (
   content: string,
   access_token: string
 ) => {
+  const data = {
+    title,
+    perex,
+    imageId,
+    content,
+  };
+
   try {
-    const response = await appLiftingAxiosProtected.post("/articles", {
-      data: { title, perex, imageId, content },
+    const response = await appLiftingAxiosProtected.post("/articles", data, {
+      headers: {
+        Authorization: access_token,
+        "Content-Type": "application/json",
+      },
     });
-    console.log(response);
+    return response;
   } catch (e) {
+    console.log(e);
     throw e;
   }
 };
 
-export const getArticle = async (articleId: string, access_token: string) => {
+export const getArticle = async (
+  articleId: string,
+  access_token: string | undefined
+) => {
   try {
-    return await appLiftingAxiosProtected.get(`/${articleId}`, {
-      headers: { Authorization: access_token },
+    return await appLiftingAxiosProtected.get(`/articles/${articleId}`, {
+      headers: {
+        Authorization: access_token,
+      },
     });
   } catch (e) {
     throw e;
@@ -42,7 +62,7 @@ export const deleteArticle = async (
   access_token: string
 ) => {
   try {
-    return await appLiftingAxiosProtected.delete(`/${articleId}`, {
+    return await appLiftingAxiosProtected.delete(`/articles/${articleId}`, {
       headers: { Authorization: access_token },
     });
   } catch (e) {
@@ -52,10 +72,11 @@ export const deleteArticle = async (
 
 export const updateArticle = async (
   articleId: string,
-  access_token: string
+  access_token: string,
+  data: any
 ) => {
   try {
-    return await appLiftingAxiosProtected.patch(`/${articleId}`, {
+    return await appLiftingAxiosProtected.patch(`/${articleId}`, data, {
       headers: { Authorization: access_token },
     });
   } catch (e) {

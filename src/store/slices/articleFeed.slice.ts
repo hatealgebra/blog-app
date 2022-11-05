@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { components } from "../../types";
-import type { RootState } from "../store";
+import type { RootState } from "..";
 import { getArticlesFeedThunk } from "../thunks/articles.thunk";
 
 const initialState = {

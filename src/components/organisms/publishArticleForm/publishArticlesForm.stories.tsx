@@ -1,6 +1,6 @@
 import React from "react";
 
-import createArticleSubmit from "../../../helpers/createArticleSubmit.helper";
+import { createArticle } from "../../../services/articlesOperations";
 import PublishArticleForm from "./PublishArticleForm";
 
 const lorem =
@@ -9,12 +9,20 @@ const lorem =
 export const CreateNewArticleFormExample = () => {
   return (
     <PublishArticleForm
+      onSubmit={createArticle}
+      titleValue="Article title"
       markdownContentValue={lorem}
-      onSubmit={createArticleSubmit}
     />
   );
 };
-// export const EditArticleFormExample = () => <EditArticleForm />;
+// export const EditArticleFormExample = () => (
+//   <PublishArticleForm
+//     markdownContentValue={lorem}
+//     title="Mock article title"
+//     imageFileValue={britishCat}
+//     onSubmit={createArticleSubmit}
+//   />
+// );
 
 export default {
   title: "Organisms/Forms",

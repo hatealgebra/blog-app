@@ -7,8 +7,9 @@ import Button from "../../atoms/button/Button";
 import InputWithLabel from "../../molecules/inputWithLabel/InputWithLabel";
 import { StyledLoginForm } from "./forms.styled";
 import { navLinks } from "../../../utils/contants";
-import { selectAuthToken } from "../../../store/slices/auth.slices";
+
 import { emailValidation, pwdValidation } from "../../../utils/regex.utils";
+import { selectAuthToken } from "../../../store/slices/auth.slices";
 
 const LoginForm = () => {
   const [email, setEmail] = React.useState("");

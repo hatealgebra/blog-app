@@ -7,7 +7,7 @@ import CreateNewArticleForm, {
 } from "./PublishArticleForm";
 import { screen, waitFor } from "@testing-library/react";
 import PublishArticleForm from "./PublishArticleForm";
-import createArticleSubmit from "../../../helpers/createArticleSubmit.helper";
+import createArticleSubmit from "../../../helpers/publishArticle.helper";
 
 // TODO: Why
 describe("Create new article suite", () => {

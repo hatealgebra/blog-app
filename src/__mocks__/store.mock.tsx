@@ -2,7 +2,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 
 import articleFeedReducer from "../store/slices/articleFeed.slice";
-import myArticleReducer from "../store/slices/myArticles.slice";
 import authReducer from "../store/slices/auth.slices";
 
 // REDUX-PERSIST
@@ -25,7 +24,7 @@ export const reducer = combineReducers({
   articleFeed: articleFeedReducer,
 });
 
-const store = configureStore({
+const mockStore = configureStore({
   reducer: { reducer, persistedReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -49,7 +48,7 @@ const store = configureStore({
           name: NAME,
         },
         login: { email: NAME, pwd: "Applifting123" },
-        access_token: {},
+        authorization: {},
       },
       error: false,
       _persist: { ...persistConfig, version: 0, rehydrated: true },
@@ -58,8 +57,8 @@ const store = configureStore({
   devTools: true,
 });
 
-export const persistor = persistStore(store);
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export const persistor = persistStore(mockStore);
+export type RootState = ReturnType<typeof mockStore.getState>;
+export type AppDispatch = typeof mockStore.dispatch;
 
-export default store;
+export default mockStore;

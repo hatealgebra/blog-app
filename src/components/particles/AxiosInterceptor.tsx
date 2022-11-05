@@ -1,17 +1,10 @@
+import { Store } from "@reduxjs/toolkit";
 import { AxiosRequestConfig } from "axios";
 import React from "react";
 import setUpInterceptor from "../../services/axiosInterceptors";
-import { appLiftingAxiosProtected } from "../../services/services.config";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import {
-  selectAuthLogin,
-  selectAuthToken,
-} from "../../store/slices/auth.slices";
+import store from "../../store";
 
-import { reAuthorizeThunk } from "../../store/thunks/authentication.thunks";
-import store from "../../__mocks__/store.mock";
-
-const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
+const AxiosInterceptor = ({ children, store }: AxiosInterceptorProps) => {
   React.useEffect(() => {
     setUpInterceptor(store);
   }, []);
@@ -21,6 +14,7 @@ const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
 
 interface AxiosInterceptorProps {
   children: React.ReactElement | React.ReactNode;
+  store: Store;
 }
 
 export default AxiosInterceptor;

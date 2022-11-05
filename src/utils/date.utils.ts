@@ -1,3 +1,5 @@
+import { create } from "domain";
+
 /**
  * @param  {EpochTimeStamp} timestamp
  */
@@ -34,5 +36,27 @@ export const timeDifference = (
     return `${minsDifference} minute${(minsDifference > 1 && "s") || ""} ago`;
   } else {
     return `Just now`;
+  }
+};
+
+export const getDate = (createdAt: string | undefined) => {
+  if (!createdAt) {
+    return "Unknown date";
+  } else {
+    const getDoubleDigitNumber = (number: number) => {
+      if (number < 10) {
+        return `0${number}`;
+      }
+      return number;
+    };
+
+    const date = new Date(createdAt);
+    const day = date.getDay();
+    const month = date.getMonth();
+    const year = date.getFullYear().toString().slice(2);
+    const transformedDate = `${getDoubleDigitNumber(
+      month
+    )}/${getDoubleDigitNumber(day)}/${year}`;
+    return transformedDate;
   }
 };

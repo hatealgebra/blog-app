@@ -46,8 +46,7 @@ export const reAuthorizeThunk = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const response = await loginPOST(email, pwd);
-      return response;
+      return await loginPOST(email, pwd);
     } catch (err) {
       const { data } = err.response;
       return thunkAPI.rejectWithValue(data);

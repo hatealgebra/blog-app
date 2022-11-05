@@ -1,4 +1,7 @@
 import React from "react";
+import { Provider } from "react-redux";
+import { selectAuthToken } from "../../../store/slices/auth.slices";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { components } from "../../../types";
 import { timeDifference } from "../../../utils/date.utils";
 
@@ -44,7 +47,7 @@ const ArticleFeed = ({
                   articleId={articleId}
                   title={title}
                   perex={perex}
-                  createdAt={timeDifference(Date.now() / 1000, createdAt)}
+                  createdAt={createdAt}
                   imageId={imageId}
                   comments={comments}
                   author="Unknow author"

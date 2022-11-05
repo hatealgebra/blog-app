@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 
-import articleFeedReducer from "./slices/articleFeed.slice";
 import authReducer from "./slices/auth.slices";
+import articleFeedReducer from "./slices/articleFeed.slice";
 
 // REDUX-PERSIST
 import { persistStore, persistReducer } from "redux-persist";
@@ -16,6 +16,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const reducer = combineReducers({
+  // FIXME: Just store the data where it is needed, use multiple stores
   articleFeed: articleFeedReducer,
 });
 

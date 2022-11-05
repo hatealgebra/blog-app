@@ -4,18 +4,11 @@ import {
   appLiftingAxiosProtected,
 } from "./services.config";
 
-export const uploadImage = async (imageFile: File) => {
-  let bodyFormData = new FormData();
-  bodyFormData.append("image", imageFile);
-  try {
-    const response = await appLiftingAxiosProtected.post("/images", imageFile, {
-      headers: { "content-type": "multipart/form-data" },
-    });
-    return response;
-  } catch (e) {
-    console.log(e);
-    throw e;
-  }
+export const uploadImage = async (imageFile: FormData) => {
+  const response = await appLiftingAxiosProtected.post("/images", imageFile, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+  return response;
 };
 
 export const showImage = async (imageId: string) => {
@@ -31,10 +24,11 @@ export const deleteImage = async (
   access_token: string | undefined
 ) => {
   try {
-    return appLiftingAxiosProtected.delete(`/${imageId}`, {
+    return appLiftingAxiosProtected.delete(`/images/${imageId}`, {
       headers: { Authorization: access_token },
     });
   } catch (e) {
+    console.log(e);
     throw e;
   }
 };

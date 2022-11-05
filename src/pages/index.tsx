@@ -6,15 +6,20 @@ import {
   selectArticleFeedItems,
   selectArticleFeedStatus,
 } from "../store/slices/articleFeed.slice";
+import { selectAuthToken } from "../store/slices/auth.slices";
+
 import { getArticlesFeedThunk } from "../store/thunks/articles.thunk";
 
 const IndexPage = () => {
   const feedStatus = useAppSelector(selectArticleFeedStatus);
   const feedData = useAppSelector(selectArticleFeedItems);
+  const feedItems = useAppSelector(selectArticleFeedItems);
+  const authToken = useAppSelector(selectAuthToken);
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
-    dispatch(getArticlesFeedThunk());
+    dispatch(getArticlesFeedThunk(authToken));
+    console.log(authToken);
   }, []);
 
   return (

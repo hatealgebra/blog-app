@@ -11,6 +11,7 @@ import StyledLink from "../../atoms/links/link.styled";
 import { components } from "../../../types";
 
 import britishHaircat from "../../../images/british-haircat.jpg";
+import { getDate } from "../../../utils/date.utils";
 
 const ArticlePreview = ({
   imageId,
@@ -20,6 +21,7 @@ const ArticlePreview = ({
   comments,
   author,
 }: components["schemas"]["ArticleDetail"] & { author: string }) => {
+  const createdDate = getDate(createdAt);
   return (
     <StyledArticlePreviewContainer className="article-preview">
       <StyledArticlePreviewImage
@@ -31,12 +33,12 @@ const ArticlePreview = ({
       <StyledArticleRow className="article-preview__row-one">
         <span>{author}</span>
         <GoPrimitiveDot />
-        <span>{createdAt}</span>
+        <span>{createdDate}</span>
       </StyledArticleRow>
       <p className="article-preview__text">{perex}</p>
       <StyledArticleRow className="article-preview__row-two">
         <StyledLink to="#">Read whole article</StyledLink>
-        <span>{`${comments!.length} comments`}</span>
+        <span>{`${comments!.length ?? "0"} comments`}</span>
       </StyledArticleRow>
     </StyledArticlePreviewContainer>
   );

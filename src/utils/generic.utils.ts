@@ -1,7 +1,28 @@
+import { ArticleFeedLoading } from "../components/organisms/articleFeed/articleFeed.stories";
+import { deleteArticle, listArticles } from "../services/articlesOperations";
+import { deleteImage } from "../services/imagesServices";
+import { components } from "../types";
+
 export const cutTextWithElipsis = (text: string, limit: number) => {
   if (text.length <= limit) {
     return text;
   } else {
     return text.split("", limit).concat("...").join("");
+  }
+};
+
+export const clearDataAPI = async (access_token: string) => {
+  const response = await listArticles();
+  const { items } = response.data;
+  console.log(items);
+  if (items && items.length !== 0) {
+    try {
+      items.map((item) => {
+        const { articleId, imageId } = item;
+        articleId && deleteArticle(articleId, access_token);
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 };

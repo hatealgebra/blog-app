@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import AdminHeading from "../../molecules/adminHeading/AdminHeading";
 import MarkdownEditor from "../../atoms/markdownEditor/MarkdownEditor";
 import InputWithLabel from "../../molecules/inputWithLabel/InputWithLabel";
@@ -6,15 +6,24 @@ import UploadImage from "../../molecules/uploadImage/UploadImage";
 import { StyledPublishArticleForm } from "./publishArticleForm.styled";
 import { ErrorText } from "../../atoms/errorText/error.styled";
 import { useAppSelector } from "../../../store/hooks";
-import { selectAuthToken } from "../../../store/slices/auth.slices";
 
-// TODO: BETTER ERROR HANDLING, make formError object instead basic string
+import { selectAuthToken } from "../../../store/slices/auth.slices";
+import publishArticle from "../../../helpers/publishArticle.helper";
+import {
+  createArticle,
+  updateArticle,
+} from "../../../services/articlesOperations";
+
+// FIXME: maybe implement do BIG notation?
+// TODO: Mock for MSW
+// TODO: Testing
 const PublishArticleForm = ({
   titleValue,
   markdownContentValue,
   imageFileValue,
   onSubmit,
 }: PublistArticleFormProps) => {
+  const { access_token } = useAppSelector(selectAuthToken);
   const [title, setTitle] = React.useState(titleValue ?? "");
   const [markdownContent, setMarkdownContent] = React.useState(
     markdownContentValue ?? ""
@@ -26,20 +35,21 @@ const PublishArticleForm = ({
     EPublishArticleErrors.PASSED
   );
 
+  const handleOnSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    publishArticle(
+      e,
+      title,
+      markdownContent,
+      imageFile,
+      setFormError,
+      access_token
+    )(onSubmit);
+  };
+
   return (
-    <StyledPublishArticleForm
-      onSubmit={(e) => {
-        e.preventDefault();
-        onSubmit(
-          e,
-          title,
-          markdownContent,
-          imageFile,
-          setFormError,
-          "jdiaifjijijajifjiaji"
-        );
-      }}
-    >
+    <StyledPublishArticleForm onSubmit={(e) => handleOnSubmit(e)}>
       <AdminHeading
         heading="Create new article"
         buttonText="Publish article"
@@ -82,14 +92,7 @@ export interface PublistArticleFormProps {
   titleValue?: string;
   markdownContentValue?: string;
   imageFileValue?: File | null;
-  onSubmit: (
-    e: React.FormEvent,
-    title: string,
-    markdownContent: string,
-    imageFile: File | null,
-    setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>,
-    access_token: string | undefined
-  ) => void;
+  onSubmit: typeof createArticle | typeof updateArticle;
 }
 
 export enum EPublishArticleErrors {

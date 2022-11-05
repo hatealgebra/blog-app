@@ -3,12 +3,14 @@ import { Console } from "console";
 import { ESortByOptions } from "../../components/molecules/editArticleRow/EditArticleRowButtons";
 
 import { components } from "../../types";
-import type { RootState } from "../store";
+import type { RootState } from "..";
 import { getMyArticles } from "../thunks/articles.thunk";
 
 const initialState = {
   status: "idle",
-  data: { nowSort: { items: undefined } },
+  data: {
+    nowSort: { items: undefined },
+  },
   error: false,
 } as {
   status: "idle" | "loading";
@@ -16,11 +18,12 @@ const initialState = {
   data: {
     originalSort: components["schemas"]["ArticleList"];
     nowSort: components["schemas"]["ArticleList"];
+    articleToEdit: components["schemas"]["ArticleDetail"];
   };
 };
 
-export const myArticlesSlice = createSlice({
-  name: "myArticles",
+export const adminSlice = createSlice({
+  name: "admin",
   initialState,
   reducers: {
     // sortMyArticles: (state, { payload }) => {
@@ -40,6 +43,9 @@ export const myArticlesSlice = createSlice({
     //   //   )
     //   // }
     // }
+    chooseArticleToEdit: (state, { payload }) => {
+      state.data.articleToEdit = state.data.originalSort.items![payload];
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getMyArticles.pending, (state) => {
@@ -60,9 +66,11 @@ export const myArticlesSlice = createSlice({
 
 export const selectMyArticlesItems = (state: RootState) =>
   state.myArticles.data.nowSort.items;
+export const selectArticleToEdit = (state: RootState) =>
+  state.myArticles.data.articleToEdit;
 export const selectMyArticlesStatus = (state: RootState) =>
   state.myArticles.status;
 export const selectMyArticlesError = (state: RootState) =>
   state.myArticles.error;
 
-export default myArticlesSlice.reducer;
+export default adminSlice.reducer;

@@ -6,8 +6,8 @@ import { ThemeProvider } from "styled-components";
 
 import Theme from "../components/particles/Theme";
 import GlobalStyle from "../components/particles/GlobalStyle";
-import authReducer from "../store/slices/auth.slices";
-import articleFeedReducer from "../store/slices/articleFeed.slice";
+import authReducer from "../store/auth.slices";
+import articleFeedReducer from "../store/articleFeed/articleFeed.slice";
 
 export const setupTest = (component: React.ReactElement | React.ReactNode) => {
   return render(

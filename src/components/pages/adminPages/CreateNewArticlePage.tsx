@@ -1,13 +1,15 @@
 import React from "react";
-import createArticleSubmit from "../../../helpers/createArticleSubmit.helper";
+import publishArticle from "../../../helpers/publishArticle.helper";
+import { createArticle } from "../../../services/articlesOperations";
 
-import CreateNewArticleForm from "../../organisms/publishArticleForm/PublishArticleForm";
+import PublishArticleForm from "../../organisms/publishArticleForm/PublishArticleForm";
 import PageTemplate from "../../templates/Page.template";
 
 const CreateNewArticlePage = () => {
+  const fn = () => console.log("testing");
   return (
     <PageTemplate>
-      <CreateNewArticleForm onSubmit={createArticleSubmit} />
+      <PublishArticleForm onSubmit={fn} />
     </PageTemplate>
   );
 };

@@ -1,4 +1,7 @@
 import React from "react";
+import { useAppSelector } from "../../../store/hooks";
+import { selectAuthToken } from "../../../store/slices/auth.slices";
+import { clearDataAPI } from "../../../utils/generic.utils";
 import Link from "./link.styled";
 import LoginLink from "./LoginLink";
 

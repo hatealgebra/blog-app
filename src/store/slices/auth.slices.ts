@@ -1,20 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { components } from "../../types";
-import { RootState } from "../store";
+import { RootState } from "..";
+
 import {
   postLoginThunk,
   reAuthorizeThunk,
 } from "../thunks/authentication.thunks";
 
+// FIXME: Name of the keys
 export const authInitialState = {
   status: "idle",
-  data: { access_token: {} },
+  data: { authorization: {} },
   error: false,
 } as {
   status: "idle" | "loading";
   data: {
     tenant: components["schemas"]["Tenant"] | null;
-    access_token: components["schemas"]["AccessToken"];
+    authorization: components["schemas"]["AccessToken"];
     login: {
       email: string;
       pwd: string;
@@ -47,7 +49,7 @@ export const authSlice = createSlice({
     });
     builder.addCase(reAuthorizeThunk.fulfilled, (state, { payload }) => {
       state.status = "idle";
-      state.data.access_token = payload.data;
+      state.data.authorization = payload.data;
     });
     builder.addCase(reAuthorizeThunk.rejected, (state, { payload }) => {
       state.status = "idle";
@@ -61,7 +63,7 @@ export const selectAuthLogin = (state: RootState) =>
 export const selectAuthTenant = (state: RootState) =>
   state.persistedReducer.data.tenant ?? undefined;
 export const selectAuthToken = (state: RootState) =>
-  state.persistedReducer.data.access_token;
+  state.persistedReducer.data.authorization.access_token;
 export const selectAuthStatus = (state: RootState) =>
   state.persistedReducer.status;
 export const selectAuthError = (state: RootState) =>

@@ -5,7 +5,7 @@ import { addDecorator } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { initialize, mswDecorator } from "msw-storybook-addon";
 import { Provider } from "react-redux";
-import store from "../src/store/store";
+import mockStore from "../src/__mocks__/store.mock";
 
 import themeDefault from "../src/components/particles/Theme";
 import GlobalStyle from "../src/components/particles/GlobalStyle";
@@ -35,9 +35,9 @@ initialize();
 // addDecorator(withThemesProvider([themeDefault]), ThemeProvider);
 addDecorator(mswDecorator);
 addDecorator((Story) => (
-  <Provider store={store}>
+  <Provider store={mockStore}>
     <ThemeProvider theme={themeDefault}>
-      <AxiosInterceptor>
+      <AxiosInterceptor store={mockStore}>
         <GlobalStyle />
         <Story />
       </AxiosInterceptor>

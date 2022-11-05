@@ -1,5 +1,5 @@
 import { EPublishArticleErrors } from "../components/organisms/publishArticleForm/PublishArticleForm";
-import { checkCreateArticleFormInput } from "./createArticleSubmit.helper";
+import { checkCreateArticleFormInput } from "./publishArticle.helper";
 
 describe("Check create article form inputs", () => {
   const inputValue = "Input value";

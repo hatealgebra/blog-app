@@ -2,7 +2,7 @@ import React from "react";
 import { API_KEY, USER_CONFIG } from "../../../services/services.config";
 
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { selectMyArticlesItems } from "../../../store/slices/myArticles.slice";
+// import { selectMyArticlesItems } from "../../../store/admin/myArticles.slice";
 import { getArticlesFeedThunk } from "../../../store/thunks/articles.thunk";
 import { ADMIN_LINKS } from "../../../utils/contants";
 import AdminHeading from "../../molecules/adminHeading/AdminHeading";
@@ -18,7 +18,7 @@ import {
 // TODO: Finish the my Articles
 
 const MyArticlesTable = () => {
-  const articles = useAppSelector(selectMyArticlesItems);
+  // const articles = useAppSelector(selectMyArticlesItems);
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
@@ -33,7 +33,7 @@ const MyArticlesTable = () => {
         to={ADMIN_LINKS.CREATE_ARTICLE}
       />
       <MyArticlesForm onSubmit={(e) => e.preventDefault()}>
-        <StyledArticlesTable>
+        {/* <StyledArticlesTable>
           <EditArticleRowButtons
             dispatchSort={dispatch}
             // setCheckAll={console.log("hey")}
@@ -53,7 +53,7 @@ const MyArticlesTable = () => {
             : articles && articles.length === 0
             ? "No articles to show"
             : "nothing"}
-        </StyledArticlesTable>
+        </StyledArticlesTable> */}
       </MyArticlesForm>
     </MyArticlesTableContainer>
   );
