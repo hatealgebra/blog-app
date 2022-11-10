@@ -1,28 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { combineReducers } from "redux";
 
-import articleFeedReducer from "../store/slices/articleFeed.slice";
-import authReducer from "../store/slices/auth.slices";
-
-// REDUX-PERSIST
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
 import { USER_CONFIG } from "../services/services.config";
+import { reducer, persistedReducer, persistConfig } from "../store";
+// REDUX-PERSIST
+import { persistStore } from "redux-persist";
+
+import articleDetailReponseJSON from "../__mocks__/responses/articleDetailResponse.mock.json";
 
 const { TENANT_ID, CREATED_AT, LAST_USED_AT, NAME } = USER_CONFIG;
-
-const mockAuth = { status: "idle" };
-
-const persistConfig = {
-  key: "root",
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, authReducer);
-
-export const reducer = combineReducers({
-  articleFeed: articleFeedReducer,
-});
 
 const mockStore = configureStore({
   reducer: { reducer, persistedReducer },
@@ -36,6 +21,15 @@ const mockStore = configureStore({
         status: "idle",
         data: { items: undefined },
         error: false,
+      },
+      admin: {
+        status: "idle",
+        error: false,
+        data: {
+          articleToEdit: articleDetailReponseJSON,
+          originalSort: {},
+          nowSort: {},
+        },
       },
     },
     persistedReducer: {

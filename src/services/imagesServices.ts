@@ -5,15 +5,26 @@ import {
 } from "./services.config";
 
 export const uploadImage = async (imageFile: FormData) => {
-  const response = await appLiftingAxiosProtected.post("/images", imageFile, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
-  return response;
+  try {
+    const response = await appLiftingAxiosProtected.post("/images", imageFile, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    console.log(response);
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 export const showImage = async (imageId: string) => {
   try {
-    return await appLiftingAxios.get(`/${imageId}`);
+    const response = await appLiftingAxios.get(`/images/${imageId}`, {
+      responseType: "blob",
+    });
+    console.log(response);
+    return response;
   } catch (e) {
     throw e;
   }

@@ -8,17 +8,19 @@ const setUpInterceptor = (store: Store) => {
     const { dispatch, getState } = store;
     const { login, authorization } = getState().persistedReducer.data;
     const { email, pwd } = login;
-    if (!config.headers["Authorization"] || !authorization.access_token) {
-      console.log(config.headers["Authorization"]);
-      console.log(authorization.access_token);
-      const response = dispatch(reAuthorizeThunk({ email, pwd }));
-      console.log(response);
+    const { access_token } = authorization;
+    if (!config.headers!["Authorization"] && !access_token) {
+      const reauthenticationResponse = await dispatch(
+        reAuthorizeThunk({ email, pwd })
+      );
+
+      const refreshedToken = await reauthenticationResponse.payload.data
+        .access_token;
       config.headers = config.headers ?? {};
-      config.headers["Authorization"] =
-        getState().persistedReducer.data.access_token;
+      config.headers["Authorization"] = refreshedToken;
     } else {
       config.headers = config.headers ?? {};
-      config.headers.Authorization = authorization.access_token;
+      config.headers["Authorization"] = authorization.access_token;
     }
     return config;
   };
@@ -29,30 +31,30 @@ const setUpInterceptor = (store: Store) => {
     },
 
     (error) => {
+      console.log(error);
       Promise.reject(error);
     }
   );
 
-  // appLiftingAxiosProtected.interceptors.response.use(
-  //   async (response) => response,
-  //   async (error) => {
-  //     const { config, response } = error;
-  //     const { status } = response;
-  //     const { dispatch, getState } = store;
-  //     const { login } = getState().persistedReducer.data;
-  //     const { email, pwd } = login;
-  //     if (status === 403) {
-  //       try {
-  //         const response = await dispatch(reAuthorizeThunk({ email, pwd }));
-  //         const { access_token } = await response.payload.data;
-  //         config.headers = config.headers ?? {};
-  //         config.headers!.Authorization = access_token;
-  //       } catch (e) {
-  //         return e;
-  //       }
-  //     }
-  //   }
-  // );
+  appLiftingAxiosProtected.interceptors.response.use(
+    async (response) => response,
+    async (error) => {
+      console.log(error);
+      console.log(error);
+      const { config, response } = error;
+      const { status } = response;
+      const { dispatch, getState } = store;
+      const { login, authorization } = getState().persistedReducer.data;
+      const { email, pwd } = login;
+      if (status === 403) {
+        try {
+          dispatch(reAuthorizeThunk({ email, pwd }));
+        } catch (e) {
+          return e;
+        }
+      }
+    }
+  );
 };
 
 export default setUpInterceptor;

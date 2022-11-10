@@ -1,23 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Console } from "console";
 import { ESortByOptions } from "../../components/molecules/editArticleRow/EditArticleRowButtons";
 
 import { components } from "../../types";
 import type { RootState } from "..";
-import { getMyArticles } from "../thunks/articles.thunk";
+import { getArticlesFeedThunk } from "../thunks/articles.thunk";
+// import { getMyArticles } from "../thunks/articles.thunk";
 
 const initialState = {
   status: "idle",
-  data: {
-    nowSort: { items: undefined },
-  },
+  data: {},
   error: false,
 } as {
   status: "idle" | "loading";
   error: boolean;
   data: {
-    originalSort: components["schemas"]["ArticleList"];
-    nowSort: components["schemas"]["ArticleList"];
+    originalSort: components["schemas"]["ArticleDetail"][];
+    nowSort: components["schemas"]["ArticleDetail"][];
     articleToEdit: components["schemas"]["ArticleDetail"];
   };
 };
@@ -26,37 +24,38 @@ export const adminSlice = createSlice({
   name: "admin",
   initialState,
   reducers: {
-    // sortMyArticles: (state, { payload }) => {
-    //   if (payload === ESortByOptions.ORIGINAL) {
-    //     state.data.nowSort = state.data.originalSort;
-    //   // } else {
-    //   //   state.data.nowSort.items = [...state.data.originalSort.items.sort(
-    //   //     (a, b) => {
-    //   //       if (a[payload] > b[payload]) {
-    //   //         return 1;
-    //   //       } else if (a[payload] < b[payload]) {
-    //   //         return -1;
-    //   //       } else {
-    //   //         return 0;
-    //   //       }
-    //   //     }
-    //   //   )
-    //   // }
-    // }
+    sortMyArticles: (state, { payload }) => {
+      if (payload === ESortByOptions.ORIGINAL) {
+        state.data.nowSort = state.data.originalSort;
+      } else {
+        state.data.nowSort.items = [...state.data.originalSort.items].sort(
+          (a, b) => {
+            if (a[payload] > b[payload]) {
+              return 1;
+            } else if (a[payload] < b[payload]) {
+              return -1;
+            } else {
+              return 0;
+            }
+          }
+        );
+      }
+    },
     chooseArticleToEdit: (state, { payload }) => {
       state.data.articleToEdit = state.data.originalSort.items![payload];
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getMyArticles.pending, (state) => {
+    builder.addCase(getArticlesFeedThunk.pending, (state) => {
       state.status = "loading";
     });
-    builder.addCase(getMyArticles.fulfilled, (state, { payload }) => {
+    builder.addCase(getArticlesFeedThunk.fulfilled, (state, { payload }) => {
+      console.log(payload);
       state.status = "idle";
       state.data.originalSort = payload;
       state.data.nowSort = payload;
     });
-    builder.addCase(getMyArticles.rejected, (state, { payload }) => {
+    builder.addCase(getArticlesFeedThunk.rejected, (state, { payload }) => {
       state.error = true;
       state.status = "idle";
       state.data = initialState.data;
@@ -65,12 +64,14 @@ export const adminSlice = createSlice({
 });
 
 export const selectMyArticlesItems = (state: RootState) =>
-  state.myArticles.data.nowSort.items;
-export const selectArticleToEdit = (state: RootState) =>
-  state.myArticles.data.articleToEdit;
+  state.reducer.admin.data.nowSort.items;
+// export const selectArticleToEdit = (state: RootState) =>
+// state.admin.data.articleToEdit;
 export const selectMyArticlesStatus = (state: RootState) =>
-  state.myArticles.status;
+  state.reducer.admin.status;
 export const selectMyArticlesError = (state: RootState) =>
-  state.myArticles.error;
+  state.reducer.admin.error;
+export const selectArticleToEdit = (state: RootState) =>
+  state.reducer.admin.data.articleToEdit;
 
 export default adminSlice.reducer;

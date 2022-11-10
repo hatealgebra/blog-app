@@ -2,6 +2,7 @@ import { navigate } from "gatsby";
 import React from "react";
 import { EPublishArticleErrors } from "../components/organisms/publishArticleForm/PublishArticleForm";
 import { createArticle, updateArticle } from "../services/articlesOperations";
+
 import { uploadImage } from "../services/imagesServices";
 import { ADMIN_LINKS } from "../utils/contants";
 import { cutTextWithElipsis } from "../utils/generic.utils";
@@ -45,19 +46,68 @@ export const validatePublishArticleForm: TFormHandling = (
   }
 };
 
-// FIXME: SentUploadImage only when needed
+export const updateArticleHelper = async (
+  articleId: string,
+  title: string,
+  perex: string,
+  content: string,
+  imageFormData: FormData,
+  access_token: string,
+  isImageChanged: boolean
+) => {
+  try {
+    if (isImageChanged) {
+      const uploadImageResponse = await uploadImage(imageFormData);
+      return updateArticle(articleId, access_token, {
+        title,
+        perex,
+        imageId: await uploadImageResponse!.data[0].imageId,
+        content,
+      });
+    }
+    return updateArticle(articleId, access_token, { title, perex, content });
+  } catch (e) {
+    throw e;
+  }
+};
 
+export const createArticleHelper = async (
+  title: string,
+  perex: string,
+  content: string,
+  imageFormData: FormData,
+  access_token: string,
+  ...args: any
+) => {
+  try {
+    const uploadImageResponse = await uploadImage(imageFormData);
+    console.log(uploadImageResponse);
+    const response = createArticle(
+      title,
+      perex,
+      await uploadImageResponse!.data[0].imageId,
+      content
+    );
+    console.log(await response);
+    return response;
+  } catch (e) {
+    console.log(e);
+    throw e;
+  }
+};
+
+// FIXME: SentUploadImage only when needed
 const publishArticle =
   (
     e: React.FormEvent,
     title: string,
     markdownContent: string,
     imageFile: Blob | string,
+    isImageChanged: boolean,
     setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>,
     access_token: string
   ) =>
   async (articleOperationFn: any) => {
-    console.log("second");
     const trimmedTitle = title.trim();
     const trimmedMarkdownContent = markdownContent.trim();
     const perex = cutTextWithElipsis(trimmedMarkdownContent, 130);
@@ -72,32 +122,22 @@ const publishArticle =
     if (formValidationPassed) {
       let formData = new FormData();
       formData.append("image", imageFile!);
-      console.log("hi");
       try {
-        const uploadImageResponse = await uploadImage(formData);
-        console.log(uploadImageResponse);
-
         articleOperationFn(
           trimmedTitle,
           perex,
-          (await uploadImageResponse.data[0].imageId) ?? "",
+          access_token,
+          formData,
           trimmedMarkdownContent,
-          access_token
+          isImageChanged
         );
 
-        // navigate(ADMIN_LINKS.MY_ARTICLES);
-      } catch (e) {}
+        navigate(ADMIN_LINKS.MY_ARTICLES);
+      } catch (e) {
+        console.log(e);
+      }
     }
   };
-
-type articleOperationFnArgs = (
-  title: string,
-  perex: string,
-  imageId: string,
-  markdownContent: string,
-  access_token: string,
-  ...args: any
-) => Promise<any>;
 
 type TFormHandling = (
   title: string,

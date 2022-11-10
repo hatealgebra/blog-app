@@ -8,29 +8,29 @@ import { ErrorText } from "../../atoms/errorText/error.styled";
 import { useAppSelector } from "../../../store/hooks";
 
 import { selectAuthToken } from "../../../store/slices/auth.slices";
-import publishArticle from "../../../helpers/publishArticle.helper";
-import {
-  createArticle,
-  updateArticle,
-} from "../../../services/articlesOperations";
+import publishArticle, {
+  createArticleHelper,
+  updateArticleHelper,
+} from "../../../helpers/publishArticle.helper";
 
 // FIXME: maybe implement do BIG notation?
 // TODO: Mock for MSW
 // TODO: Testing
+// FIXME: When editing the article, get the loading screen maybe?
 const PublishArticleForm = ({
   titleValue,
   markdownContentValue,
   imageFileValue,
   onSubmit,
+  ...props
 }: PublistArticleFormProps) => {
-  const { access_token } = useAppSelector(selectAuthToken);
-  const [title, setTitle] = React.useState(titleValue ?? "");
+  const access_token = useAppSelector(selectAuthToken);
+  const [title, setTitle] = React.useState("New article title");
   const [markdownContent, setMarkdownContent] = React.useState(
-    markdownContentValue ?? ""
+    "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
   );
-  const [imageFile, setImageFile] = React.useState<File | null>(
-    imageFileValue === undefined ? null : imageFileValue
-  );
+  const [imageFile, setImageFile] = React.useState<File | null>(null);
+  const [isImageChanged, setIsImageChanged] = React.useState(false);
   const [formError, setFormError] = React.useState<EPublishArticleErrors>(
     EPublishArticleErrors.PASSED
   );
@@ -43,10 +43,21 @@ const PublishArticleForm = ({
       title,
       markdownContent,
       imageFile,
+      isImageChanged,
       setFormError,
       access_token
     )(onSubmit);
   };
+
+  React.useEffect(() => {
+    setIsImageChanged(true);
+  }, [setImageFile]);
+
+  React.useEffect(() => {
+    setTitle((prevState) => titleValue ?? prevState);
+    setMarkdownContent((prevState) => markdownContentValue ?? prevState);
+    setImageFile((prevState) => imageFileValue || prevState);
+  }, [titleValue, markdownContentValue, imageFileValue]);
 
   return (
     <StyledPublishArticleForm onSubmit={(e) => handleOnSubmit(e)}>
@@ -92,7 +103,7 @@ export interface PublistArticleFormProps {
   titleValue?: string;
   markdownContentValue?: string;
   imageFileValue?: File | null;
-  onSubmit: typeof createArticle | typeof updateArticle;
+  onSubmit: typeof updateArticleHelper | typeof createArticleHelper;
 }
 
 export enum EPublishArticleErrors {

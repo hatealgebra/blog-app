@@ -1,5 +1,5 @@
 import { EPublishArticleErrors } from "../components/organisms/publishArticleForm/PublishArticleForm";
-import { checkCreateArticleFormInput } from "./publishArticle.helper";
+import { validatePublishArticleForm } from "./publishArticle.helper";
 
 describe("Check create article form inputs", () => {
   const inputValue = "Input value";
@@ -12,28 +12,28 @@ describe("Check create article form inputs", () => {
   const mockDispatchError = jest.fn();
 
   test("Everything is empty", () => {
-    expect(checkCreateArticleFormInput("", "", null, mockDispatchError)).toBe(
+    expect(validatePublishArticleForm("", "", null, mockDispatchError)).toBe(
       false
     );
   });
   test("Everything is empty error value", () => {
-    checkCreateArticleFormInput("", "", null, mockDispatchError);
+    validatePublishArticleForm("", "", null, mockDispatchError);
     expect(mockDispatchError).toBeCalledWith(EPublishArticleErrors.TITLE_EMPTY);
   });
   test("Markdown is empty", () => {
     expect(
-      checkCreateArticleFormInput(inputValue, "", null, mockDispatchError)
+      validatePublishArticleForm(inputValue, "", null, mockDispatchError)
     ).toBe(false);
   });
   test("Markdown is empty error value", () => {
-    checkCreateArticleFormInput(inputValue, "", null, mockDispatchError);
+    validatePublishArticleForm(inputValue, "", null, mockDispatchError);
     expect(mockDispatchError).toBeCalledWith(
       EPublishArticleErrors.MARKDOWN_EMPY
     );
   });
   test("Markdown is too short", () => {
     expect(
-      checkCreateArticleFormInput(
+      validatePublishArticleForm(
         inputValue,
         markdownShortValue,
         null,
@@ -42,7 +42,7 @@ describe("Check create article form inputs", () => {
     ).toBe(false);
   });
   test("Markdown is too short error value", () => {
-    checkCreateArticleFormInput(
+    validatePublishArticleForm(
       inputValue,
       markdownShortValue,
       null,
@@ -54,7 +54,7 @@ describe("Check create article form inputs", () => {
   });
   test("Uploaded file is empty", () => {
     expect(
-      checkCreateArticleFormInput(
+      validatePublishArticleForm(
         inputValue,
         markdownPassValue,
         null,
@@ -63,7 +63,7 @@ describe("Check create article form inputs", () => {
     ).toBe(false);
   });
   test("Uploaded file is empty error value", () => {
-    checkCreateArticleFormInput(
+    validatePublishArticleForm(
       inputValue,
       markdownPassValue,
       null,
@@ -73,7 +73,7 @@ describe("Check create article form inputs", () => {
   });
   test("Everything is filled correctly", () => {
     expect(
-      checkCreateArticleFormInput(
+      validatePublishArticleForm(
         inputValue,
         markdownPassValue,
         mockFile,
@@ -82,7 +82,7 @@ describe("Check create article form inputs", () => {
     ).toBe(true);
   });
   test("Everything is filled correctly error value", () => {
-    checkCreateArticleFormInput(
+    validPublishArticleForm(
       inputValue,
       markdownPassValue,
       mockFile,

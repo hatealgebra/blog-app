@@ -4,7 +4,7 @@ import { StyledMinimalButton, StyledUploadImage } from "./uploadImage.styled";
 
 const UploadImage = ({ image, setImage }: UploadImageProps) => {
   const [imagePreview, setImagePreview] =
-    React.useState<string | undefined>(undefined);
+    React.useState<string | undefined>(image);
   const hiddenFileInputRef = React.useRef<HTMLInputElement>(null);
 
   const handleInput = () => {
@@ -16,8 +16,7 @@ const UploadImage = ({ image, setImage }: UploadImageProps) => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files !== null) {
       const fileUploaded = event.target.files[0];
-
-      return setImage(fileUploaded);
+      setImage(fileUploaded);
     }
   };
 
@@ -30,7 +29,7 @@ const UploadImage = ({ image, setImage }: UploadImageProps) => {
     } else {
       setImagePreview(undefined);
     }
-  }, [handleFileChange]);
+  }, [image]);
 
   return (
     <StyledUploadImage>

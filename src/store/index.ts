@@ -3,21 +3,24 @@ import { combineReducers } from "redux";
 
 import authReducer from "./slices/auth.slices";
 import articleFeedReducer from "./slices/articleFeed.slice";
+import adminReducer from "./slices/admin.slices";
+import myArticlesReducer from "./slices/myArticles.slices";
 
 // REDUX-PERSIST
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const persistConfig = {
+export const persistConfig = {
   key: "root",
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, authReducer);
+export const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const reducer = combineReducers({
   // FIXME: Just store the data where it is needed, use multiple stores
   articleFeed: articleFeedReducer,
+  admin: adminReducer,
 });
 
 const store = configureStore({

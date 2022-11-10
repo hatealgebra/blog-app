@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { Axios, AxiosRequestConfig } from "axios";
 import { ELoginFormValidation } from "../../components/organisms/forms/LoginForm";
 import { loginPOST } from "../../services/authServices";
-import { emailValidation, pwdValidation } from "../../utils/regex.utils";
 
 export const postLoginThunk = createAsyncThunk(
   "auth/login",
@@ -46,7 +46,8 @@ export const reAuthorizeThunk = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      return await loginPOST(email, pwd);
+      const loginResponse = await loginPOST(email, pwd);
+      return loginResponse;
     } catch (err) {
       const { data } = err.response;
       return thunkAPI.rejectWithValue(data);

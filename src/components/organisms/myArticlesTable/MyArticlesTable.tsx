@@ -14,11 +14,13 @@ import {
   MyArticlesTableContainer,
   StyledArticlesTable,
 } from "./myArticlesTable.styled";
+import { selectMyArticlesItems } from "../../../store/slices/admin.slices";
+import { components } from "../../../types";
 
 // TODO: Finish the my Articles
 
 const MyArticlesTable = () => {
-  // const articles = useAppSelector(selectMyArticlesItems);
+  const articles = useAppSelector(selectMyArticlesItems);
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
@@ -33,27 +35,30 @@ const MyArticlesTable = () => {
         to={ADMIN_LINKS.CREATE_ARTICLE}
       />
       <MyArticlesForm onSubmit={(e) => e.preventDefault()}>
-        {/* <StyledArticlesTable>
+        <StyledArticlesTable>
           <EditArticleRowButtons
             dispatchSort={dispatch}
-            // setCheckAll={console.log("hey")}
+            setCheckAll={console.log("hey")}
           />
           {articles !== undefined && articles.length > 0
-            ? articles.map((article) => {
-                const { articleId, title, perex, comments } = article;
-                return (
-                  <EditArticleRow
-                    articleId={articleId}
-                    title={title}
-                    perex={perex}
-                    dispatch={() => console.log("article")}
-                  />
-                );
-              })
+            ? articles.map(
+                (article: components["schemas"]["ArticleDetail"]) => {
+                  const { articleId, title, perex, comments } = article;
+                  return (
+                    <EditArticleRow
+                      articleId={articleId}
+                      title={title}
+                      perex={perex}
+                      comments={comments}
+                      dispatch={() => console.log("article")}
+                    />
+                  );
+                }
+              )
             : articles && articles.length === 0
             ? "No articles to show"
             : "nothing"}
-        </StyledArticlesTable> */}
+        </StyledArticlesTable>
       </MyArticlesForm>
     </MyArticlesTableContainer>
   );

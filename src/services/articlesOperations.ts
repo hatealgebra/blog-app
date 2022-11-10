@@ -18,8 +18,7 @@ export const createArticle = async (
   title: string,
   perex: string,
   imageId: string,
-  content: string,
-  access_token: string
+  content: string
 ) => {
   const data = {
     title,
@@ -31,10 +30,10 @@ export const createArticle = async (
   try {
     const response = await appLiftingAxiosProtected.post("/articles", data, {
       headers: {
-        Authorization: access_token,
         "Content-Type": "application/json",
       },
     });
+    console.log(response);
     return response;
   } catch (e) {
     console.log(e);
@@ -76,9 +75,13 @@ export const updateArticle = async (
   data: any
 ) => {
   try {
-    return await appLiftingAxiosProtected.patch(`/${articleId}`, data, {
-      headers: { Authorization: access_token },
-    });
+    return await appLiftingAxiosProtected.patch(
+      `/articles/${articleId}`,
+      data,
+      {
+        headers: { Authorization: access_token },
+      }
+    );
   } catch (e) {
     throw e;
   }

@@ -11,7 +11,6 @@ export const getArticlesFeedThunk = createAsyncThunk(
       const newArticlesArray = await Promise.all(
         items.map(async (article: components["schemas"]["Article"]) => {
           const { articleId, createdAt } = article;
-          console.log(createdAt);
           const getArticleResponse = await getArticle(articleId!, access_token);
           const { comments } = getArticleResponse.data;
 

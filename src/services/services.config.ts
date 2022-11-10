@@ -13,6 +13,10 @@ export enum USER_CONFIG {
 
 export const appLiftingAxios = axios.create({
   baseURL: BASE_API_URL,
+  headers: {
+    "X-API-KEY": API_KEY,
+    "Content-type": "application/json",
+  },
 });
 
 export const appLiftingAxiosProtected = axios.create({
