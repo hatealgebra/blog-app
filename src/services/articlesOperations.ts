@@ -75,6 +75,7 @@ export const updateArticle = async (
   data: any
 ) => {
   try {
+    console.log(articleId);
     return await appLiftingAxiosProtected.patch(
       `/articles/${articleId}`,
       data,

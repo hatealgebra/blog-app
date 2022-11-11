@@ -11,7 +11,6 @@ export const uploadImage = async (imageFile: FormData) => {
         "Content-Type": "multipart/form-data",
       },
     });
-    console.log(response);
     return response;
   } catch (e) {
     console.log(e);
@@ -23,7 +22,6 @@ export const showImage = async (imageId: string) => {
     const response = await appLiftingAxios.get(`/images/${imageId}`, {
       responseType: "blob",
     });
-    console.log(response);
     return response;
   } catch (e) {
     throw e;

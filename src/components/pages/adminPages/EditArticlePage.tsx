@@ -17,7 +17,7 @@ const EditArticlePage = () => {
 
   const setData = async (article: components["schemas"]["ArticleDetail"]) => {
     const { imageId } = article;
-    const { data } = await showImage("24c7481f-36d7-48a7-ba92-a05cab074800");
+    const { data } = await showImage(imageId!);
     return setArticleData({
       ...article,
       imageData: data,

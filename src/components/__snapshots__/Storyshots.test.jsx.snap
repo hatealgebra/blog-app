@@ -6,17 +6,17 @@ exports[`Storyshots Atoms/Avatar All Sizes 1`] = `
 >
   <img
     alt="Generic user avatar"
-    class="sc-iBYQkv jAwMsz"
+    class="sc-kDvujY bWcqhu"
     src="[object Object]"
   />
   <img
     alt="Generic user avatar"
-    class="sc-iBYQkv fpztvn"
+    class="sc-kDvujY dqfeUi"
     src="[object Object]"
   />
   <img
     alt="Generic user avatar"
-    class="sc-iBYQkv eDMoNv"
+    class="sc-kDvujY bMVDdu"
     src="[object Object]"
   />
 </div>
@@ -28,12 +28,12 @@ exports[`Storyshots Atoms/Avatar Different Images 1`] = `
 >
   <img
     alt="Generic user avatar"
-    class="sc-iBYQkv jAwMsz"
+    class="sc-kDvujY bWcqhu"
     src="[object Object]"
   />
   <img
     alt="fallback user avatar"
-    class="sc-iBYQkv jAwMsz"
+    class="sc-kDvujY bWcqhu"
     src="[object Object]"
   />
 </div>
@@ -252,10 +252,10 @@ exports[`Storyshots Atoms/Button Standard Buttons 1`] = `
 
 exports[`Storyshots Atoms/Checkbox Checkbox Example 1`] = `
 <div
-  class="sc-pyfCe eFdSra"
+  class="sc-ftTHYK bpCbn"
 >
   <input
-    class="sc-ftTHYK lmzctJ"
+    class="sc-iBYQkv jkxsjj"
     type="checkbox"
   />
 </div>
@@ -263,10 +263,10 @@ exports[`Storyshots Atoms/Checkbox Checkbox Example 1`] = `
 
 exports[`Storyshots Atoms/Checkbox Checkbox With Label 1`] = `
 <div
-  class="sc-pyfCe eFdSra"
+  class="sc-ftTHYK bpCbn"
 >
   <input
-    class="sc-ftTHYK lmzctJ"
+    class="sc-iBYQkv jkxsjj"
     type="checkbox"
   />
   <span>
@@ -277,7 +277,7 @@ exports[`Storyshots Atoms/Checkbox Checkbox With Label 1`] = `
 
 exports[`Storyshots Atoms/Error text Error Text Example 1`] = `
 <span
-  class="sc-jrcTuL khuZoW"
+  class="sc-ipEyDJ CPuoT"
 >
   This is error text sample
 </span>
@@ -344,20 +344,20 @@ exports[`Storyshots Atoms/Link All Variants 1`] = `
   style="display: flex; flex-direction: column; gap: 10px;"
 >
   <a
-    class="sc-ipEyDJ bwSmQR"
+    class="sc-eDWCr kIObJt"
     href="/#"
   >
     Classic link
   </a>
   <a
-    class="sc-ipEyDJ bwSmQR"
+    class="sc-eDWCr kIObJt"
     href="/#"
     variant="text"
   >
     Text link
   </a>
   <a
-    class="sc-eDWCr FREtm login-link"
+    class="sc-ksBlkl fxuheE login-link"
     href="/login"
   >
     <span>
@@ -759,13 +759,13 @@ exports[`Storyshots Atoms/MarkdownEditor Mark Down Editor Example 1`] = `
 
 exports[`Storyshots Molecules/Admin Heading Admin Heading Example 1`] = `
 <div
-  class="sc-bjfHbI gzNInb"
+  class="sc-dIfARi ckvMSP"
 >
   <h1>
     Page Title
   </h1>
   <a
-    class="sc-dkrFOg sc-kDvujY eidQVA bxiMqE"
+    class="sc-dkrFOg sc-csuSiG eidQVA gBuZIb"
     colortheme="primary"
     href="/#"
   >
@@ -776,7 +776,7 @@ exports[`Storyshots Molecules/Admin Heading Admin Heading Example 1`] = `
 
 exports[`Storyshots Molecules/Article Preview Article Preview Small Example 1`] = `
 <div
-  class="sc-dmctIk kZeJYl"
+  class="sc-fLcnxK kAHQnN"
 >
   <h5>
     Hello world
@@ -789,11 +789,11 @@ exports[`Storyshots Molecules/Article Preview Article Preview Small Example 1`] 
 
 exports[`Storyshots Molecules/Comment Comment Example 1`] = `
 <div
-  class="sc-fLcnxK keeCZm comment"
+  class="sc-iveFHk brboMR comment"
 >
   <img
     alt="fallback user avatar"
-    class="sc-iBYQkv jAwMsz"
+    class="sc-kDvujY bWcqhu"
     src="[object Object]"
   />
   <h5
@@ -812,7 +812,7 @@ exports[`Storyshots Molecules/Comment Comment Example 1`] = `
      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quibusdam qui autem libero consequuntur tenetur eveniet recusandae aliquam obcaecati. Consequatur perferendis id, dolorem quae unde recusandae ad deleniti obcaecati similique? 
   </p>
   <div
-    class="sc-kgTSHT cbxtrC comment__voting-counter"
+    class="sc-bBABsx bdMrOV comment__voting-counter"
   >
     <span
       data-testid="reactionCounter"
@@ -871,11 +871,11 @@ exports[`Storyshots Molecules/Comment Comment Example 1`] = `
 
 exports[`Storyshots Molecules/Create comment Create Comment Example 1`] = `
 <form
-  class="sc-bBABsx cTHKSI"
+  class="sc-cwSeag imLJsM"
 >
   <img
     alt="fallback user avatar"
-    class="sc-iBYQkv jAwMsz"
+    class="sc-kDvujY bWcqhu"
     src="[object Object]"
   />
   <textarea
@@ -885,23 +885,23 @@ exports[`Storyshots Molecules/Create comment Create Comment Example 1`] = `
     rows="1"
   />
   <span
-    class="sc-jrcTuL khuZoW"
+    class="sc-ipEyDJ CPuoT"
   />
 </form>
 `;
 
 exports[`Storyshots Molecules/Edit article Article Row Buttons Example 1`] = `
 <tr
-  class="sc-cwSeag kfHyut edit-article"
+  class="sc-jrcTuL ikvuNf edit-article"
 >
   <th
     class="edit-article__checkbox"
   >
     <div
-      class="sc-pyfCe eFdSra"
+      class="sc-ftTHYK bpCbn"
     >
       <input
-        class="sc-ftTHYK lmzctJ"
+        class="sc-iBYQkv jkxsjj"
         type="checkbox"
       />
     </div>
@@ -1012,16 +1012,16 @@ exports[`Storyshots Molecules/Edit article Article Row Buttons Example 1`] = `
 
 exports[`Storyshots Molecules/Edit article Article Row Example 1`] = `
 <tr
-  class="sc-cwSeag kfHyut edit-article"
+  class="sc-jrcTuL ikvuNf edit-article"
 >
   <td
     class="edit-article__checkbox"
   >
     <div
-      class="sc-pyfCe eFdSra"
+      class="sc-ftTHYK bpCbn"
     >
       <input
-        class="sc-ftTHYK lmzctJ"
+        class="sc-iBYQkv jkxsjj"
         type="checkbox"
       />
     </div>
@@ -1053,7 +1053,7 @@ exports[`Storyshots Molecules/Edit article Article Row Example 1`] = `
       class="edit-article__actions"
     >
       <button
-        class="sc-iveFHk iScTuD"
+        class="sc-pyfCe jQaHbN"
       >
         <svg
           fill="none"
@@ -1072,7 +1072,7 @@ exports[`Storyshots Molecules/Edit article Article Row Example 1`] = `
         </svg>
       </button>
       <button
-        class="sc-iveFHk iScTuD"
+        class="sc-pyfCe jQaHbN"
       >
         <svg
           fill="currentColor"
@@ -1183,20 +1183,20 @@ exports[`Storyshots Molecules/Mobile Menu Mobile Menu Example 1`] = `
       class="sc-iJnaPW ekRfsf"
     >
       <a
-        class="sc-ipEyDJ sc-csuSiG bwSmQR weTKw"
+        class="sc-eDWCr sc-bqWxrE kIObJt cxjsvH"
         href="/admin/my-article"
       >
         Recent articles
       </a>
       <a
-        class="sc-ipEyDJ sc-csuSiG bwSmQR weTKw"
+        class="sc-eDWCr sc-bqWxrE kIObJt cxjsvH"
         href="/admin/my-article"
       >
         About
       </a>
     </nav>
     <a
-      class="sc-eDWCr FREtm login-link"
+      class="sc-ksBlkl fxuheE login-link"
       href="/login"
     >
       <span>
@@ -1378,11 +1378,11 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
   class="sc-gYbzsP discussion"
 >
   <form
-    class="sc-bBABsx cTHKSI"
+    class="sc-cwSeag imLJsM"
   >
     <img
       alt="fallback user avatar"
-      class="sc-iBYQkv jAwMsz"
+      class="sc-kDvujY bWcqhu"
       src="[object Object]"
     />
     <textarea
@@ -1392,18 +1392,18 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
       rows="1"
     />
     <span
-      class="sc-jrcTuL khuZoW"
+      class="sc-ipEyDJ CPuoT"
     />
   </form>
   <div
     class="sc-hhOBVt ktvZst"
   >
     <div
-      class="sc-fLcnxK keeCZm comment"
+      class="sc-iveFHk brboMR comment"
     >
       <img
         alt="fallback user avatar"
-        class="sc-iBYQkv jAwMsz"
+        class="sc-kDvujY bWcqhu"
         src="[object Object]"
       />
       <h5
@@ -1422,7 +1422,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
         You see, wire telegraph is a kind of a very, very long cat. You pull his tail in New York and his head is meowing in Los Angeles. Do you understand this? And radio operates exactly the same way: you send signals here, they receive them there. The only difference is that there is no cat.
       </p>
       <div
-        class="sc-kgTSHT cbxtrC comment__voting-counter"
+        class="sc-bBABsx bdMrOV comment__voting-counter"
       >
         <span
           data-testid="reactionCounter"
@@ -1479,11 +1479,11 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
       </div>
     </div>
     <div
-      class="sc-fLcnxK keeCZm comment"
+      class="sc-iveFHk brboMR comment"
     >
       <img
         alt="fallback user avatar"
-        class="sc-iBYQkv jAwMsz"
+        class="sc-kDvujY bWcqhu"
         src="[object Object]"
       />
       <h5
@@ -1502,7 +1502,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
         A cat has absolute emotional honesty: human beings, for one reason or another, may hide their feelings, but a cat does not
       </p>
       <div
-        class="sc-kgTSHT cbxtrC comment__voting-counter"
+        class="sc-bBABsx bdMrOV comment__voting-counter"
       >
         <span
           data-testid="reactionCounter"
@@ -1559,11 +1559,11 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
       </div>
     </div>
     <div
-      class="sc-fLcnxK keeCZm comment"
+      class="sc-iveFHk brboMR comment"
     >
       <img
         alt="fallback user avatar"
-        class="sc-iBYQkv jAwMsz"
+        class="sc-kDvujY bWcqhu"
         src="[object Object]"
       />
       <h5
@@ -1582,7 +1582,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
         In its flawless grace and superior self-sufficiency I have seen a symbol of the perfect beauty and bland impersonality of the universe itself, objectively considered, and in its air of silent mystery there resides for me all the wonder and fascination of the unknown
       </p>
       <div
-        class="sc-kgTSHT cbxtrC comment__voting-counter"
+        class="sc-bBABsx bdMrOV comment__voting-counter"
       >
         <span
           data-testid="reactionCounter"
@@ -1639,11 +1639,11 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
       </div>
     </div>
     <div
-      class="sc-fLcnxK keeCZm comment"
+      class="sc-iveFHk brboMR comment"
     >
       <img
         alt="fallback user avatar"
-        class="sc-iBYQkv jAwMsz"
+        class="sc-kDvujY bWcqhu"
         src="[object Object]"
       />
       <h5
@@ -1662,7 +1662,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
         I regard cats as one of the great joys in the world. I see them as a gift of highest order
       </p>
       <div
-        class="sc-kgTSHT cbxtrC comment__voting-counter"
+        class="sc-bBABsx bdMrOV comment__voting-counter"
       >
         <span
           data-testid="reactionCounter"
@@ -1722,376 +1722,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
 </div>
 `;
 
-exports[`Storyshots Organisms/Forms Create New Article Form Example 1`] = `
-<form
-  class="sc-cCjUiG gELOtv"
->
-  <div
-    class="sc-bjfHbI gzNInb"
-  >
-    <h1>
-      Create new article
-    </h1>
-    <button
-      class="sc-dkrFOg eidQVA"
-      type="submit"
-    >
-      Publish article
-    </button>
-  </div>
-  <div>
-    <div
-      class="sc-jSUZER dqJJqp"
-    >
-      <label
-        for="Article title"
-      >
-        Article title
-      </label>
-      <input
-        class="sc-hLBbgP fFQznY"
-        id="Article title"
-        placeholder="My new article"
-        value=""
-      />
-    </div>
-    <span
-      class="sc-jrcTuL khuZoW"
-    />
-  </div>
-  <div>
-    <div
-      class="sc-bYMpWt fnArBX"
-    >
-      <label
-        class="upload-image__label"
-      >
-        Featured Image
-      </label>
-      <button
-        class="sc-dkrFOg eidQVA"
-        type="button"
-      >
-        Upload an Image
-      </button>
-      <input
-        accept="image/*"
-        data-testid="image-uploader"
-        style="display: none;"
-        type="file"
-      />
-    </div>
-    <span
-      class="sc-jrcTuL khuZoW"
-    />
-  </div>
-  <div>
-    <div
-      id="simplemde-editor-2-wrapper"
-    >
-      <textarea
-        id="simplemde-editor-2"
-        placeholder="Supports markdown. Yay!"
-        style="display: none;"
-      />
-      <div
-        class="EasyMDEContainer"
-        role="application"
-      >
-        <div
-          class="editor-toolbar"
-          role="toolbar"
-        >
-          <button
-            aria-label="Bold"
-            class="bold"
-            tabindex="-1"
-            title="Bold (Ctrl-B)"
-            type="button"
-          >
-            <i
-              class="fa fa-bold"
-            />
-          </button>
-          <button
-            aria-label="Italic"
-            class="italic"
-            tabindex="-1"
-            title="Italic (Ctrl-I)"
-            type="button"
-          >
-            <i
-              class="fa fa-italic"
-            />
-          </button>
-          <button
-            aria-label="Heading"
-            class="heading"
-            tabindex="-1"
-            title="Heading (Ctrl-H)"
-            type="button"
-          >
-            <i
-              class="fa fa-header fa-heading"
-            />
-          </button>
-          <i
-            class="separator"
-          >
-            |
-          </i>
-          <button
-            aria-label="Quote"
-            class="quote"
-            tabindex="-1"
-            title="Quote (Ctrl-')"
-            type="button"
-          >
-            <i
-              class="fa fa-quote-left"
-            />
-          </button>
-          <button
-            aria-label="Generic List"
-            class="unordered-list"
-            tabindex="-1"
-            title="Generic List (Ctrl-L)"
-            type="button"
-          >
-            <i
-              class="fa fa-list-ul"
-            />
-          </button>
-          <button
-            aria-label="Numbered List"
-            class="ordered-list"
-            tabindex="-1"
-            title="Numbered List (Ctrl-Alt-L)"
-            type="button"
-          >
-            <i
-              class="fa fa-list-ol"
-            />
-          </button>
-          <i
-            class="separator"
-          >
-            |
-          </i>
-          <button
-            aria-label="Create Link"
-            class="link"
-            tabindex="-1"
-            title="Create Link (Ctrl-K)"
-            type="button"
-          >
-            <i
-              class="fa fa-link"
-            />
-          </button>
-          <button
-            aria-label="Insert Image"
-            class="image"
-            tabindex="-1"
-            title="Insert Image (Ctrl-Alt-I)"
-            type="button"
-          >
-            <i
-              class="fa fa-image"
-            />
-          </button>
-          <i
-            class="separator"
-          >
-            |
-          </i>
-          <button
-            aria-label="Toggle Preview"
-            class="preview no-disable"
-            tabindex="-1"
-            title="Toggle Preview (Ctrl-P)"
-            type="button"
-          >
-            <i
-              class="fa fa-eye"
-            />
-          </button>
-          <button
-            aria-label="Toggle Side by Side"
-            class="side-by-side no-disable no-mobile"
-            tabindex="-1"
-            title="Toggle Side by Side (F9)"
-            type="button"
-          >
-            <i
-              class="fa fa-columns"
-            />
-          </button>
-          <button
-            aria-label="Toggle Fullscreen"
-            class="fullscreen no-disable no-mobile"
-            tabindex="-1"
-            title="Toggle Fullscreen (F11)"
-            type="button"
-          >
-            <i
-              class="fa fa-arrows-alt"
-            />
-          </button>
-          <i
-            class="separator"
-          >
-            |
-          </i>
-          <button
-            aria-label="Markdown Guide"
-            class="guide no-disable"
-            tabindex="-1"
-            title="Markdown Guide"
-            type="button"
-          >
-            <i
-              class="fa fa-question-circle"
-            />
-          </button>
-        </div>
-        <div
-          class="CodeMirror cm-s-easymde CodeMirror-wrap CodeMirror-empty"
-          translate="no"
-        >
-          <div
-            style="overflow: hidden; position: relative; width: 3px; height: 0px;"
-          >
-            <textarea
-              autocapitalize="off"
-              autocorrect="off"
-              spellcheck="false"
-              style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"
-              tabindex="0"
-            />
-          </div>
-          <div
-            class="CodeMirror-vscrollbar"
-            cm-not-content="true"
-            tabindex="-1"
-          >
-            <div
-              style="min-width: 1px;"
-            />
-          </div>
-          <div
-            class="CodeMirror-hscrollbar"
-            cm-not-content="true"
-            tabindex="-1"
-          >
-            <div
-              style="height: 100%; min-height: 1px;"
-            />
-          </div>
-          <div
-            class="CodeMirror-scrollbar-filler"
-            cm-not-content="true"
-          />
-          <div
-            class="CodeMirror-gutter-filler"
-            cm-not-content="true"
-          />
-          <div
-            class="CodeMirror-scroll"
-            style="min-height: 300px;"
-            tabindex="-1"
-          >
-            <div
-              class="CodeMirror-sizer"
-              style="margin-left: 0px;"
-            >
-              <div
-                style="position: relative;"
-              >
-                <div
-                  class="CodeMirror-lines"
-                  role="presentation"
-                >
-                  <div
-                    role="presentation"
-                    style="position: relative; outline: none;"
-                  >
-                    <pre
-                      class="CodeMirror-placeholder CodeMirror-line-like"
-                      style="height: 0px; overflow: visible; direction: ltr;"
-                    >
-                      Supports markdown. Yay!
-                    </pre>
-                    <div
-                      class="CodeMirror-measure"
-                    >
-                      <pre
-                        class="CodeMirror-line-like"
-                      >
-                        <span>
-                          xxxxxxxxxx
-                        </span>
-                      </pre>
-                    </div>
-                    <div
-                      class="CodeMirror-measure"
-                    />
-                    <div
-                      style="position: relative; z-index: 1;"
-                    />
-                    <div
-                      class="CodeMirror-cursors"
-                    />
-                    <div
-                      class="CodeMirror-code"
-                      role="presentation"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="position: absolute; height: 50px; width: 1px;"
-            />
-            <div
-              class="CodeMirror-gutters"
-              style="display: none;"
-            />
-          </div>
-        </div>
-        <div
-          class="editor-preview-side editor-preview"
-        />
-        <div
-          class="editor-statusbar"
-        >
-          <span
-            class="autosave"
-          />
-          <span
-            class="lines"
-          >
-            1
-          </span>
-          <span
-            class="words"
-          >
-            0
-          </span>
-          <span
-            class="cursor"
-          >
-            1:1
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="sc-jrcTuL khuZoW"
-    />
-  </div>
-</form>
-`;
+exports[`Storyshots Organisms/Forms Create New Article Form Example 1`] = `null`;
 
 exports[`Storyshots Organisms/Forms Login Form Example 1`] = `
 <form
@@ -2146,7 +1777,7 @@ exports[`Storyshots Organisms/Forms Login Form Example 1`] = `
 
 exports[`Storyshots Organisms/Related Articles section Related Articles Section 1`] = `
 <div
-  class="sc-cabOPr imbcBZ related-articles"
+  class="sc-iAEawV kzHWGV related-articles"
 >
   <h3>
     Related Articles
@@ -2155,7 +1786,7 @@ exports[`Storyshots Organisms/Related Articles section Related Articles Section 
     class="related-articles__articles"
   >
     <div
-      class="sc-dmctIk kZeJYl"
+      class="sc-fLcnxK kAHQnN"
     >
       <h5>
         Wet vs. Dry Cat Food: Which is Better?
@@ -2165,7 +1796,7 @@ exports[`Storyshots Organisms/Related Articles section Related Articles Section 
       </p>
     </div>
     <div
-      class="sc-dmctIk kZeJYl"
+      class="sc-fLcnxK kAHQnN"
     >
       <h5>
         How Much Wet Food Should I Feed My Cat?
@@ -2175,7 +1806,7 @@ exports[`Storyshots Organisms/Related Articles section Related Articles Section 
       </p>
     </div>
     <div
-      class="sc-dmctIk kZeJYl"
+      class="sc-fLcnxK kAHQnN"
     >
       <h5>
         Do Cats Drink Water? Cat Hydration & Dehydration Prevention
@@ -2185,7 +1816,7 @@ exports[`Storyshots Organisms/Related Articles section Related Articles Section 
       </p>
     </div>
     <div
-      class="sc-dmctIk kZeJYl"
+      class="sc-fLcnxK kAHQnN"
     >
       <h5>
         What Is the Difference Between Natural and Organic Cat Food?
@@ -2195,7 +1826,7 @@ exports[`Storyshots Organisms/Related Articles section Related Articles Section 
       </p>
     </div>
     <div
-      class="sc-dmctIk kZeJYl"
+      class="sc-fLcnxK kAHQnN"
     >
       <h5>
         Why Do Cats Have Whiskers?
@@ -2210,7 +1841,7 @@ exports[`Storyshots Organisms/Related Articles section Related Articles Section 
 
 exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
 <header
-  class="sc-iTFTee diIgDx TopNavbar"
+  class="sc-eeMvmM fAkfVZ TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -2225,18 +1856,18 @@ exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
       />
        
       <nav
-        class="sc-iAEawV cdfTIw"
+        class="sc-cUEOzv cZgqxh"
       >
         <a
           aria-current="page"
-          class="sc-ipEyDJ aOkuR"
+          class="sc-eDWCr cCSUfZ"
           href="/"
           variant="classic"
         >
           Recent Articles
         </a>
         <a
-          class="sc-ipEyDJ aOkuR"
+          class="sc-eDWCr cCSUfZ"
           href="/about"
           variant="classic"
         >
@@ -2245,7 +1876,7 @@ exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
       </nav>
     </div>
     <a
-      class="sc-eDWCr FREtm login-link"
+      class="sc-ksBlkl fxuheE login-link"
       href="/login"
     >
       <span>
@@ -2275,7 +1906,7 @@ exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
 
 exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
 <header
-  class="sc-iTFTee eAGDbh TopNavbar"
+  class="sc-eeMvmM cVvAZJ TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -2342,20 +1973,20 @@ exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
           class="sc-iJnaPW ekRfsf"
         >
           <a
-            class="sc-ipEyDJ sc-csuSiG bwSmQR weTKw"
+            class="sc-eDWCr sc-bqWxrE kIObJt cxjsvH"
             href="/admin/my-article"
           >
             Recent articles
           </a>
           <a
-            class="sc-ipEyDJ sc-csuSiG bwSmQR weTKw"
+            class="sc-eDWCr sc-bqWxrE kIObJt cxjsvH"
             href="/admin/my-article"
           >
             About
           </a>
         </nav>
         <a
-          class="sc-eDWCr FREtm login-link"
+          class="sc-ksBlkl fxuheE login-link"
           href="/login"
         >
           <span>
@@ -2387,7 +2018,7 @@ exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
 
 exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
 <header
-  class="sc-iTFTee diIgDx TopNavbar"
+  class="sc-eeMvmM fAkfVZ TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -2401,18 +2032,18 @@ exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
       class="TopNavbar__sub-container"
     >
       <nav
-        class="sc-iAEawV cdfTIw"
+        class="sc-cUEOzv cZgqxh"
       >
         <a
           aria-current="page"
-          class="sc-ipEyDJ aOkuR"
+          class="sc-eDWCr cCSUfZ"
           href="/"
           variant="classic"
         >
           Recent Articles
         </a>
         <a
-          class="sc-ipEyDJ aOkuR"
+          class="sc-eDWCr cCSUfZ"
           href="/about"
           variant="classic"
         >
@@ -2420,7 +2051,7 @@ exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
         </a>
       </nav>
       <a
-        class="sc-eDWCr FREtm login-link"
+        class="sc-ksBlkl fxuheE login-link"
         href="/login"
       >
         <span>
@@ -2473,14 +2104,14 @@ exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
         >
           <a
             aria-current="page"
-            class="sc-ipEyDJ aOkuR"
+            class="sc-eDWCr cCSUfZ"
             href="/"
             variant="classic"
           >
             Recent Articles
           </a>
           <a
-            class="sc-ipEyDJ aOkuR"
+            class="sc-eDWCr cCSUfZ"
             href="/about"
             variant="classic"
           >
@@ -2489,7 +2120,7 @@ exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
         </nav>
       </div>
       <a
-        class="sc-eDWCr FREtm login-link"
+        class="sc-ksBlkl fxuheE login-link"
         href="/login"
       >
         <span>
@@ -2517,376 +2148,7 @@ exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
   </header>
   <div
     class="sc-bCfvAP bEppUh"
-  >
-    <form
-      class="sc-cabOPr eddtFX"
-    >
-      <div
-        class="sc-bjfHbI gzNInb"
-      >
-        <h1>
-          Create new article
-        </h1>
-        <button
-          class="sc-dkrFOg eidQVA"
-          type="submit"
-        >
-          Publish article
-        </button>
-      </div>
-      <div>
-        <div
-          class="sc-jSUZER dqJJqp"
-        >
-          <label
-            for="Article title"
-          >
-            Article title
-          </label>
-          <input
-            class="sc-hLBbgP fFQznY"
-            id="Article title"
-            placeholder="My new article"
-            value=""
-          />
-        </div>
-        <span
-          class="sc-jrcTuL khuZoW"
-        />
-      </div>
-      <div>
-        <div
-          class="sc-bYMpWt fnArBX"
-        >
-          <label
-            class="upload-image__label"
-          >
-            Featured Image
-          </label>
-          <button
-            class="sc-dkrFOg eidQVA"
-            type="button"
-          >
-            Upload an Image
-          </button>
-          <input
-            accept="image/*"
-            data-testid="image-uploader"
-            style="display: none;"
-            type="file"
-          />
-        </div>
-        <span
-          class="sc-jrcTuL khuZoW"
-        />
-      </div>
-      <div>
-        <div
-          id="simplemde-editor-3-wrapper"
-        >
-          <textarea
-            id="simplemde-editor-3"
-            placeholder="Supports markdown. Yay!"
-            style="display: none;"
-          />
-          <div
-            class="EasyMDEContainer"
-            role="application"
-          >
-            <div
-              class="editor-toolbar"
-              role="toolbar"
-            >
-              <button
-                aria-label="Bold"
-                class="bold"
-                tabindex="-1"
-                title="Bold (Ctrl-B)"
-                type="button"
-              >
-                <i
-                  class="fa fa-bold"
-                />
-              </button>
-              <button
-                aria-label="Italic"
-                class="italic"
-                tabindex="-1"
-                title="Italic (Ctrl-I)"
-                type="button"
-              >
-                <i
-                  class="fa fa-italic"
-                />
-              </button>
-              <button
-                aria-label="Heading"
-                class="heading"
-                tabindex="-1"
-                title="Heading (Ctrl-H)"
-                type="button"
-              >
-                <i
-                  class="fa fa-header fa-heading"
-                />
-              </button>
-              <i
-                class="separator"
-              >
-                |
-              </i>
-              <button
-                aria-label="Quote"
-                class="quote"
-                tabindex="-1"
-                title="Quote (Ctrl-')"
-                type="button"
-              >
-                <i
-                  class="fa fa-quote-left"
-                />
-              </button>
-              <button
-                aria-label="Generic List"
-                class="unordered-list"
-                tabindex="-1"
-                title="Generic List (Ctrl-L)"
-                type="button"
-              >
-                <i
-                  class="fa fa-list-ul"
-                />
-              </button>
-              <button
-                aria-label="Numbered List"
-                class="ordered-list"
-                tabindex="-1"
-                title="Numbered List (Ctrl-Alt-L)"
-                type="button"
-              >
-                <i
-                  class="fa fa-list-ol"
-                />
-              </button>
-              <i
-                class="separator"
-              >
-                |
-              </i>
-              <button
-                aria-label="Create Link"
-                class="link"
-                tabindex="-1"
-                title="Create Link (Ctrl-K)"
-                type="button"
-              >
-                <i
-                  class="fa fa-link"
-                />
-              </button>
-              <button
-                aria-label="Insert Image"
-                class="image"
-                tabindex="-1"
-                title="Insert Image (Ctrl-Alt-I)"
-                type="button"
-              >
-                <i
-                  class="fa fa-image"
-                />
-              </button>
-              <i
-                class="separator"
-              >
-                |
-              </i>
-              <button
-                aria-label="Toggle Preview"
-                class="preview no-disable"
-                tabindex="-1"
-                title="Toggle Preview (Ctrl-P)"
-                type="button"
-              >
-                <i
-                  class="fa fa-eye"
-                />
-              </button>
-              <button
-                aria-label="Toggle Side by Side"
-                class="side-by-side no-disable no-mobile"
-                tabindex="-1"
-                title="Toggle Side by Side (F9)"
-                type="button"
-              >
-                <i
-                  class="fa fa-columns"
-                />
-              </button>
-              <button
-                aria-label="Toggle Fullscreen"
-                class="fullscreen no-disable no-mobile"
-                tabindex="-1"
-                title="Toggle Fullscreen (F11)"
-                type="button"
-              >
-                <i
-                  class="fa fa-arrows-alt"
-                />
-              </button>
-              <i
-                class="separator"
-              >
-                |
-              </i>
-              <button
-                aria-label="Markdown Guide"
-                class="guide no-disable"
-                tabindex="-1"
-                title="Markdown Guide"
-                type="button"
-              >
-                <i
-                  class="fa fa-question-circle"
-                />
-              </button>
-            </div>
-            <div
-              class="CodeMirror cm-s-easymde CodeMirror-wrap CodeMirror-empty"
-              translate="no"
-            >
-              <div
-                style="overflow: hidden; position: relative; width: 3px; height: 0px;"
-              >
-                <textarea
-                  autocapitalize="off"
-                  autocorrect="off"
-                  spellcheck="false"
-                  style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"
-                  tabindex="0"
-                />
-              </div>
-              <div
-                class="CodeMirror-vscrollbar"
-                cm-not-content="true"
-                tabindex="-1"
-              >
-                <div
-                  style="min-width: 1px;"
-                />
-              </div>
-              <div
-                class="CodeMirror-hscrollbar"
-                cm-not-content="true"
-                tabindex="-1"
-              >
-                <div
-                  style="height: 100%; min-height: 1px;"
-                />
-              </div>
-              <div
-                class="CodeMirror-scrollbar-filler"
-                cm-not-content="true"
-              />
-              <div
-                class="CodeMirror-gutter-filler"
-                cm-not-content="true"
-              />
-              <div
-                class="CodeMirror-scroll"
-                style="min-height: 300px;"
-                tabindex="-1"
-              >
-                <div
-                  class="CodeMirror-sizer"
-                  style="margin-left: 0px;"
-                >
-                  <div
-                    style="position: relative;"
-                  >
-                    <div
-                      class="CodeMirror-lines"
-                      role="presentation"
-                    >
-                      <div
-                        role="presentation"
-                        style="position: relative; outline: none;"
-                      >
-                        <pre
-                          class="CodeMirror-placeholder CodeMirror-line-like"
-                          style="height: 0px; overflow: visible; direction: ltr;"
-                        >
-                          Supports markdown. Yay!
-                        </pre>
-                        <div
-                          class="CodeMirror-measure"
-                        >
-                          <pre
-                            class="CodeMirror-line-like"
-                          >
-                            <span>
-                              xxxxxxxxxx
-                            </span>
-                          </pre>
-                        </div>
-                        <div
-                          class="CodeMirror-measure"
-                        />
-                        <div
-                          style="position: relative; z-index: 1;"
-                        />
-                        <div
-                          class="CodeMirror-cursors"
-                        />
-                        <div
-                          class="CodeMirror-code"
-                          role="presentation"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="position: absolute; height: 50px; width: 1px;"
-                />
-                <div
-                  class="CodeMirror-gutters"
-                  style="display: none;"
-                />
-              </div>
-            </div>
-            <div
-              class="editor-preview-side editor-preview"
-            />
-            <div
-              class="editor-statusbar"
-            >
-              <span
-                class="autosave"
-              />
-              <span
-                class="lines"
-              >
-                1
-              </span>
-              <span
-                class="words"
-              >
-                0
-              </span>
-              <span
-                class="cursor"
-              >
-                1:1
-              </span>
-            </div>
-          </div>
-        </div>
-        <span
-          class="sc-jrcTuL khuZoW"
-        />
-      </div>
-    </form>
-  </div>
+  />
 </div>
 `;
 
@@ -2914,14 +2176,14 @@ exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
         >
           <a
             aria-current="page"
-            class="sc-ipEyDJ aOkuR"
+            class="sc-eDWCr cCSUfZ"
             href="/"
             variant="classic"
           >
             Recent Articles
           </a>
           <a
-            class="sc-ipEyDJ aOkuR"
+            class="sc-eDWCr cCSUfZ"
             href="/about"
             variant="classic"
           >
@@ -2930,7 +2192,7 @@ exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
         </nav>
       </div>
       <a
-        class="sc-eDWCr FREtm login-link"
+        class="sc-ksBlkl fxuheE login-link"
         href="/login"
       >
         <span>
@@ -2958,376 +2220,7 @@ exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
   </header>
   <div
     class="sc-bCfvAP bEppUh"
-  >
-    <form
-      class="sc-cabOPr eddtFX"
-    >
-      <div
-        class="sc-bjfHbI gzNInb"
-      >
-        <h1>
-          Create new article
-        </h1>
-        <button
-          class="sc-dkrFOg eidQVA"
-          type="submit"
-        >
-          Publish article
-        </button>
-      </div>
-      <div>
-        <div
-          class="sc-jSUZER dqJJqp"
-        >
-          <label
-            for="Article title"
-          >
-            Article title
-          </label>
-          <input
-            class="sc-hLBbgP fFQznY"
-            id="Article title"
-            placeholder="My new article"
-            value=""
-          />
-        </div>
-        <span
-          class="sc-jrcTuL khuZoW"
-        />
-      </div>
-      <div>
-        <div
-          class="sc-bYMpWt fnArBX"
-        >
-          <label
-            class="upload-image__label"
-          >
-            Featured Image
-          </label>
-          <button
-            class="sc-dkrFOg eidQVA"
-            type="button"
-          >
-            Upload an Image
-          </button>
-          <input
-            accept="image/*"
-            data-testid="image-uploader"
-            style="display: none;"
-            type="file"
-          />
-        </div>
-        <span
-          class="sc-jrcTuL khuZoW"
-        />
-      </div>
-      <div>
-        <div
-          id="simplemde-editor-4-wrapper"
-        >
-          <textarea
-            id="simplemde-editor-4"
-            placeholder="Supports markdown. Yay!"
-            style="display: none;"
-          />
-          <div
-            class="EasyMDEContainer"
-            role="application"
-          >
-            <div
-              class="editor-toolbar"
-              role="toolbar"
-            >
-              <button
-                aria-label="Bold"
-                class="bold"
-                tabindex="-1"
-                title="Bold (Ctrl-B)"
-                type="button"
-              >
-                <i
-                  class="fa fa-bold"
-                />
-              </button>
-              <button
-                aria-label="Italic"
-                class="italic"
-                tabindex="-1"
-                title="Italic (Ctrl-I)"
-                type="button"
-              >
-                <i
-                  class="fa fa-italic"
-                />
-              </button>
-              <button
-                aria-label="Heading"
-                class="heading"
-                tabindex="-1"
-                title="Heading (Ctrl-H)"
-                type="button"
-              >
-                <i
-                  class="fa fa-header fa-heading"
-                />
-              </button>
-              <i
-                class="separator"
-              >
-                |
-              </i>
-              <button
-                aria-label="Quote"
-                class="quote"
-                tabindex="-1"
-                title="Quote (Ctrl-')"
-                type="button"
-              >
-                <i
-                  class="fa fa-quote-left"
-                />
-              </button>
-              <button
-                aria-label="Generic List"
-                class="unordered-list"
-                tabindex="-1"
-                title="Generic List (Ctrl-L)"
-                type="button"
-              >
-                <i
-                  class="fa fa-list-ul"
-                />
-              </button>
-              <button
-                aria-label="Numbered List"
-                class="ordered-list"
-                tabindex="-1"
-                title="Numbered List (Ctrl-Alt-L)"
-                type="button"
-              >
-                <i
-                  class="fa fa-list-ol"
-                />
-              </button>
-              <i
-                class="separator"
-              >
-                |
-              </i>
-              <button
-                aria-label="Create Link"
-                class="link"
-                tabindex="-1"
-                title="Create Link (Ctrl-K)"
-                type="button"
-              >
-                <i
-                  class="fa fa-link"
-                />
-              </button>
-              <button
-                aria-label="Insert Image"
-                class="image"
-                tabindex="-1"
-                title="Insert Image (Ctrl-Alt-I)"
-                type="button"
-              >
-                <i
-                  class="fa fa-image"
-                />
-              </button>
-              <i
-                class="separator"
-              >
-                |
-              </i>
-              <button
-                aria-label="Toggle Preview"
-                class="preview no-disable"
-                tabindex="-1"
-                title="Toggle Preview (Ctrl-P)"
-                type="button"
-              >
-                <i
-                  class="fa fa-eye"
-                />
-              </button>
-              <button
-                aria-label="Toggle Side by Side"
-                class="side-by-side no-disable no-mobile"
-                tabindex="-1"
-                title="Toggle Side by Side (F9)"
-                type="button"
-              >
-                <i
-                  class="fa fa-columns"
-                />
-              </button>
-              <button
-                aria-label="Toggle Fullscreen"
-                class="fullscreen no-disable no-mobile"
-                tabindex="-1"
-                title="Toggle Fullscreen (F11)"
-                type="button"
-              >
-                <i
-                  class="fa fa-arrows-alt"
-                />
-              </button>
-              <i
-                class="separator"
-              >
-                |
-              </i>
-              <button
-                aria-label="Markdown Guide"
-                class="guide no-disable"
-                tabindex="-1"
-                title="Markdown Guide"
-                type="button"
-              >
-                <i
-                  class="fa fa-question-circle"
-                />
-              </button>
-            </div>
-            <div
-              class="CodeMirror cm-s-easymde CodeMirror-wrap CodeMirror-empty"
-              translate="no"
-            >
-              <div
-                style="overflow: hidden; position: relative; width: 3px; height: 0px;"
-              >
-                <textarea
-                  autocapitalize="off"
-                  autocorrect="off"
-                  spellcheck="false"
-                  style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"
-                  tabindex="0"
-                />
-              </div>
-              <div
-                class="CodeMirror-vscrollbar"
-                cm-not-content="true"
-                tabindex="-1"
-              >
-                <div
-                  style="min-width: 1px;"
-                />
-              </div>
-              <div
-                class="CodeMirror-hscrollbar"
-                cm-not-content="true"
-                tabindex="-1"
-              >
-                <div
-                  style="height: 100%; min-height: 1px;"
-                />
-              </div>
-              <div
-                class="CodeMirror-scrollbar-filler"
-                cm-not-content="true"
-              />
-              <div
-                class="CodeMirror-gutter-filler"
-                cm-not-content="true"
-              />
-              <div
-                class="CodeMirror-scroll"
-                style="min-height: 300px;"
-                tabindex="-1"
-              >
-                <div
-                  class="CodeMirror-sizer"
-                  style="margin-left: 0px;"
-                >
-                  <div
-                    style="position: relative;"
-                  >
-                    <div
-                      class="CodeMirror-lines"
-                      role="presentation"
-                    >
-                      <div
-                        role="presentation"
-                        style="position: relative; outline: none;"
-                      >
-                        <pre
-                          class="CodeMirror-placeholder CodeMirror-line-like"
-                          style="height: 0px; overflow: visible; direction: ltr;"
-                        >
-                          Supports markdown. Yay!
-                        </pre>
-                        <div
-                          class="CodeMirror-measure"
-                        >
-                          <pre
-                            class="CodeMirror-line-like"
-                          >
-                            <span>
-                              xxxxxxxxxx
-                            </span>
-                          </pre>
-                        </div>
-                        <div
-                          class="CodeMirror-measure"
-                        />
-                        <div
-                          style="position: relative; z-index: 1;"
-                        />
-                        <div
-                          class="CodeMirror-cursors"
-                        />
-                        <div
-                          class="CodeMirror-code"
-                          role="presentation"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="position: absolute; height: 50px; width: 1px;"
-                />
-                <div
-                  class="CodeMirror-gutters"
-                  style="display: none;"
-                />
-              </div>
-            </div>
-            <div
-              class="editor-preview-side editor-preview"
-            />
-            <div
-              class="editor-statusbar"
-            >
-              <span
-                class="autosave"
-              />
-              <span
-                class="lines"
-              >
-                1
-              </span>
-              <span
-                class="words"
-              >
-                0
-              </span>
-              <span
-                class="cursor"
-              >
-                1:1
-              </span>
-            </div>
-          </div>
-        </div>
-        <span
-          class="sc-jrcTuL khuZoW"
-        />
-      </div>
-    </form>
-  </div>
+  />
 </div>
 `;
 
@@ -3355,14 +2248,14 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
         >
           <a
             aria-current="page"
-            class="sc-ipEyDJ aOkuR"
+            class="sc-eDWCr cCSUfZ"
             href="/"
             variant="classic"
           >
             Recent Articles
           </a>
           <a
-            class="sc-ipEyDJ aOkuR"
+            class="sc-eDWCr cCSUfZ"
             href="/about"
             variant="classic"
           >
@@ -3371,7 +2264,7 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
         </nav>
       </div>
       <a
-        class="sc-eDWCr FREtm login-link"
+        class="sc-ksBlkl fxuheE login-link"
         href="/login"
       >
         <span>
@@ -3404,13 +2297,13 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
       class="sc-jcMfQk fnnRm"
     >
       <div
-        class="sc-bjfHbI gzNInb"
+        class="sc-dIfARi ckvMSP"
       >
         <h1>
           MyArticles
         </h1>
         <a
-          class="sc-dkrFOg sc-kDvujY eidQVA bxiMqE"
+          class="sc-dkrFOg sc-csuSiG eidQVA gBuZIb"
           colortheme="primary"
           href="/admin/create-article"
         >
@@ -3419,7 +2312,130 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
       </div>
       <form
         class="sc-cjibBx hWRmqo"
-      />
+      >
+        <table
+          class="sc-cCjUiG dreQCC"
+        >
+          <tr
+            class="sc-jrcTuL ikvuNf edit-article"
+          >
+            <th
+              class="edit-article__checkbox"
+            >
+              <div
+                class="sc-ftTHYK bpCbn"
+              >
+                <input
+                  class="sc-iBYQkv jkxsjj"
+                  type="checkbox"
+                />
+              </div>
+            </th>
+            <th
+              class="edit-article__title"
+            >
+              <button
+                class="sc-bcXHqe ffhSDA"
+              >
+                <span>
+                  Article title
+                </span>
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                  />
+                </svg>
+              </button>
+            </th>
+            <th
+              class="edit-article__perex"
+            >
+              <button
+                class="sc-bcXHqe ffhSDA"
+              >
+                <span>
+                  Perex
+                </span>
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                  />
+                </svg>
+              </button>
+            </th>
+            <th
+              class="edit-article__author"
+            >
+              <button
+                class="sc-bcXHqe ffhSDA"
+              >
+                <span>
+                  Author
+                </span>
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                  />
+                </svg>
+              </button>
+            </th>
+            <th
+              class="edit-article__nr-comments"
+            >
+              <button
+                class="sc-bcXHqe ffhSDA"
+              >
+                <span>
+                  # of comments
+                </span>
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                  />
+                </svg>
+              </button>
+            </th>
+            <th
+              class="edit-article__actions-container"
+            >
+              Actions
+            </th>
+          </tr>
+          nothing
+        </table>
+      </form>
     </div>
   </div>
 </div>
@@ -3427,10 +2443,10 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
 
 exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
 <div
-  class="sc-dPWrhe OsjMp"
+  class="sc-cOxWqc jjhXEs"
 >
   <header
-    class="sc-iTFTee diIgDx TopNavbar"
+    class="sc-eeMvmM fAkfVZ TopNavbar"
   >
     <div
       class="TopNavbar__container"
@@ -3445,18 +2461,18 @@ exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
         />
          
         <nav
-          class="sc-iAEawV cdfTIw"
+          class="sc-cUEOzv cZgqxh"
         >
           <a
             aria-current="page"
-            class="sc-ipEyDJ aOkuR"
+            class="sc-eDWCr cCSUfZ"
             href="/"
             variant="classic"
           >
             Recent Articles
           </a>
           <a
-            class="sc-ipEyDJ aOkuR"
+            class="sc-eDWCr cCSUfZ"
             href="/about"
             variant="classic"
           >
@@ -3465,7 +2481,7 @@ exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
         </nav>
       </div>
       <a
-        class="sc-eDWCr FREtm login-link"
+        class="sc-ksBlkl fxuheE login-link"
         href="/login"
       >
         <span>
@@ -3492,10 +2508,10 @@ exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
     </div>
   </header>
   <div
-    class="sc-cUEOzv jouLch"
+    class="sc-dPWrhe eUevid"
   >
     <div
-      class="sc-eeMvmM iIrupD"
+      class="sc-jOiSOi hshWsd"
     >
       <form
         class="sc-gKPRtg jfweml"

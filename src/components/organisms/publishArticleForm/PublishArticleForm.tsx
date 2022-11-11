@@ -8,10 +8,12 @@ import { ErrorText } from "../../atoms/errorText/error.styled";
 import { useAppSelector } from "../../../store/hooks";
 
 import { selectAuthToken } from "../../../store/slices/auth.slices";
-import publishArticle, {
+import {
   createArticleHelper,
   updateArticleHelper,
+  validatePublishArticleForm,
 } from "../../../helpers/publishArticle.helper";
+import { cutTextWithElipsis } from "../../../utils/generic.utils";
 
 // FIXME: maybe implement do BIG notation?
 // TODO: Mock for MSW
@@ -23,7 +25,7 @@ const PublishArticleForm = ({
   imageFileValue,
   onSubmit,
   ...props
-}: PublistArticleFormProps) => {
+}: PublishArticleProps) => {
   const access_token = useAppSelector(selectAuthToken);
   const [title, setTitle] = React.useState("New article title");
   const [markdownContent, setMarkdownContent] = React.useState(
@@ -37,16 +39,29 @@ const PublishArticleForm = ({
 
   const handleOnSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const trimmedTitle = title.trim();
+    const trimmedMD = markdownContent.trim();
+    const perex = cutTextWithElipsis(trimmedMD, 130);
 
-    publishArticle(
-      e,
-      title,
-      markdownContent,
+    const formValidationPassed = validatePublishArticleForm(
+      trimmedTitle,
+      trimmedMD,
       imageFile,
-      isImageChanged,
-      setFormError,
-      access_token
-    )(onSubmit);
+      setFormError
+    );
+
+    if (formValidationPassed) {
+      return onSubmit(
+        e,
+        trimmedTitle,
+        trimmedMD,
+        perex,
+        imageFile!,
+        isImageChanged,
+        setFormError,
+        access_token
+      );
+    }
   };
 
   React.useEffect(() => {
@@ -99,7 +114,7 @@ const PublishArticleForm = ({
   );
 };
 
-export interface PublistArticleFormProps {
+export interface PublishArticleProps {
   titleValue?: string;
   markdownContentValue?: string;
   imageFileValue?: File | null;
