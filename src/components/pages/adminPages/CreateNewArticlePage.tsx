@@ -7,7 +7,7 @@ import PageTemplate from "../../templates/Page.template";
 const CreateNewArticlePage = () => {
   return (
     <PageTemplate>
-      <PublishArticleForm onSubmit={createArticleHelper} />
+      <PublishArticleForm />
     </PageTemplate>
   );
 };

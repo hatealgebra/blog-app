@@ -6,7 +6,6 @@ import PublishArticleForm from "../../organisms/publishArticleForm/PublishArticl
 import PageTemplate from "../../templates/Page.template";
 import { components } from "../../../types";
 import { showImage } from "../../../services/imagesServices";
-import { updateArticleHelper } from "../../../helpers/publishArticle.helper";
 
 const EditArticlePage = () => {
   const [articleData, setArticleData] =
@@ -33,7 +32,6 @@ const EditArticlePage = () => {
         titleValue={articleData?.title}
         imageFileValue={articleData?.imageData}
         markdownContentValue={articleData?.content}
-        onSubmit={updateArticleHelper}
       />
     </PageTemplate>
   );

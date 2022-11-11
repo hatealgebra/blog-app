@@ -27,8 +27,8 @@ const mockStore = configureStore({
         error: false,
         data: {
           articleToEdit: articleDetailReponseJSON,
-          originalSort: {},
-          nowSort: {},
+          originalSort: [],
+          nowSort: [],
         },
       },
     },

@@ -11,6 +11,7 @@ export const uploadImage = async (imageFile: FormData) => {
         "Content-Type": "multipart/form-data",
       },
     });
+    console.log(response);
     return response;
   } catch (e) {
     console.log(e);

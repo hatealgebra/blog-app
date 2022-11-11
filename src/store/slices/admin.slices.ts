@@ -41,7 +41,7 @@ export const adminSlice = createSlice({
         );
       }
     },
-    chooseArticleToEdit: (state, { payload }) => {
+    setArticleToEdit: (state, { payload }) => {
       state.data.articleToEdit = state.data.originalSort.items![payload];
     },
   },
@@ -63,6 +63,9 @@ export const adminSlice = createSlice({
   },
 });
 
+// ACTIONS
+export const { sortMyArticles, setArticleToEdit } = adminSlice.actions;
+// SELECTORS
 export const selectMyArticlesItems = (state: RootState) =>
   state.reducer.admin.data.nowSort.items;
 // export const selectArticleToEdit = (state: RootState) =>

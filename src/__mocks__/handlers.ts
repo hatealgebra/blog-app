@@ -28,13 +28,14 @@ export const handlers = [
   rest.post(`${BASE_API_URL}/articles`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(createArticleResponseJSON));
   }),
-  // POST IMAGE
+  // Upload IMAGE
   rest.post(`${BASE_API_URL}/images`, (req, res, ctx) => {
     console.log(req);
     return res(ctx.status(200), ctx.json(imageMockJSON));
   }),
+  /* GET handling*/
 
-  // ARTICLES
+  // LIST ARTICLES
   // FIXME: Fix the reauthorize, the dispatch is called multiple
   rest.get(`${BASE_API_URL}/articles`, (req, res, ctx) => {
     console.log(res, ctx);
@@ -54,5 +55,10 @@ export const handlers = [
   // IMAGES
   rest.get(`${BASE_API_URL}/images/:imageId`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.body(britishCatJPG));
+  }),
+  /* PATCH */
+  // UPDATE ARTICLE
+  rest.patch(`${BASE_API_URL}/articles/:articleId`, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(articleDetailJSON));
   }),
 ];

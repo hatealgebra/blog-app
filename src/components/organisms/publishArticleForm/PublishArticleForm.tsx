@@ -23,15 +23,13 @@ const PublishArticleForm = ({
   titleValue,
   markdownContentValue,
   imageFileValue,
-  onSubmit,
   ...props
 }: PublishArticleProps) => {
   const access_token = useAppSelector(selectAuthToken);
-  const [title, setTitle] = React.useState("New article title");
-  const [markdownContent, setMarkdownContent] = React.useState(
-    "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
-  );
-  const [imageFile, setImageFile] = React.useState<File | null>(null);
+  const [articleId, setArticleId] = React.useState(undefined);
+  const [title, setTitle] = React.useState("");
+  const [markdownContent, setMarkdownContent] = React.useState("");
+  const [imageFile, setImageFile] = React.useState<Blob | null>(null);
   const [isImageChanged, setIsImageChanged] = React.useState(false);
   const [formError, setFormError] = React.useState<EPublishArticleErrors>(
     EPublishArticleErrors.PASSED
@@ -51,16 +49,28 @@ const PublishArticleForm = ({
     );
 
     if (formValidationPassed) {
-      return onSubmit(
-        e,
-        trimmedTitle,
-        trimmedMD,
-        perex,
-        imageFile!,
-        isImageChanged,
-        setFormError,
-        access_token
-      );
+      let imageFormData = new FormData();
+      imageFormData.append("image", imageFile!);
+      if (articleId) {
+        return updateArticleHelper(
+          e,
+          articleId,
+          trimmedTitle,
+          perex,
+          trimmedMD,
+          imageFormData!,
+          access_token,
+          isImageChanged
+        );
+      } else {
+        return createArticleHelper(
+          e,
+          trimmedTitle,
+          perex,
+          trimmedMD,
+          imageFormData
+        );
+      }
     }
   };
 
@@ -118,7 +128,6 @@ export interface PublishArticleProps {
   titleValue?: string;
   markdownContentValue?: string;
   imageFileValue?: File | null;
-  onSubmit: typeof updateArticleHelper | typeof createArticleHelper;
 }
 
 export enum EPublishArticleErrors {

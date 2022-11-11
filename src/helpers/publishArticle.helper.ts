@@ -1,5 +1,5 @@
 import { navigate } from "gatsby";
-import React from "react";
+import React, { FormEvent } from "react";
 import { EPublishArticleErrors } from "../components/organisms/publishArticleForm/PublishArticleForm";
 import { createArticle, updateArticle } from "../services/articlesOperations";
 
@@ -46,24 +46,20 @@ export const validatePublishArticleForm: TFormHandling = (
 };
 
 export const createArticleHelper = async (
+  e: FormEvent,
   title: string,
   perex: string,
   content: string,
-  imageFile: string | Blob,
-  access_token: string,
-  ...args: any
+  imageFormData: FormData
 ) => {
-  let formData = new FormData();
-  formData.append("image", imageFile!);
   try {
-    const uploadImageResponse = await uploadImage(formData);
+    const uploadImageResponse = await uploadImage(imageFormData);
     const response = createArticle(
       title,
       perex,
       await uploadImageResponse!.data[0].imageId,
       content
     );
-    console.log(await response);
     return response;
   } catch (e) {
     console.log(e);
@@ -71,12 +67,13 @@ export const createArticleHelper = async (
   }
 };
 export const updateArticleHelper = async (
+  e: FormEvent,
   articleId: string,
   title: string,
   perex: string,
   content: string,
   imageFormData: FormData,
-  access_token: string,
+  access_token: string | undefined,
   isImageChanged: boolean
 ) => {
   try {
@@ -89,7 +86,8 @@ export const updateArticleHelper = async (
         content,
       });
     }
-    return updateArticle(articleId, access_token, { title, perex, content });
+    updateArticle(articleId, access_token, { title, perex, content });
+    return navigate(ADMIN_LINKS.MY_ARTICLES);
   } catch (e) {
     throw e;
   }
@@ -98,7 +96,7 @@ export const updateArticleHelper = async (
 type TFormHandling = (
   title: string,
   markdownContent: string,
-  imageFile: string | Blob,
+  imageFile: string | Blob | null,
   setFormError: React.Dispatch<React.SetStateAction<EPublishArticleErrors>>
 ) =>
   | {

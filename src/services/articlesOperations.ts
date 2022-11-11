@@ -33,7 +33,6 @@ export const createArticle = async (
         "Content-Type": "application/json",
       },
     });
-    console.log(response);
     return response;
   } catch (e) {
     console.log(e);
@@ -71,18 +70,20 @@ export const deleteArticle = async (
 
 export const updateArticle = async (
   articleId: string,
-  access_token: string,
+  access_token: string | undefined,
   data: any
 ) => {
   try {
     console.log(articleId);
-    return await appLiftingAxiosProtected.patch(
+    const response = await appLiftingAxiosProtected.patch(
       `/articles/${articleId}`,
       data,
       {
         headers: { Authorization: access_token },
       }
     );
+    console.log(response);
+    return response;
   } catch (e) {
     throw e;
   }
