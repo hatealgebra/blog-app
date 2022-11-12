@@ -11,6 +11,7 @@ import { RiDeleteBin7Line } from "@react-icons/all-files/ri/RiDeleteBin7Line";
 import ButtonSort from "../../atoms/button/ButtonSort";
 import { enumDefaultedMember } from "@babel/types";
 import { useAppDispatch } from "../../../store/hooks";
+import { sortMyArticles } from "../../../store/slices/admin.slices";
 
 const EditArticleRowButtons = ({
   // setCheckAll,
@@ -31,10 +32,10 @@ const EditArticleRowButtons = ({
   const activeSort = (sortType: ESortByOptions) => {
     setIsActive((prev) => {
       if (prev === sortType) {
-        dispatchSort({ type: "myArticles/sortMyArticles", payload: ORIGINAL });
+        dispatchSort(sortMyArticles(ORIGINAL));
         return ORIGINAL;
       }
-      dispatchSort({ type: "myArticles/sortMyArticles", payload: sortType });
+      dispatchSort(sortMyArticles(sortType));
       return sortType;
     });
   };

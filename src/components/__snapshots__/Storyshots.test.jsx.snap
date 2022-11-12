@@ -1777,7 +1777,7 @@ exports[`Storyshots Organisms/Forms Login Form Example 1`] = `
 
 exports[`Storyshots Organisms/Related Articles section Related Articles Section 1`] = `
 <div
-  class="sc-iAEawV kzHWGV related-articles"
+  class="sc-eeMvmM gDzLRn related-articles"
 >
   <h3>
     Related Articles
@@ -1841,7 +1841,7 @@ exports[`Storyshots Organisms/Related Articles section Related Articles Section 
 
 exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
 <header
-  class="sc-eeMvmM fAkfVZ TopNavbar"
+  class="sc-cUEOzv ffpPau TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -1856,7 +1856,7 @@ exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
       />
        
       <nav
-        class="sc-cUEOzv cZgqxh"
+        class="sc-jOiSOi jqkDPw"
       >
         <a
           aria-current="page"
@@ -1906,7 +1906,7 @@ exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
 
 exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
 <header
-  class="sc-eeMvmM cVvAZJ TopNavbar"
+  class="sc-cUEOzv jEEqXG TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -2018,7 +2018,7 @@ exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
 
 exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
 <header
-  class="sc-eeMvmM fAkfVZ TopNavbar"
+  class="sc-cUEOzv ffpPau TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -2032,7 +2032,7 @@ exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
       class="TopNavbar__sub-container"
     >
       <nav
-        class="sc-cUEOzv cZgqxh"
+        class="sc-jOiSOi jqkDPw"
       >
         <a
           aria-current="page"
@@ -2148,7 +2148,376 @@ exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
   </header>
   <div
     class="sc-bCfvAP bEppUh"
-  />
+  >
+    <form
+      class="sc-cabOPr eddtFX"
+    >
+      <div
+        class="sc-dIfARi ckvMSP"
+      >
+        <h1>
+          Create new article
+        </h1>
+        <button
+          class="sc-dkrFOg eidQVA"
+          type="submit"
+        >
+          Publish article
+        </button>
+      </div>
+      <div>
+        <div
+          class="sc-jSUZER dqJJqp"
+        >
+          <label
+            for="Article title"
+          >
+            Article title
+          </label>
+          <input
+            class="sc-hLBbgP fFQznY"
+            id="Article title"
+            placeholder="My new article"
+            value=""
+          />
+        </div>
+        <span
+          class="sc-ipEyDJ CPuoT"
+        />
+      </div>
+      <div>
+        <div
+          class="sc-bYMpWt fnArBX"
+        >
+          <label
+            class="upload-image__label"
+          >
+            Featured Image
+          </label>
+          <button
+            class="sc-dkrFOg eidQVA"
+            type="button"
+          >
+            Upload an Image
+          </button>
+          <input
+            accept="image/*"
+            data-testid="image-uploader"
+            style="display: none;"
+            type="file"
+          />
+        </div>
+        <span
+          class="sc-ipEyDJ CPuoT"
+        />
+      </div>
+      <div>
+        <div
+          id="simplemde-editor-3-wrapper"
+        >
+          <textarea
+            id="simplemde-editor-3"
+            placeholder="Supports markdown. Yay!"
+            style="display: none;"
+          />
+          <div
+            class="EasyMDEContainer"
+            role="application"
+          >
+            <div
+              class="editor-toolbar"
+              role="toolbar"
+            >
+              <button
+                aria-label="Bold"
+                class="bold"
+                tabindex="-1"
+                title="Bold (Ctrl-B)"
+                type="button"
+              >
+                <i
+                  class="fa fa-bold"
+                />
+              </button>
+              <button
+                aria-label="Italic"
+                class="italic"
+                tabindex="-1"
+                title="Italic (Ctrl-I)"
+                type="button"
+              >
+                <i
+                  class="fa fa-italic"
+                />
+              </button>
+              <button
+                aria-label="Heading"
+                class="heading"
+                tabindex="-1"
+                title="Heading (Ctrl-H)"
+                type="button"
+              >
+                <i
+                  class="fa fa-header fa-heading"
+                />
+              </button>
+              <i
+                class="separator"
+              >
+                |
+              </i>
+              <button
+                aria-label="Quote"
+                class="quote"
+                tabindex="-1"
+                title="Quote (Ctrl-')"
+                type="button"
+              >
+                <i
+                  class="fa fa-quote-left"
+                />
+              </button>
+              <button
+                aria-label="Generic List"
+                class="unordered-list"
+                tabindex="-1"
+                title="Generic List (Ctrl-L)"
+                type="button"
+              >
+                <i
+                  class="fa fa-list-ul"
+                />
+              </button>
+              <button
+                aria-label="Numbered List"
+                class="ordered-list"
+                tabindex="-1"
+                title="Numbered List (Ctrl-Alt-L)"
+                type="button"
+              >
+                <i
+                  class="fa fa-list-ol"
+                />
+              </button>
+              <i
+                class="separator"
+              >
+                |
+              </i>
+              <button
+                aria-label="Create Link"
+                class="link"
+                tabindex="-1"
+                title="Create Link (Ctrl-K)"
+                type="button"
+              >
+                <i
+                  class="fa fa-link"
+                />
+              </button>
+              <button
+                aria-label="Insert Image"
+                class="image"
+                tabindex="-1"
+                title="Insert Image (Ctrl-Alt-I)"
+                type="button"
+              >
+                <i
+                  class="fa fa-image"
+                />
+              </button>
+              <i
+                class="separator"
+              >
+                |
+              </i>
+              <button
+                aria-label="Toggle Preview"
+                class="preview no-disable"
+                tabindex="-1"
+                title="Toggle Preview (Ctrl-P)"
+                type="button"
+              >
+                <i
+                  class="fa fa-eye"
+                />
+              </button>
+              <button
+                aria-label="Toggle Side by Side"
+                class="side-by-side no-disable no-mobile"
+                tabindex="-1"
+                title="Toggle Side by Side (F9)"
+                type="button"
+              >
+                <i
+                  class="fa fa-columns"
+                />
+              </button>
+              <button
+                aria-label="Toggle Fullscreen"
+                class="fullscreen no-disable no-mobile"
+                tabindex="-1"
+                title="Toggle Fullscreen (F11)"
+                type="button"
+              >
+                <i
+                  class="fa fa-arrows-alt"
+                />
+              </button>
+              <i
+                class="separator"
+              >
+                |
+              </i>
+              <button
+                aria-label="Markdown Guide"
+                class="guide no-disable"
+                tabindex="-1"
+                title="Markdown Guide"
+                type="button"
+              >
+                <i
+                  class="fa fa-question-circle"
+                />
+              </button>
+            </div>
+            <div
+              class="CodeMirror cm-s-easymde CodeMirror-wrap CodeMirror-empty"
+              translate="no"
+            >
+              <div
+                style="overflow: hidden; position: relative; width: 3px; height: 0px;"
+              >
+                <textarea
+                  autocapitalize="off"
+                  autocorrect="off"
+                  spellcheck="false"
+                  style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"
+                  tabindex="0"
+                />
+              </div>
+              <div
+                class="CodeMirror-vscrollbar"
+                cm-not-content="true"
+                tabindex="-1"
+              >
+                <div
+                  style="min-width: 1px;"
+                />
+              </div>
+              <div
+                class="CodeMirror-hscrollbar"
+                cm-not-content="true"
+                tabindex="-1"
+              >
+                <div
+                  style="height: 100%; min-height: 1px;"
+                />
+              </div>
+              <div
+                class="CodeMirror-scrollbar-filler"
+                cm-not-content="true"
+              />
+              <div
+                class="CodeMirror-gutter-filler"
+                cm-not-content="true"
+              />
+              <div
+                class="CodeMirror-scroll"
+                style="min-height: 300px;"
+                tabindex="-1"
+              >
+                <div
+                  class="CodeMirror-sizer"
+                  style="margin-left: 0px;"
+                >
+                  <div
+                    style="position: relative;"
+                  >
+                    <div
+                      class="CodeMirror-lines"
+                      role="presentation"
+                    >
+                      <div
+                        role="presentation"
+                        style="position: relative; outline: none;"
+                      >
+                        <pre
+                          class="CodeMirror-placeholder CodeMirror-line-like"
+                          style="height: 0px; overflow: visible; direction: ltr;"
+                        >
+                          Supports markdown. Yay!
+                        </pre>
+                        <div
+                          class="CodeMirror-measure"
+                        >
+                          <pre
+                            class="CodeMirror-line-like"
+                          >
+                            <span>
+                              xxxxxxxxxx
+                            </span>
+                          </pre>
+                        </div>
+                        <div
+                          class="CodeMirror-measure"
+                        />
+                        <div
+                          style="position: relative; z-index: 1;"
+                        />
+                        <div
+                          class="CodeMirror-cursors"
+                        />
+                        <div
+                          class="CodeMirror-code"
+                          role="presentation"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="position: absolute; height: 50px; width: 1px;"
+                />
+                <div
+                  class="CodeMirror-gutters"
+                  style="display: none;"
+                />
+              </div>
+            </div>
+            <div
+              class="editor-preview-side editor-preview"
+            />
+            <div
+              class="editor-statusbar"
+            >
+              <span
+                class="autosave"
+              />
+              <span
+                class="lines"
+              >
+                1
+              </span>
+              <span
+                class="words"
+              >
+                0
+              </span>
+              <span
+                class="cursor"
+              >
+                1:1
+              </span>
+            </div>
+          </div>
+        </div>
+        <span
+          class="sc-ipEyDJ CPuoT"
+        />
+      </div>
+    </form>
+  </div>
 </div>
 `;
 
@@ -2220,7 +2589,376 @@ exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
   </header>
   <div
     class="sc-bCfvAP bEppUh"
-  />
+  >
+    <form
+      class="sc-cabOPr eddtFX"
+    >
+      <div
+        class="sc-dIfARi ckvMSP"
+      >
+        <h1>
+          Create new article
+        </h1>
+        <button
+          class="sc-dkrFOg eidQVA"
+          type="submit"
+        >
+          Publish article
+        </button>
+      </div>
+      <div>
+        <div
+          class="sc-jSUZER dqJJqp"
+        >
+          <label
+            for="Article title"
+          >
+            Article title
+          </label>
+          <input
+            class="sc-hLBbgP fFQznY"
+            id="Article title"
+            placeholder="My new article"
+            value=""
+          />
+        </div>
+        <span
+          class="sc-ipEyDJ CPuoT"
+        />
+      </div>
+      <div>
+        <div
+          class="sc-bYMpWt fnArBX"
+        >
+          <label
+            class="upload-image__label"
+          >
+            Featured Image
+          </label>
+          <button
+            class="sc-dkrFOg eidQVA"
+            type="button"
+          >
+            Upload an Image
+          </button>
+          <input
+            accept="image/*"
+            data-testid="image-uploader"
+            style="display: none;"
+            type="file"
+          />
+        </div>
+        <span
+          class="sc-ipEyDJ CPuoT"
+        />
+      </div>
+      <div>
+        <div
+          id="simplemde-editor-4-wrapper"
+        >
+          <textarea
+            id="simplemde-editor-4"
+            placeholder="Supports markdown. Yay!"
+            style="display: none;"
+          />
+          <div
+            class="EasyMDEContainer"
+            role="application"
+          >
+            <div
+              class="editor-toolbar"
+              role="toolbar"
+            >
+              <button
+                aria-label="Bold"
+                class="bold"
+                tabindex="-1"
+                title="Bold (Ctrl-B)"
+                type="button"
+              >
+                <i
+                  class="fa fa-bold"
+                />
+              </button>
+              <button
+                aria-label="Italic"
+                class="italic"
+                tabindex="-1"
+                title="Italic (Ctrl-I)"
+                type="button"
+              >
+                <i
+                  class="fa fa-italic"
+                />
+              </button>
+              <button
+                aria-label="Heading"
+                class="heading"
+                tabindex="-1"
+                title="Heading (Ctrl-H)"
+                type="button"
+              >
+                <i
+                  class="fa fa-header fa-heading"
+                />
+              </button>
+              <i
+                class="separator"
+              >
+                |
+              </i>
+              <button
+                aria-label="Quote"
+                class="quote"
+                tabindex="-1"
+                title="Quote (Ctrl-')"
+                type="button"
+              >
+                <i
+                  class="fa fa-quote-left"
+                />
+              </button>
+              <button
+                aria-label="Generic List"
+                class="unordered-list"
+                tabindex="-1"
+                title="Generic List (Ctrl-L)"
+                type="button"
+              >
+                <i
+                  class="fa fa-list-ul"
+                />
+              </button>
+              <button
+                aria-label="Numbered List"
+                class="ordered-list"
+                tabindex="-1"
+                title="Numbered List (Ctrl-Alt-L)"
+                type="button"
+              >
+                <i
+                  class="fa fa-list-ol"
+                />
+              </button>
+              <i
+                class="separator"
+              >
+                |
+              </i>
+              <button
+                aria-label="Create Link"
+                class="link"
+                tabindex="-1"
+                title="Create Link (Ctrl-K)"
+                type="button"
+              >
+                <i
+                  class="fa fa-link"
+                />
+              </button>
+              <button
+                aria-label="Insert Image"
+                class="image"
+                tabindex="-1"
+                title="Insert Image (Ctrl-Alt-I)"
+                type="button"
+              >
+                <i
+                  class="fa fa-image"
+                />
+              </button>
+              <i
+                class="separator"
+              >
+                |
+              </i>
+              <button
+                aria-label="Toggle Preview"
+                class="preview no-disable"
+                tabindex="-1"
+                title="Toggle Preview (Ctrl-P)"
+                type="button"
+              >
+                <i
+                  class="fa fa-eye"
+                />
+              </button>
+              <button
+                aria-label="Toggle Side by Side"
+                class="side-by-side no-disable no-mobile"
+                tabindex="-1"
+                title="Toggle Side by Side (F9)"
+                type="button"
+              >
+                <i
+                  class="fa fa-columns"
+                />
+              </button>
+              <button
+                aria-label="Toggle Fullscreen"
+                class="fullscreen no-disable no-mobile"
+                tabindex="-1"
+                title="Toggle Fullscreen (F11)"
+                type="button"
+              >
+                <i
+                  class="fa fa-arrows-alt"
+                />
+              </button>
+              <i
+                class="separator"
+              >
+                |
+              </i>
+              <button
+                aria-label="Markdown Guide"
+                class="guide no-disable"
+                tabindex="-1"
+                title="Markdown Guide"
+                type="button"
+              >
+                <i
+                  class="fa fa-question-circle"
+                />
+              </button>
+            </div>
+            <div
+              class="CodeMirror cm-s-easymde CodeMirror-wrap CodeMirror-empty"
+              translate="no"
+            >
+              <div
+                style="overflow: hidden; position: relative; width: 3px; height: 0px;"
+              >
+                <textarea
+                  autocapitalize="off"
+                  autocorrect="off"
+                  spellcheck="false"
+                  style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"
+                  tabindex="0"
+                />
+              </div>
+              <div
+                class="CodeMirror-vscrollbar"
+                cm-not-content="true"
+                tabindex="-1"
+              >
+                <div
+                  style="min-width: 1px;"
+                />
+              </div>
+              <div
+                class="CodeMirror-hscrollbar"
+                cm-not-content="true"
+                tabindex="-1"
+              >
+                <div
+                  style="height: 100%; min-height: 1px;"
+                />
+              </div>
+              <div
+                class="CodeMirror-scrollbar-filler"
+                cm-not-content="true"
+              />
+              <div
+                class="CodeMirror-gutter-filler"
+                cm-not-content="true"
+              />
+              <div
+                class="CodeMirror-scroll"
+                style="min-height: 300px;"
+                tabindex="-1"
+              >
+                <div
+                  class="CodeMirror-sizer"
+                  style="margin-left: 0px;"
+                >
+                  <div
+                    style="position: relative;"
+                  >
+                    <div
+                      class="CodeMirror-lines"
+                      role="presentation"
+                    >
+                      <div
+                        role="presentation"
+                        style="position: relative; outline: none;"
+                      >
+                        <pre
+                          class="CodeMirror-placeholder CodeMirror-line-like"
+                          style="height: 0px; overflow: visible; direction: ltr;"
+                        >
+                          Supports markdown. Yay!
+                        </pre>
+                        <div
+                          class="CodeMirror-measure"
+                        >
+                          <pre
+                            class="CodeMirror-line-like"
+                          >
+                            <span>
+                              xxxxxxxxxx
+                            </span>
+                          </pre>
+                        </div>
+                        <div
+                          class="CodeMirror-measure"
+                        />
+                        <div
+                          style="position: relative; z-index: 1;"
+                        />
+                        <div
+                          class="CodeMirror-cursors"
+                        />
+                        <div
+                          class="CodeMirror-code"
+                          role="presentation"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="position: absolute; height: 50px; width: 1px;"
+                />
+                <div
+                  class="CodeMirror-gutters"
+                  style="display: none;"
+                />
+              </div>
+            </div>
+            <div
+              class="editor-preview-side editor-preview"
+            />
+            <div
+              class="editor-statusbar"
+            >
+              <span
+                class="autosave"
+              />
+              <span
+                class="lines"
+              >
+                1
+              </span>
+              <span
+                class="words"
+              >
+                0
+              </span>
+              <span
+                class="cursor"
+              >
+                1:1
+              </span>
+            </div>
+          </div>
+        </div>
+        <span
+          class="sc-ipEyDJ CPuoT"
+        />
+      </div>
+    </form>
+  </div>
 </div>
 `;
 
@@ -2443,10 +3181,10 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
 
 exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
 <div
-  class="sc-cOxWqc jjhXEs"
+  class="sc-AHaJN fvLofd"
 >
   <header
-    class="sc-eeMvmM fAkfVZ TopNavbar"
+    class="sc-cUEOzv ffpPau TopNavbar"
   >
     <div
       class="TopNavbar__container"
@@ -2461,7 +3199,7 @@ exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
         />
          
         <nav
-          class="sc-cUEOzv cZgqxh"
+          class="sc-jOiSOi jqkDPw"
         >
           <a
             aria-current="page"
@@ -2508,10 +3246,10 @@ exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
     </div>
   </header>
   <div
-    class="sc-dPWrhe eUevid"
+    class="sc-bCfvAP bEppUh"
   >
     <div
-      class="sc-jOiSOi hshWsd"
+      class="sc-dPWrhe gpBQNc"
     >
       <form
         class="sc-gKPRtg jfweml"

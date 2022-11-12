@@ -25,6 +25,7 @@ const StyledTopNav = styled.header<TopNavBarProps>`
       margin: 0 auto;
       justify-content: space-between;
       align-items: center;
+      max-width: 1000px;
     }
     &__sub-container {
       display: flex;

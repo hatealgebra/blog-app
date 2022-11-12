@@ -50,7 +50,6 @@ export const adminSlice = createSlice({
       state.status = "loading";
     });
     builder.addCase(getArticlesFeedThunk.fulfilled, (state, { payload }) => {
-      console.log(payload);
       state.status = "idle";
       state.data.originalSort = payload;
       state.data.nowSort = payload;

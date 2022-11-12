@@ -1,4 +1,5 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
 import ArticleFeed from "../components/organisms/articleFeed/ArticleFeed";
 import PageTemplate from "../components/templates/Page.template";
 import { useAppDispatch, useAppSelector } from "../store/hooks";

@@ -14,7 +14,7 @@ export const FormContainerTemplate = styled.div`
 `;
 
 export const NonFormPageContainer = styled.div<{ isArticle?: boolean }>`
-  max-width: 1600px;
+  max-width: 1000px;
   height: 100%;
   width: 100%;
   ${PageTemplateBaseStyling};

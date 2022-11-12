@@ -16,12 +16,15 @@
     "typecheck": "tsc --noEmit",
     "storybook": "NODE_ENV=production start-storybook -p 6006 -s static",
     "build-storybook": "NODE_ENV=production build-storybook -s static",
-    "test": "TZ=UTC jest --watchAll"
+    "test": "TZ=UTC jest --watchAll",
+    "cy:open": "cypress open gatsby develop",
+    "cy:e2e": "develop http://localhost:8000 cy:open"
   },
   "dependencies": {
+    "@babel/runtime": "^7.20.1",
     "@fontsource/montserrat": "^4.5.12",
     "@react-icons/all-files": "^4.1.0",
-    "@reduxjs/toolkit": "^1.8.6",
+    "@reduxjs/toolkit": "^1.9.0",
     "@storybook/addon-storyshots": "^6.5.12",
     "axios": "^1.0.0",
     "babel-plugin-styled-components": "^2.0.7",

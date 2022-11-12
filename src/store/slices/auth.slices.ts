@@ -63,7 +63,7 @@ export const selectAuthLogin = (state: RootState) =>
 export const selectAuthTenant = (state: RootState) =>
   state.persistedReducer.data.tenant ?? undefined;
 export const selectAuthToken = (state: RootState) =>
-  state.persistedReducer.data.authorization.access_token;
+  state.persistedReducer.data.authorization?.access_token;
 export const selectAuthStatus = (state: RootState) =>
   state.persistedReducer.status;
 export const selectAuthError = (state: RootState) =>

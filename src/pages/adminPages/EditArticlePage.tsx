@@ -1,11 +1,10 @@
 import React from "react";
-
-import { useAppSelector } from "../../../store/hooks";
-import { selectArticleToEdit } from "../../../store/slices/admin.slices";
-import PublishArticleForm from "../../organisms/publishArticleForm/PublishArticleForm";
-import PageTemplate from "../../templates/Page.template";
-import { components } from "../../../types";
-import { showImage } from "../../../services/imagesServices";
+import PublishArticleForm from "../../components/organisms/publishArticleForm/PublishArticleForm";
+import PageTemplate from "../../components/templates/Page.template";
+import { showImage } from "../../services/imagesServices";
+import { useAppSelector } from "../../store/hooks";
+import { selectArticleToEdit } from "../../store/slices/admin.slices";
+import { components } from "../../types";
 
 const EditArticlePage = () => {
   const [articleData, setArticleData] =

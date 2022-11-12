@@ -1,12 +1,13 @@
 import React from "react";
-import ReadArticle from "../organisms/readArticle/ReadArticle";
-import PageTemplate from "../templates/Page.template";
 
-import articleMockJSON from "../../__mocks__/responses/articleDetailResponse.mock.json";
-import relatedArticlesMock from "../../__mocks__/responses/articlesResponse.mock.json";
-import RelatedArticles from "../organisms/relatedArticles/RelatedArticles";
-import Discussion from "../organisms/discussion/Discussion";
-import { StyledArticlePageContainer } from "../templates/templates.styled";
+import Discussion from "../components/organisms/discussion/Discussion";
+import ReadArticle from "../components/organisms/readArticle/ReadArticle";
+import RelatedArticles from "../components/organisms/relatedArticles/RelatedArticles";
+import PageTemplate from "../components/templates/Page.template";
+import { StyledArticlePageContainer } from "../components/templates/templates.styled";
+
+import articleMockJSON from "../__mocks__/responses/articleDetailResponse.mock.json";
+import relatedArticlesMock from "../__mocks__/responses/articlesResponse.mock.json";
 
 const ArticlePage = () => {
   const { title, imageId, author, createdAt, content, comments } =

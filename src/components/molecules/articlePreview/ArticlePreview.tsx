@@ -13,6 +13,7 @@ import { components } from "../../../types";
 import britishHaircat from "../../../images/british-haircat.jpg";
 import { getDate } from "../../../utils/date.utils";
 
+// FIXME: Max char at the heading
 const ArticlePreview = ({
   imageId,
   title,

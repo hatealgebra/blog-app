@@ -19,7 +19,6 @@ const EditArticleRow = ({
   components["schemas"]["ArticleDetail"] & {
     dispatch: Dispatch<string>;
   }) => {
-  console.log(comments);
   const [isChecked, setIsChecked] = React.useState(false);
   const editArticle = () => {};
 
