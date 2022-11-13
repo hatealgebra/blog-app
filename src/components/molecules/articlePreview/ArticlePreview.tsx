@@ -1,6 +1,5 @@
 import React from "react";
 
-import { IGatsbyImageData } from "gatsby-plugin-image";
 import StyledArticlePreviewContainer, {
   StyledArticlePreviewImage,
   StyledArticleRow,

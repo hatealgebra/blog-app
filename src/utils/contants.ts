@@ -3,7 +3,6 @@ export enum navLinks {
   ABOUT = "/about",
   LOGIN = "/login",
   REGISTER = "/register",
-  MY_ARTICLES = "/admin/my-article",
 }
 export enum ADMIN_LINKS {
   MY_ARTICLES = "/admin/my-articles",

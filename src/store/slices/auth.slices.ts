@@ -10,14 +10,14 @@ import {
 // FIXME: Name of the keys
 export const authInitialState = {
   status: "idle",
-  data: { authorization: {} },
+  data: {},
   error: false,
 } as {
   status: "idle" | "loading";
   data: {
     tenant: components["schemas"]["Tenant"] | null;
-    authorization: components["schemas"]["AccessToken"];
-    login: {
+    authorization?: components["schemas"]["AccessToken"];
+    login?: {
       email: string;
       pwd: string;
     };
@@ -28,7 +28,11 @@ export const authInitialState = {
 export const authSlice = createSlice({
   name: "auth",
   initialState: authInitialState,
-  reducers: {},
+  reducers: {
+    logout: (state, { payload }) => {
+      state.data = {};
+    },
+  },
   extraReducers: (builder) => {
     // login
 
@@ -58,6 +62,8 @@ export const authSlice = createSlice({
   },
 });
 
+export const { logout } = authSlice.actions;
+
 export const selectAuthLogin = (state: RootState) =>
   state.persistedReducer.data.login;
 export const selectAuthTenant = (state: RootState) =>
@@ -68,5 +74,10 @@ export const selectAuthStatus = (state: RootState) =>
   state.persistedReducer.status;
 export const selectAuthError = (state: RootState) =>
   state.persistedReducer.error;
+export const selectAuthLogged = (state: RootState) => {
+  const { authorization, login } = state.persistedReducer.data;
+  console.log(authorization, login);
+  return !authorization || !login ? false : true;
+};
 
 export default authSlice.reducer;

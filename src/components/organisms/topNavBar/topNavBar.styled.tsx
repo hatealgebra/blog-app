@@ -4,11 +4,11 @@ import { TopNavBarProps } from "./TopNavBar";
 
 const StyledTopNav = styled.header<TopNavBarProps>`
   position: fixed;
+  display: flex;
   top: 0;
   z-index: 98;
   left: 0;
   right: 0;
-  display: flex;
   background-color: ${({ theme }) => theme.color.mono};
   padding: ${({ variant }) =>
     variant === "mobile"
@@ -28,6 +28,7 @@ const StyledTopNav = styled.header<TopNavBarProps>`
       max-width: 1000px;
     }
     &__sub-container {
+      position: relative;
       display: flex;
       gap: 20px;
       align-items: center;

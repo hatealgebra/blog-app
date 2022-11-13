@@ -16,6 +16,7 @@ export const ButtonLink = styled(StyledButton).attrs<{
 const StyledLink = styled(GatsbyLink)<{ variant?: "classic" | "text" }>`
   color: ${({ variant }) => (variant === "classic" ? "black" : "auto")};
   text-decoration: none;
+  font-weight: 400;
   &:hover {
     text-decoration: underline;
   }

@@ -344,13 +344,13 @@ exports[`Storyshots Atoms/Link All Variants 1`] = `
   style="display: flex; flex-direction: column; gap: 10px;"
 >
   <a
-    class="sc-eDWCr kIObJt"
+    class="sc-eDWCr RmwYw"
     href="/#"
   >
     Classic link
   </a>
   <a
-    class="sc-eDWCr kIObJt"
+    class="sc-eDWCr RmwYw"
     href="/#"
     variant="text"
   >
@@ -1151,16 +1151,91 @@ exports[`Storyshots Molecules/Input with label Input With Label Types 1`] = `
 </div>
 `;
 
+exports[`Storyshots Molecules/Login Status Login Status Example 1`] = `
+<div
+  class="sc-gikAfH iTxYcX"
+>
+  <button
+    class="sc-lllmON jMSuHw"
+  >
+    <img
+      alt="fallback user avatar"
+      class="sc-kDvujY dqfeUi"
+      src="[object Object]"
+    />
+  </button>
+  <menu
+    class="sc-iJnaPW kwVnMb"
+  >
+    <a
+      class="sc-eDWCr RmwYw"
+      href="/admin/my-articles"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"
+          />
+        </g>
+      </svg>
+      <span>
+        My Articles
+      </span>
+    </a>
+    <a
+      aria-current="page"
+      class="sc-eDWCr RmwYw"
+      href="/"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm4 9V8l-5 4 5 4v-3h6v-2H9z"
+          />
+        </g>
+      </svg>
+      <span>
+        Log Out
+      </span>
+    </a>
+  </menu>
+</div>
+`;
+
 exports[`Storyshots Molecules/Mobile Menu Mobile Menu Example 1`] = `
 <div
-  class="sc-lllmON cqOhdR mobile-menu"
+  class="sc-ezOQGI gRyvGO mobile-menu"
   data-testid="mobileMenu"
 >
   <div
     class="mobile-menu__help-div"
   >
     <button
-      class="sc-gikAfH klcmGY"
+      class="sc-kMjNwy cYJcza"
     >
       <svg
         fill="currentColor"
@@ -1180,17 +1255,15 @@ exports[`Storyshots Molecules/Mobile Menu Mobile Menu Example 1`] = `
       </svg>
     </button>
     <nav
-      class="sc-iJnaPW ekRfsf"
+      class="sc-bYMpWt iETqhN"
     >
       <a
-        class="sc-eDWCr sc-bqWxrE kIObJt cxjsvH"
-        href="/admin/my-article"
+        class="sc-eDWCr sc-bqWxrE RmwYw cxjsvH"
       >
         Recent articles
       </a>
       <a
-        class="sc-eDWCr sc-bqWxrE kIObJt cxjsvH"
-        href="/admin/my-article"
+        class="sc-eDWCr sc-bqWxrE RmwYw cxjsvH"
       >
         About
       </a>
@@ -1226,7 +1299,7 @@ exports[`Storyshots Molecules/Mobile Menu Mobile Menu Example 1`] = `
 
 exports[`Storyshots Molecules/Upload image Upload Image Example 1`] = `
 <div
-  class="sc-bYMpWt fnArBX"
+  class="sc-jIRcFI bxWJcT"
 >
   <label
     class="upload-image__label"
@@ -1250,7 +1323,7 @@ exports[`Storyshots Molecules/Upload image Upload Image Example 1`] = `
 
 exports[`Storyshots Organisms/Article Feed Article Feed Empty 1`] = `
 <div
-  class="sc-jIRcFI irMBaB article-feed"
+  class="sc-cCjUiG dTGpIp article-feed"
 >
   <h1
     class="article-feed__heading"
@@ -1261,7 +1334,7 @@ exports[`Storyshots Organisms/Article Feed Article Feed Empty 1`] = `
     class="article-feed__articles"
   >
     <div
-      class="sc-kMjNwy fCuvuu"
+      class="sc-hhOBVt eMYjih"
     />
   </div>
 </div>
@@ -1269,7 +1342,7 @@ exports[`Storyshots Organisms/Article Feed Article Feed Empty 1`] = `
 
 exports[`Storyshots Organisms/Article Feed Article Feed Full 1`] = `
 <div
-  class="sc-jIRcFI irMBaB article-feed"
+  class="sc-cCjUiG dTGpIp article-feed"
 >
   <h1
     class="article-feed__heading"
@@ -1280,7 +1353,7 @@ exports[`Storyshots Organisms/Article Feed Article Feed Full 1`] = `
     class="article-feed__articles"
   >
     <div
-      class="sc-ilhmMj iQJYkM"
+      class="sc-gYbzsP jhkjfy"
     >
       <h3>
         No Articles to show
@@ -1292,7 +1365,7 @@ exports[`Storyshots Organisms/Article Feed Article Feed Full 1`] = `
 
 exports[`Storyshots Organisms/Article Feed Article Feed Loading 1`] = `
 <div
-  class="sc-jIRcFI irMBaB article-feed"
+  class="sc-cCjUiG dTGpIp article-feed"
 >
   <h1
     class="article-feed__heading"
@@ -1303,7 +1376,7 @@ exports[`Storyshots Organisms/Article Feed Article Feed Loading 1`] = `
     class="article-feed__articles"
   >
     <div
-      class="sc-ilhmMj iQJYkM"
+      class="sc-gYbzsP jhkjfy"
     >
       <svg
         aria-busy="true"
@@ -1375,7 +1448,7 @@ exports[`Storyshots Organisms/Article Feed Article Feed Loading 1`] = `
 
 exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
 <div
-  class="sc-gYbzsP discussion"
+  class="sc-jcMfQk discussion"
 >
   <form
     class="sc-cwSeag imLJsM"
@@ -1396,7 +1469,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
     />
   </form>
   <div
-    class="sc-hhOBVt ktvZst"
+    class="sc-cjibBx kbRvpa"
   >
     <div
       class="sc-iveFHk brboMR comment"
@@ -1777,7 +1850,7 @@ exports[`Storyshots Organisms/Forms Login Form Example 1`] = `
 
 exports[`Storyshots Organisms/Related Articles section Related Articles Section 1`] = `
 <div
-  class="sc-eeMvmM gDzLRn related-articles"
+  class="sc-dPWrhe dQgSaE related-articles"
 >
   <h3>
     Related Articles
@@ -1841,7 +1914,7 @@ exports[`Storyshots Organisms/Related Articles section Related Articles Section 
 
 exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
 <header
-  class="sc-cUEOzv ffpPau TopNavbar"
+  class="sc-bCfvAP BBNEb TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -1856,18 +1929,18 @@ exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
       />
        
       <nav
-        class="sc-jOiSOi jqkDPw"
+        class="sc-cOxWqc gvABZg"
       >
         <a
           aria-current="page"
-          class="sc-eDWCr cCSUfZ"
+          class="sc-eDWCr jqstjY"
           href="/"
           variant="classic"
         >
           Recent Articles
         </a>
         <a
-          class="sc-eDWCr cCSUfZ"
+          class="sc-eDWCr jqstjY"
           href="/about"
           variant="classic"
         >
@@ -1875,38 +1948,89 @@ exports[`Storyshots Organisms/Top NavBar Desktop Nav Bar 1`] = `
         </a>
       </nav>
     </div>
-    <a
-      class="sc-ksBlkl fxuheE login-link"
-      href="/login"
+    <div
+      class="TopNavbar__sub-container"
     >
-      <span>
-        Login
-      </span>
-      <svg
-        fill="none"
-        height="1em"
-        stroke="currentColor"
-        stroke-width="0"
-        style="transform: rotate(180deg);"
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="sc-gikAfH iTxYcX"
       >
-        <path
-          d="M10 19l-7-7m0 0l7-7m-7 7h18"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-        />
-      </svg>
-    </a>
+        <button
+          class="sc-lllmON jMSuHw"
+        >
+          <img
+            alt="fallback user avatar"
+            class="sc-kDvujY dqfeUi"
+            src="[object Object]"
+          />
+        </button>
+        <menu
+          class="sc-iJnaPW kwVnMb"
+        >
+          <a
+            class="sc-eDWCr RmwYw"
+            href="/admin/my-articles"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"
+                />
+              </g>
+            </svg>
+            <span>
+              My Articles
+            </span>
+          </a>
+          <a
+            aria-current="page"
+            class="sc-eDWCr RmwYw"
+            href="/"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm4 9V8l-5 4 5 4v-3h6v-2H9z"
+                />
+              </g>
+            </svg>
+            <span>
+              Log Out
+            </span>
+          </a>
+        </menu>
+      </div>
+    </div>
   </div>
 </header>
 `;
 
 exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
 <header
-  class="sc-cUEOzv jEEqXG TopNavbar"
+  class="sc-bCfvAP kjwQjf TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -1943,14 +2067,14 @@ exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
       </svg>
     </button>
     <div
-      class="sc-lllmON jAyHlN mobile-menu"
+      class="sc-ezOQGI icFzvi mobile-menu"
       data-testid="mobileMenu"
     >
       <div
         class="mobile-menu__help-div"
       >
         <button
-          class="sc-gikAfH klcmGY"
+          class="sc-kMjNwy cYJcza"
         >
           <svg
             fill="currentColor"
@@ -1970,17 +2094,15 @@ exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
           </svg>
         </button>
         <nav
-          class="sc-iJnaPW ekRfsf"
+          class="sc-bYMpWt iETqhN"
         >
           <a
-            class="sc-eDWCr sc-bqWxrE kIObJt cxjsvH"
-            href="/admin/my-article"
+            class="sc-eDWCr sc-bqWxrE RmwYw cxjsvH"
           >
             Recent articles
           </a>
           <a
-            class="sc-eDWCr sc-bqWxrE kIObJt cxjsvH"
-            href="/admin/my-article"
+            class="sc-eDWCr sc-bqWxrE RmwYw cxjsvH"
           >
             About
           </a>
@@ -2018,7 +2140,7 @@ exports[`Storyshots Organisms/Top NavBar Mobile Nav Bar 1`] = `
 
 exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
 <header
-  class="sc-cUEOzv ffpPau TopNavbar"
+  class="sc-bCfvAP BBNEb TopNavbar"
 >
   <div
     class="TopNavbar__container"
@@ -2032,49 +2154,96 @@ exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
       class="TopNavbar__sub-container"
     >
       <nav
-        class="sc-jOiSOi jqkDPw"
+        class="sc-cOxWqc gvABZg"
       >
         <a
           aria-current="page"
-          class="sc-eDWCr cCSUfZ"
+          class="sc-eDWCr jqstjY"
           href="/"
           variant="classic"
         >
           Recent Articles
         </a>
         <a
-          class="sc-eDWCr cCSUfZ"
+          class="sc-eDWCr jqstjY"
           href="/about"
           variant="classic"
         >
           About
         </a>
       </nav>
-      <a
-        class="sc-ksBlkl fxuheE login-link"
-        href="/login"
+      <div
+        class="sc-gikAfH iTxYcX"
       >
-        <span>
-          Login
-        </span>
-        <svg
-          fill="none"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          style="transform: rotate(180deg);"
-          viewBox="0 0 24 24"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="sc-lllmON jMSuHw"
         >
-          <path
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+          <img
+            alt="fallback user avatar"
+            class="sc-kDvujY dqfeUi"
+            src="[object Object]"
           />
-        </svg>
-      </a>
+        </button>
+        <menu
+          class="sc-iJnaPW kwVnMb"
+        >
+          <a
+            class="sc-eDWCr RmwYw"
+            href="/admin/my-articles"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"
+                />
+              </g>
+            </svg>
+            <span>
+              My Articles
+            </span>
+          </a>
+          <a
+            aria-current="page"
+            class="sc-eDWCr RmwYw"
+            href="/"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm4 9V8l-5 4 5 4v-3h6v-2H9z"
+                />
+              </g>
+            </svg>
+            <span>
+              Log Out
+            </span>
+          </a>
+        </menu>
+      </div>
     </div>
   </div>
 </header>
@@ -2082,10 +2251,10 @@ exports[`Storyshots Organisms/Top NavBar Tablet Nav Bar 1`] = `
 
 exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
 <div
-  class="sc-AHaJN fvLofd"
+  class="sc-jfTVlA huCboG"
 >
   <header
-    class="sc-cUEOzv ffpPau TopNavbar"
+    class="sc-bCfvAP BBNEb TopNavbar"
   >
     <div
       class="TopNavbar__container"
@@ -2100,18 +2269,18 @@ exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
         />
          
         <nav
-          class="sc-jOiSOi jqkDPw"
+          class="sc-cOxWqc gvABZg"
         >
           <a
             aria-current="page"
-            class="sc-eDWCr cCSUfZ"
+            class="sc-eDWCr jqstjY"
             href="/"
             variant="classic"
           >
             Recent Articles
           </a>
           <a
-            class="sc-eDWCr cCSUfZ"
+            class="sc-eDWCr jqstjY"
             href="/about"
             variant="classic"
           >
@@ -2119,38 +2288,89 @@ exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
           </a>
         </nav>
       </div>
-      <a
-        class="sc-ksBlkl fxuheE login-link"
-        href="/login"
+      <div
+        class="TopNavbar__sub-container"
       >
-        <span>
-          Login
-        </span>
-        <svg
-          fill="none"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          style="transform: rotate(180deg);"
-          viewBox="0 0 24 24"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="sc-gikAfH iTxYcX"
         >
-          <path
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </a>
+          <button
+            class="sc-lllmON jMSuHw"
+          >
+            <img
+              alt="fallback user avatar"
+              class="sc-kDvujY dqfeUi"
+              src="[object Object]"
+            />
+          </button>
+          <menu
+            class="sc-iJnaPW kwVnMb"
+          >
+            <a
+              class="sc-eDWCr RmwYw"
+              href="/admin/my-articles"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"
+                  />
+                </g>
+              </svg>
+              <span>
+                My Articles
+              </span>
+            </a>
+            <a
+              aria-current="page"
+              class="sc-eDWCr RmwYw"
+              href="/"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm4 9V8l-5 4 5 4v-3h6v-2H9z"
+                  />
+                </g>
+              </svg>
+              <span>
+                Log Out
+              </span>
+            </a>
+          </menu>
+        </div>
+      </div>
     </div>
   </header>
   <div
-    class="sc-bCfvAP bEppUh"
+    class="sc-khsqcC gjMkUW"
   >
     <form
-      class="sc-cabOPr eddtFX"
+      class="sc-eeMvmM lgqXnh"
     >
       <div
         class="sc-dIfARi ckvMSP"
@@ -2187,7 +2407,7 @@ exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
       </div>
       <div>
         <div
-          class="sc-bYMpWt fnArBX"
+          class="sc-jIRcFI bxWJcT"
         >
           <label
             class="upload-image__label"
@@ -2523,10 +2743,10 @@ exports[`Storyshots Pages/Admin pages Create New Article 1`] = `
 
 exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
 <div
-  class="sc-AHaJN fvLofd"
+  class="sc-jfTVlA huCboG"
 >
   <header
-    class="sc-cUEOzv ffpPau TopNavbar"
+    class="sc-bCfvAP BBNEb TopNavbar"
   >
     <div
       class="TopNavbar__container"
@@ -2541,18 +2761,18 @@ exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
         />
          
         <nav
-          class="sc-jOiSOi jqkDPw"
+          class="sc-cOxWqc gvABZg"
         >
           <a
             aria-current="page"
-            class="sc-eDWCr cCSUfZ"
+            class="sc-eDWCr jqstjY"
             href="/"
             variant="classic"
           >
             Recent Articles
           </a>
           <a
-            class="sc-eDWCr cCSUfZ"
+            class="sc-eDWCr jqstjY"
             href="/about"
             variant="classic"
           >
@@ -2560,38 +2780,89 @@ exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
           </a>
         </nav>
       </div>
-      <a
-        class="sc-ksBlkl fxuheE login-link"
-        href="/login"
+      <div
+        class="TopNavbar__sub-container"
       >
-        <span>
-          Login
-        </span>
-        <svg
-          fill="none"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          style="transform: rotate(180deg);"
-          viewBox="0 0 24 24"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="sc-gikAfH iTxYcX"
         >
-          <path
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </a>
+          <button
+            class="sc-lllmON jMSuHw"
+          >
+            <img
+              alt="fallback user avatar"
+              class="sc-kDvujY dqfeUi"
+              src="[object Object]"
+            />
+          </button>
+          <menu
+            class="sc-iJnaPW kwVnMb"
+          >
+            <a
+              class="sc-eDWCr RmwYw"
+              href="/admin/my-articles"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"
+                  />
+                </g>
+              </svg>
+              <span>
+                My Articles
+              </span>
+            </a>
+            <a
+              aria-current="page"
+              class="sc-eDWCr RmwYw"
+              href="/"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm4 9V8l-5 4 5 4v-3h6v-2H9z"
+                  />
+                </g>
+              </svg>
+              <span>
+                Log Out
+              </span>
+            </a>
+          </menu>
+        </div>
+      </div>
     </div>
   </header>
   <div
-    class="sc-bCfvAP bEppUh"
+    class="sc-khsqcC gjMkUW"
   >
     <form
-      class="sc-cabOPr eddtFX"
+      class="sc-eeMvmM lgqXnh"
     >
       <div
         class="sc-dIfARi ckvMSP"
@@ -2628,7 +2899,7 @@ exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
       </div>
       <div>
         <div
-          class="sc-bYMpWt fnArBX"
+          class="sc-jIRcFI bxWJcT"
         >
           <label
             class="upload-image__label"
@@ -2964,10 +3235,10 @@ exports[`Storyshots Pages/Admin pages Edit Article 1`] = `
 
 exports[`Storyshots Pages/Admin pages My Articles 1`] = `
 <div
-  class="sc-AHaJN fvLofd"
+  class="sc-jfTVlA huCboG"
 >
   <header
-    class="sc-cUEOzv ffpPau TopNavbar"
+    class="sc-bCfvAP BBNEb TopNavbar"
   >
     <div
       class="TopNavbar__container"
@@ -2982,18 +3253,18 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
         />
          
         <nav
-          class="sc-jOiSOi jqkDPw"
+          class="sc-cOxWqc gvABZg"
         >
           <a
             aria-current="page"
-            class="sc-eDWCr cCSUfZ"
+            class="sc-eDWCr jqstjY"
             href="/"
             variant="classic"
           >
             Recent Articles
           </a>
           <a
-            class="sc-eDWCr cCSUfZ"
+            class="sc-eDWCr jqstjY"
             href="/about"
             variant="classic"
           >
@@ -3001,38 +3272,89 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
           </a>
         </nav>
       </div>
-      <a
-        class="sc-ksBlkl fxuheE login-link"
-        href="/login"
+      <div
+        class="TopNavbar__sub-container"
       >
-        <span>
-          Login
-        </span>
-        <svg
-          fill="none"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          style="transform: rotate(180deg);"
-          viewBox="0 0 24 24"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="sc-gikAfH iTxYcX"
         >
-          <path
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </a>
+          <button
+            class="sc-lllmON jMSuHw"
+          >
+            <img
+              alt="fallback user avatar"
+              class="sc-kDvujY dqfeUi"
+              src="[object Object]"
+            />
+          </button>
+          <menu
+            class="sc-iJnaPW kwVnMb"
+          >
+            <a
+              class="sc-eDWCr RmwYw"
+              href="/admin/my-articles"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"
+                  />
+                </g>
+              </svg>
+              <span>
+                My Articles
+              </span>
+            </a>
+            <a
+              aria-current="page"
+              class="sc-eDWCr RmwYw"
+              href="/"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm4 9V8l-5 4 5 4v-3h6v-2H9z"
+                  />
+                </g>
+              </svg>
+              <span>
+                Log Out
+              </span>
+            </a>
+          </menu>
+        </div>
+      </div>
     </div>
   </header>
   <div
-    class="sc-bCfvAP bEppUh"
+    class="sc-khsqcC gjMkUW"
   >
     <div
-      class="sc-jcMfQk fnnRm"
+      class="sc-iAEawV HumLj"
     >
       <div
         class="sc-dIfARi ckvMSP"
@@ -3049,10 +3371,10 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
         </a>
       </div>
       <form
-        class="sc-cjibBx hWRmqo"
+        class="sc-iTFTee dQwQxT"
       >
         <table
-          class="sc-cCjUiG dreQCC"
+          class="sc-cabOPr ldoyLS"
         >
           <tr
             class="sc-jrcTuL ikvuNf edit-article"
@@ -3181,10 +3503,10 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
 
 exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
 <div
-  class="sc-AHaJN fvLofd"
+  class="sc-jfTVlA huCboG"
 >
   <header
-    class="sc-cUEOzv ffpPau TopNavbar"
+    class="sc-bCfvAP BBNEb TopNavbar"
   >
     <div
       class="TopNavbar__container"
@@ -3199,18 +3521,18 @@ exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
         />
          
         <nav
-          class="sc-jOiSOi jqkDPw"
+          class="sc-cOxWqc gvABZg"
         >
           <a
             aria-current="page"
-            class="sc-eDWCr cCSUfZ"
+            class="sc-eDWCr jqstjY"
             href="/"
             variant="classic"
           >
             Recent Articles
           </a>
           <a
-            class="sc-eDWCr cCSUfZ"
+            class="sc-eDWCr jqstjY"
             href="/about"
             variant="classic"
           >
@@ -3218,38 +3540,89 @@ exports[`Storyshots Pages/Form Pages Login Form Page 1`] = `
           </a>
         </nav>
       </div>
-      <a
-        class="sc-ksBlkl fxuheE login-link"
-        href="/login"
+      <div
+        class="TopNavbar__sub-container"
       >
-        <span>
-          Login
-        </span>
-        <svg
-          fill="none"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          style="transform: rotate(180deg);"
-          viewBox="0 0 24 24"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="sc-gikAfH iTxYcX"
         >
-          <path
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </a>
+          <button
+            class="sc-lllmON jMSuHw"
+          >
+            <img
+              alt="fallback user avatar"
+              class="sc-kDvujY dqfeUi"
+              src="[object Object]"
+            />
+          </button>
+          <menu
+            class="sc-iJnaPW kwVnMb"
+          >
+            <a
+              class="sc-eDWCr RmwYw"
+              href="/admin/my-articles"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"
+                  />
+                </g>
+              </svg>
+              <span>
+                My Articles
+              </span>
+            </a>
+            <a
+              aria-current="page"
+              class="sc-eDWCr RmwYw"
+              href="/"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm4 9V8l-5 4 5 4v-3h6v-2H9z"
+                  />
+                </g>
+              </svg>
+              <span>
+                Log Out
+              </span>
+            </a>
+          </menu>
+        </div>
+      </div>
     </div>
   </header>
   <div
-    class="sc-bCfvAP bEppUh"
+    class="sc-khsqcC gjMkUW"
   >
     <div
-      class="sc-dPWrhe gpBQNc"
+      class="sc-AHaJN bVzXOo"
     >
       <form
         class="sc-gKPRtg jfweml"
