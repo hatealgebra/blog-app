@@ -64,7 +64,6 @@ const TopNavBarLinks = () => (
 );
 
 const LoginLinkSwitch = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
-  console.log(isLoggedIn);
   return isLoggedIn ? <LoginStatus /> : <LoginLink />;
 };
 

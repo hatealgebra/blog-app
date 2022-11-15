@@ -55,6 +55,8 @@ export const parameters = {
   },
 };
 
+export const decorators = [mswDecorator];
+
 if (typeof global.process === "undefined") {
   const { worker } = require("../src/__mocks__/browser");
   worker.start();

@@ -40,29 +40,17 @@ export const createArticle = async (
   }
 };
 
-export const getArticle = async (
-  articleId: string,
-  access_token: string | undefined
-) => {
+export const getArticle = async (articleId: string) => {
   try {
-    return await appLiftingAxiosProtected.get(`/articles/${articleId}`, {
-      headers: {
-        Authorization: access_token,
-      },
-    });
+    return await appLiftingAxiosProtected.get(`/articles/${articleId}`);
   } catch (e) {
     throw e;
   }
 };
 
-export const deleteArticle = async (
-  articleId: string,
-  access_token: string
-) => {
+export const deleteArticle = async (articleId: string) => {
   try {
-    return await appLiftingAxiosProtected.delete(`/articles/${articleId}`, {
-      headers: { Authorization: access_token },
-    });
+    return await appLiftingAxiosProtected.delete(`/articles/${articleId}`);
   } catch (e) {
     throw e;
   }

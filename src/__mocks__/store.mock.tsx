@@ -42,6 +42,7 @@ const mockStore = configureStore({
           name: NAME,
         },
         login: { email: NAME, pwd: "Applifting123" },
+        authorization: {},
       },
       error: false,
       _persist: { ...persistConfig, version: 0, rehydrated: true },

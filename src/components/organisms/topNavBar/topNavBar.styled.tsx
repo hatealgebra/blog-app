@@ -29,8 +29,10 @@ const StyledTopNav = styled.header<TopNavBarProps>`
     }
     &__sub-container {
       position: relative;
+      top: 0px;
       display: flex;
       gap: 20px;
+      align-content: flex-start;
       align-items: center;
     }
   }

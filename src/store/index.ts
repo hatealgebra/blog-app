@@ -4,7 +4,6 @@ import { combineReducers } from "redux";
 import authReducer from "./slices/auth.slices";
 import articleFeedReducer from "./slices/articleFeed.slice";
 import adminReducer from "./slices/admin.slices";
-import myArticlesReducer from "./slices/myArticles.slices";
 
 // REDUX-PERSIST
 import { persistStore, persistReducer } from "redux-persist";

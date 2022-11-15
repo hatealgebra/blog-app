@@ -1,11 +1,6 @@
 import React from "react";
-import { Provider } from "react-redux";
-import { selectAuthToken } from "../../../store/slices/auth.slices";
-import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { components } from "../../../types";
-import { timeDifference } from "../../../utils/date.utils";
-
-import ProgressBar from "../../atoms/loadingIcon/ProgressBar";
+import Loading from "../../atoms/loadingIcon/Loading";
 import ArticlePreview from "../../molecules/articlePreview/ArticlePreview";
 import {
   ArticlesContainer,
@@ -25,7 +20,7 @@ const ArticleFeed = ({
       <div className="article-feed__articles">
         {isLoading === "loading" ? (
           <CenterContainer>
-            <ProgressBar />
+            <Loading />
           </CenterContainer>
         ) : items === undefined ? (
           <CenterContainer>

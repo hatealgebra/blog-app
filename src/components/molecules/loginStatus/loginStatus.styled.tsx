@@ -6,13 +6,13 @@ export const AvatarButtonStyled = styled.button`
   cursor: pointer;
 `;
 
-export const LoginStatuMenuStyled = styled.menu<{ isOpen: boolean }>`
+export const LoginStatuMenuStyled = styled.ul<{ isOpen: boolean }>`
   position: absolute;
   right: 0px;
   z-index: 5;
+  width: 150px;
   display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
   flex-direction: column;
-  width: 150px;
   padding: 5px 0px;
   margin: 0;
   box-shadow: ${({ theme }) => theme.shadow.search_shadow};
@@ -33,4 +33,6 @@ export const LoginStatuMenuStyled = styled.menu<{ isOpen: boolean }>`
   }
 `;
 
-export const LoginStatusContainerStyled = styled.div``;
+export const LoginStatusContainerStyled = styled.div`
+  min-height: fit-content;
+`;

@@ -1,48 +1,36 @@
 import React, { Dispatch } from "react";
 import { components } from "../../../types";
 import Checkbox from "../../atoms/checkbox/Checkbox";
-import {
-  StyledEditArticleRow,
-  StyledIconButton,
-} from "./editArticleRow.styled";
+import { StyledEditArticleRow } from "./editArticleRow.styled";
 
-import { FiEdit2 } from "@react-icons/all-files/fi/FiEdit2";
-import { RiDeleteBin7Line } from "@react-icons/all-files/ri/RiDeleteBin7Line";
 import ButtonSort from "../../atoms/button/ButtonSort";
-import { enumDefaultedMember } from "@babel/types";
-import { useAppDispatch } from "../../../store/hooks";
 import { sortMyArticles } from "../../../store/slices/admin.slices";
+import { AnyAction } from "@reduxjs/toolkit";
+import { deleteArticleThunk } from "../../../store/thunks/admin.thunks";
 
 const EditArticleRowButtons = ({
-  // setCheckAll,
-  dispatchEdit,
-  dispatchDelete,
-  dispatchSort,
+  switchAllBoxes,
+  dispatch,
 }: EditArticleRowButtonsProp) => {
   const { BY_TITLE, BY_AUTHOR, BY_NR_COMMENTS, BY_PEREX, ORIGINAL } =
     ESortByOptions;
   const [isChecked, setIsChecked] = React.useState(false);
   const [isActive, setIsActive] = React.useState<ESortByOptions>(ORIGINAL);
-  const dispatch = useAppDispatch();
-
-  const editArticle = () => {};
-
-  const deleteArticle = () => {};
 
   const activeSort = (sortType: ESortByOptions) => {
     setIsActive((prev) => {
       if (prev === sortType) {
-        dispatchSort(sortMyArticles(ORIGINAL));
+        dispatch(sortMyArticles(ORIGINAL));
         return ORIGINAL;
       }
-      dispatchSort(sortMyArticles(sortType));
+      dispatch(sortMyArticles(sortType));
       return sortType;
     });
   };
 
   React.useEffect(() => {
-    // setCheckAll();
-  }, [setIsChecked]);
+    switchAllBoxes(isChecked);
+  }, [isChecked]);
 
   return (
     <StyledEditArticleRow className="edit-article">
@@ -81,7 +69,7 @@ const EditArticleRowButtons = ({
           isActive={isActive === BY_NR_COMMENTS}
           onClick={() => activeSort(BY_NR_COMMENTS)}
         >
-          # of comments
+          # comments
         </ButtonSort>
       </th>
       <th className="edit-article__actions-container">Actions</th>
@@ -98,10 +86,8 @@ export enum ESortByOptions {
 }
 
 interface EditArticleRowButtonsProp {
-  // setCheckAll: Function;
-  dispatchSort: Function;
-  dispatchEdit: Function;
-  dispatchDelete: Function;
+  switchAllBoxes: React.SetStateAction<any>;
+  dispatch: React.Dispatch<AnyAction>;
 }
 
 export default EditArticleRowButtons;

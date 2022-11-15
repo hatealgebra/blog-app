@@ -1,4 +1,24 @@
 import styled from "styled-components";
+import { CenterContainer } from "../articleFeed/articleFeed.styled";
+
+export const StyledFallbackContentContainer = styled(CenterContainer)`
+  position: absolute;
+  min-height: 250px;
+  width: 90%;
+  gap: 10px;
+  flex-direction: column;
+
+  img {
+    width: 250px;
+  }
+  span {
+    font-weight: 700;
+  }
+
+  ${({ theme }) => `${theme.breakpoint.tablet}{
+    flex-direction: row;
+  }`}
+`;
 
 export const StyledArticlesTable = styled.table`
   table-layout: fixed;
@@ -6,6 +26,7 @@ export const StyledArticlesTable = styled.table`
   border-collapse: collapse;
   padding: 0;
   margin: 0;
+  overflow: auto;
 
   ${({ theme }) => theme.breakpoint.tablet} {
     border-spacing: 5px 10px;

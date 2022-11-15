@@ -8,9 +8,9 @@ import LoginStatus from "./LoginStatus";
 describe("Check the menu functionality", () => {
   let avatarButton: HTMLElement, menu: HTMLElement;
   beforeEach(() => {
-    const { getByRole } = setupTestWithStore(<LoginStatus isLogged={true} />);
-    avatarButton = getByRole("button", { description: "avatar-button" });
-    menu = getByRole("menu");
+    const { getByRole, getByLabelText } = setupTestWithStore(<LoginStatus />);
+    avatarButton = getByRole("button", { name: "avatar-button" });
+    menu = getByLabelText("admin-menu");
     userEvent.click(avatarButton);
   });
   test("Shows logged in user", async () => {

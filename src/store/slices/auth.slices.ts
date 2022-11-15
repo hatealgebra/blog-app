@@ -76,8 +76,9 @@ export const selectAuthError = (state: RootState) =>
   state.persistedReducer.error;
 export const selectAuthLogged = (state: RootState) => {
   const { authorization, login } = state.persistedReducer.data;
-  console.log(authorization, login);
-  return !authorization || !login ? false : true;
+  return !authorization || Object.keys(authorization!).length === 0 || !login
+    ? false
+    : true;
 };
 
 export default authSlice.reducer;

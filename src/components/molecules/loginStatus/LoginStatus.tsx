@@ -26,10 +26,17 @@ const LoginStatus = () => {
 
   return (
     <LoginStatusContainerStyled ref={ref}>
-      <AvatarButtonStyled onClick={() => setIsOpen((prevState) => !prevState)}>
+      <AvatarButtonStyled
+        onClick={() => setIsOpen((prevState) => !prevState)}
+        aria-label="avatar-button"
+      >
         <Avatar size="md" />
       </AvatarButtonStyled>
-      <LoginStatuMenuStyled isOpen={isOpen} onClick={() => setIsOpen(false)}>
+      <LoginStatuMenuStyled
+        aria-label="admin-menu"
+        isOpen={isOpen}
+        onClick={() => setIsOpen(false)}
+      >
         <StyledLink to={ADMIN_LINKS.MY_ARTICLES}>
           <RiAdminFill />
           <span>My Articles</span>
