@@ -8,7 +8,8 @@ import {
 
 export const listArticles = async () => {
   try {
-    return await appLiftingAxiosProtected.get("/articles");
+    const response = await appLiftingAxiosProtected.get("/articles");
+    return response;
   } catch (e) {
     throw e;
   }
@@ -62,7 +63,6 @@ export const updateArticle = async (
   data: any
 ) => {
   try {
-    console.log(articleId);
     const response = await appLiftingAxiosProtected.patch(
       `/articles/${articleId}`,
       data,
@@ -70,7 +70,6 @@ export const updateArticle = async (
         headers: { Authorization: access_token },
       }
     );
-    console.log(response);
     return response;
   } catch (e) {
     throw e;

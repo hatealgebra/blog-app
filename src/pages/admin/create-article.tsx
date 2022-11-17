@@ -4,7 +4,7 @@ import PageTemplate from "../../components/templates/Page.template";
 
 const CreateNewArticlePage = () => {
   return (
-    <PageTemplate>
+    <PageTemplate isProtected>
       <PublishArticleForm />
     </PageTemplate>
   );

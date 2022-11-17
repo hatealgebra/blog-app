@@ -25,7 +25,7 @@ export const adminSlice = createSlice({
   name: "admin",
   initialState,
   reducers: {
-    sortMyArticles: (state, { payload }) => {
+    sortMyArticles: (state, { payload }: { payload: ESortByOptions }) => {
       if (payload === ESortByOptions.ORIGINAL) {
         state.data.nowSort = state.data.originalSort;
       } else {
@@ -43,7 +43,7 @@ export const adminSlice = createSlice({
       }
     },
     setArticleToEdit: (state, { payload }) => {
-      state.data.articleToEdit = state.data.originalSort.items![payload];
+      state.data.articleToEdit = payload;
     },
   },
   extraReducers: (builder) => {
@@ -64,8 +64,7 @@ export const adminSlice = createSlice({
       state.status = "loading";
     });
     builder.addCase(deleteArticleThunk.fulfilled, (state, { payload }) => {
-      state.data.originalSort.items = payload.newOriginalArray;
-      state.data.nowSort.items = payload.newNowSortArray;
+      state.data.originalSort.items = payload;
       state.status = "idle";
     });
     builder.addCase(deleteArticleThunk.rejected, (state, { payload }) => {
@@ -78,14 +77,14 @@ export const adminSlice = createSlice({
 export const { sortMyArticles, setArticleToEdit } = adminSlice.actions;
 // SELECTORS
 export const selectMyArticlesOriginalItems = (state: RootState) =>
-  state.reducer.admin.data.originalSort?.items ?? [];
+  state.reducer?.admin.data.originalSort?.items;
 export const selectMyArticlesItems = (state: RootState) =>
-  state.reducer.admin.data.nowSort?.items ?? [];
+  state.reducer?.admin.data.nowSort?.items ?? [];
 export const selectMyArticlesStatus = (state: RootState) =>
-  state.reducer.admin.status;
+  state.reducer?.admin.status;
 export const selectMyArticlesError = (state: RootState) =>
-  state.reducer.admin.error;
+  state.reducer?.admin.error;
 export const selectArticleToEdit = (state: RootState) =>
-  state.reducer.admin.data.articleToEdit;
+  state.reducer?.admin.data.articleToEdit;
 
 export default adminSlice.reducer;

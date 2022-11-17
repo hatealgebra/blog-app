@@ -9,6 +9,7 @@ const InputWithLabel = ({
   onChange,
   type,
   placeholder,
+  ...props
 }: InputWithLabelProps) => {
   return (
     <StyledInputWithLabel>

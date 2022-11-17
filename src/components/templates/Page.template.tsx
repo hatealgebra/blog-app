@@ -1,12 +1,26 @@
+import { navigate } from "gatsby";
 import React from "react";
 import useWindowSize from "../../hooks/useWindowSize";
+import { useAppSelector } from "../../store/hooks";
+import { selectAuthToken } from "../../store/slices/auth.slices";
 import { BREAKPOINTS } from "../../utils/contants";
 import TopNavBar from "../organisms/topNavBar/TopNavBar";
 import { NonFormPageContainer, StyledPageTemplate } from "./templates.styled";
 
-const PageTemplate = ({ children, isArticle }: PageTemplateProps) => {
+const PageTemplate = ({
+  children,
+  isArticle,
+  isProtected,
+}: PageTemplateProps) => {
   const { width } = useWindowSize();
   const { MOBILE, LAPTOP } = BREAKPOINTS;
+  const auth = useAppSelector(selectAuthToken);
+
+  React.useEffect(() => {
+    if (isProtected && !auth) {
+      navigate("/");
+    }
+  }, []);
 
   return (
     <StyledPageTemplate>
@@ -25,6 +39,7 @@ const PageTemplate = ({ children, isArticle }: PageTemplateProps) => {
 interface PageTemplateProps {
   children: React.ReactNode;
   isArticle?: boolean;
+  isProtected?: boolean;
 }
 
 export default PageTemplate;

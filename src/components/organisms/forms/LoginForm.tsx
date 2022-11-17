@@ -6,7 +6,7 @@ import { postLoginThunk } from "../../../store/thunks/authentication.thunks";
 import Button from "../../atoms/button/Button";
 import InputWithLabel from "../../molecules/inputWithLabel/InputWithLabel";
 import { StyledLoginForm } from "./forms.styled";
-import { navLinks } from "../../../utils/contants";
+import { ADMIN_LINKS, navLinks } from "../../../utils/contants";
 
 import { emailValidation, pwdValidation } from "../../../utils/regex.utils";
 import { selectAuthToken } from "../../../store/slices/auth.slices";
@@ -39,11 +39,15 @@ const LoginForm = () => {
         postLoginThunk({ email: emailTrim, pwd: pwdTrim, setFormError })
       );
       setPwd("");
-      navigate(navLinks.INDEX);
+      navigate(ADMIN_LINKS.MY_ARTICLES);
     } else {
       setPwd("");
     }
   };
+
+  React.useEffect(() => {
+    auth && navigate(ADMIN_LINKS.MY_ARTICLES);
+  }, []);
 
   return (
     <StyledLoginForm onSubmit={(e) => onSubmit(e, email, pwd, setFormError)}>

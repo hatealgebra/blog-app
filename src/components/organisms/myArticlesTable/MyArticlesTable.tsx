@@ -17,6 +17,7 @@ import {
   selectMyArticlesItems,
   selectMyArticlesOriginalItems,
   selectMyArticlesStatus,
+  setArticleToEdit,
 } from "../../../store/slices/admin.slices";
 import { components } from "../../../types";
 
@@ -24,9 +25,10 @@ import { deleteArticleThunk } from "../../../store/thunks/admin.thunks";
 
 import noArticles from "../../../images/no-articles.png";
 import Loading from "../../atoms/loadingIcon/Loading";
+import { navigate } from "gatsby";
 
 // TODO: Finish the my Articles
-// TODO: Add loading of the table
+// TODO: Multiple delete action?
 const MyArticlesTable = () => {
   const [checkedBoxes, setCheckedBoxes] = React.useState<boolean[]>([]);
   const originalArray = useAppSelector(selectMyArticlesOriginalItems);
@@ -35,10 +37,11 @@ const MyArticlesTable = () => {
   const dispatch = useAppDispatch();
 
   const deleteArticle = (articleId: string) =>
-    dispatch(
-      deleteArticleThunk({ articleId, originalArray, nowSortArray: articles })
-    );
-  const editArticle = (articleId: string) => {};
+    dispatch(deleteArticleThunk({ articleId, originalArray }));
+  const editArticle = (article: components["schemas"]["Article"]) => {
+    dispatch(setArticleToEdit(article));
+    navigate(ADMIN_LINKS.EDIT_ARTICLE);
+  };
 
   const switchAllBoxes = (isChecked: boolean) => {
     const allBoxesChecked = checkedBoxes.map((value) => true);
@@ -55,13 +58,14 @@ const MyArticlesTable = () => {
   return (
     <MyArticlesTableContainer>
       <AdminHeading
-        heading="MyArticles"
+        heading="My Articles"
         buttonText="Create new article"
         to={ADMIN_LINKS.CREATE_ARTICLE}
       />
       <MyArticlesForm onSubmit={(e) => e.preventDefault()}>
         <StyledArticlesTable>
           <EditArticleRowButtons
+            originalArray={originalArray}
             switchAllBoxes={switchAllBoxes}
             dispatch={dispatch}
           />
@@ -75,13 +79,14 @@ const MyArticlesTable = () => {
                 const { articleId, title, perex, comments } = article;
                 return (
                   <EditArticleRow
+                    key={articleId}
                     iteration={i}
                     articleId={articleId}
                     title={title}
                     perex={perex}
                     comments={comments!.length}
                     deleteArticle={deleteArticle}
-                    editArticle={editArticle}
+                    editArticle={() => editArticle(article)}
                     isChecked={checkedBoxes[i]}
                     setCheckedBoxes={setCheckedBoxes}
                   />

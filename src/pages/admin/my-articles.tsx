@@ -4,7 +4,7 @@ import PageTemplate from "../../components/templates/Page.template";
 
 const MyArticlesPage = () => {
   return (
-    <PageTemplate>
+    <PageTemplate isProtected>
       <MyArticlesTable />
     </PageTemplate>
   );

@@ -9,6 +9,7 @@ import { AnyAction } from "@reduxjs/toolkit";
 import { deleteArticleThunk } from "../../../store/thunks/admin.thunks";
 
 const EditArticleRowButtons = ({
+  originalArray,
   switchAllBoxes,
   dispatch,
 }: EditArticleRowButtonsProp) => {
@@ -31,6 +32,10 @@ const EditArticleRowButtons = ({
   React.useEffect(() => {
     switchAllBoxes(isChecked);
   }, [isChecked]);
+
+  React.useEffect(() => {
+    dispatch({ type: "admin/sortMyArticles", payload: isActive });
+  }, [originalArray]);
 
   return (
     <StyledEditArticleRow className="edit-article">
@@ -86,6 +91,7 @@ export enum ESortByOptions {
 }
 
 interface EditArticleRowButtonsProp {
+  originalArray: components["schemas"]["Article"];
   switchAllBoxes: React.SetStateAction<any>;
   dispatch: React.Dispatch<AnyAction>;
 }

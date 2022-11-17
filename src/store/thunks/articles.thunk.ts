@@ -8,17 +8,16 @@ export const getArticlesFeedThunk = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const articlesResponse = await listArticles();
+
       const { items } = articlesResponse.data;
       const newArticlesArray = await Promise.all(
         items.map(async (article: components["schemas"]["Article"]) => {
           const { articleId, createdAt } = article;
           const getArticleResponse = await getArticle(articleId!);
-          const { comments } = getArticleResponse.data;
-
-          return { ...article, comments };
+          const { comments, content } = getArticleResponse.data;
+          return { ...article, comments, content };
         })
       );
-      console.log(newArticlesArray);
       return { ...articlesResponse.data, items: newArticlesArray };
     } catch (e) {
       return thunkAPI.rejectWithValue(e);

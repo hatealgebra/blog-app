@@ -2,6 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Axios, AxiosRequestConfig } from "axios";
 import { ELoginFormValidation } from "../../components/organisms/forms/LoginForm";
 import { loginPOST } from "../../services/authServices";
+import { USER_CONFIG } from "../../services/services.config";
+import { getTenant } from "../../services/tenantServices";
 
 export const postLoginThunk = createAsyncThunk(
   "auth/login",
@@ -19,8 +21,13 @@ export const postLoginThunk = createAsyncThunk(
   ) => {
     try {
       setFormError(ELoginFormValidation.CORRECT_LOGIN);
-      const response = await loginPOST(email, pwd);
-      return response;
+      const authorizationResponse = await loginPOST(email, pwd);
+      const tenantResponse = await getTenant(USER_CONFIG.TENANT_ID);
+      return {
+        tenant: tenantResponse.data,
+        authorization: authorizationResponse.data,
+        login: { email, pwd },
+      };
     } catch (error) {
       const { status, data } = error.response;
       if (status === 400) {

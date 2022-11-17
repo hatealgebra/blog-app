@@ -3,24 +3,26 @@ import { deleteArticle } from "../../services/articlesOperations";
 import { components } from "../../types";
 
 export const getMyArticlesThunk = createAsyncThunk(
-  "myArticles/getMyArticlesThunk",
+  "admin/getMyArticlesThunk",
   async (_, thunkAPI) => {
     try {
     } catch (e) {}
   }
 );
+export const createArticleThunk = createAsyncThunk(
+  "admin/createArticleThunk",
+  async ({}, thunkAPI) => {}
+);
 
 export const deleteArticleThunk = createAsyncThunk(
-  "myArticle/deleteArticle",
+  "admin/deleteArticle",
   async (
     {
       articleId,
       originalArray,
-      nowSortArray,
     }: {
       articleId: string;
       originalArray: components["schemas"]["ArticleDetail"][];
-      nowSortArray: components["schemas"]["ArticleDetail"][];
     },
     thunkAPI
   ) => {
@@ -29,11 +31,8 @@ export const deleteArticleThunk = createAsyncThunk(
       const newOriginalArray = originalArray.filter(
         ({ articleId: id }) => id !== articleId
       );
-      const newNowSortArray = nowSortArray.filter(
-        ({ articleId: id }) => id !== articleId
-      );
 
-      return { newOriginalArray, newNowSortArray };
+      return newOriginalArray;
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
     }

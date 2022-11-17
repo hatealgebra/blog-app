@@ -14,7 +14,6 @@ export const cutTextWithElipsis = (text: string, limit: number) => {
 export const clearDataAPI = async (access_token: string) => {
   const response = await listArticles();
   const { items } = response.data;
-  console.log(items);
   if (items && items.length !== 0) {
     try {
       items.map((item) => {

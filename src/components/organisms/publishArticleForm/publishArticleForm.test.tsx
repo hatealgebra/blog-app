@@ -2,12 +2,10 @@ import React, { FormEvent } from "react";
 import userEvent from "@testing-library/user-event";
 
 import { setupTestWithStore } from "../../../utils/testing.utils";
-import CreateNewArticleForm, {
-  EPublishArticleErrors,
-} from "./PublishArticleForm";
+
 import { screen, waitFor } from "@testing-library/react";
 import PublishArticleForm from "./PublishArticleForm";
-import createArticleSubmit from "../../../helpers/publishArticle.helper";
+import { server } from "../../../__mocks__/server";
 
 // TODO: Why
 describe("Create new article suite", () => {
@@ -16,14 +14,13 @@ describe("Create new article suite", () => {
   let imageFileInput: HTMLElement;
   let mdInput: HTMLElement;
   let submitBtn: HTMLElement;
-  const mockFn = jest.fn((e) => e.preventDefault());
   const mockFile = new File(["goodbye"], "goodbye.png", {
     type: "image/png",
   });
 
   beforeAll(() => {
     const { getByRole, getAllByRole, getByLabelText, getByTestId } =
-      setupTestWithStore(<PublishArticleForm onSubmit={mockFn} />);
+      setupTestWithStore(<PublishArticleForm />);
     titleInput = getByLabelText("Article title");
     imageFileInput = getByTestId("image-uploader");
     mdInput = getAllByRole("textbox")[0];
@@ -38,7 +35,9 @@ describe("Create new article suite", () => {
     );
     userEvent.click(submitBtn);
     await waitFor(() => {
-      expect(mockFn).toHaveBeenCalled();
+      screen
+        .getAllByRole("textbox")
+        .map((input) => expect(input).toHaveValue(""));
     });
   });
 });

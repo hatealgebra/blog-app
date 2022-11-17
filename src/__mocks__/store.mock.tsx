@@ -41,7 +41,7 @@ const mockStore = configureStore({
           lastUsedAt: LAST_USED_AT,
           name: NAME,
         },
-        login: { email: NAME, pwd: "Applifting123" },
+        login: { email: NAME, pwd: "MockPwd12345" },
         authorization: {},
       },
       error: false,

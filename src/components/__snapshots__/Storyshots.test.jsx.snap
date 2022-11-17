@@ -6,17 +6,17 @@ exports[`Storyshots Atoms/Avatar All Sizes 1`] = `
 >
   <img
     alt="Generic user avatar"
-    class="sc-kDvujY bWcqhu"
+    class="sc-kDvujY bWcqhu avatar"
     src="[object Object]"
   />
   <img
     alt="Generic user avatar"
-    class="sc-kDvujY dqfeUi"
+    class="sc-kDvujY dqfeUi avatar"
     src="[object Object]"
   />
   <img
     alt="Generic user avatar"
-    class="sc-kDvujY bMVDdu"
+    class="sc-kDvujY bMVDdu avatar"
     src="[object Object]"
   />
 </div>
@@ -28,12 +28,12 @@ exports[`Storyshots Atoms/Avatar Different Images 1`] = `
 >
   <img
     alt="Generic user avatar"
-    class="sc-kDvujY bWcqhu"
+    class="sc-kDvujY bWcqhu avatar"
     src="[object Object]"
   />
   <img
     alt="fallback user avatar"
-    class="sc-kDvujY bWcqhu"
+    class="sc-kDvujY bWcqhu avatar"
     src="[object Object]"
   />
 </div>
@@ -451,6 +451,104 @@ exports[`Storyshots Atoms/Loading icons Loading Icons 1`] = `
       ng-attr-fill="{{config.c2}}"
     />
   </svg>
+  <div
+    aria-busy="true"
+    aria-label="three-dots-loading"
+    data-testid="three-dots-loading"
+    role="status"
+    style="display: flex;"
+  >
+    <svg
+      data-testid="three-dots-svg"
+      fill="#007BFF"
+      height="80"
+      viewBox="0 0 120 30"
+      width="80"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="15"
+        cy="15"
+        r="15"
+      >
+        <animate
+          attributeName="r"
+          begin="0s"
+          calcMode="linear"
+          dur="0.8s"
+          from="15"
+          repeatCount="indefinite"
+          to="15"
+          values="15;9;15"
+        />
+        <animate
+          attributeName="fill-opacity"
+          begin="0s"
+          calcMode="linear"
+          dur="0.8s"
+          from="1"
+          repeatCount="indefinite"
+          to="1"
+          values="1;.5;1"
+        />
+      </circle>
+      <circle
+        attributeName="fill-opacity"
+        cx="60"
+        cy="15"
+        from="1"
+        r="9"
+        to="0.3"
+      >
+        <animate
+          attributeName="r"
+          begin="0s"
+          calcMode="linear"
+          dur="0.8s"
+          from="9"
+          repeatCount="indefinite"
+          to="9"
+          values="9;15;9"
+        />
+        <animate
+          attributeName="fill-opacity"
+          begin="0s"
+          calcMode="linear"
+          dur="0.8s"
+          from="0.5"
+          repeatCount="indefinite"
+          to="0.5"
+          values=".5;1;.5"
+        />
+      </circle>
+      <circle
+        cx="105"
+        cy="15"
+        r="15"
+      >
+        <animate
+          attributeName="r"
+          begin="0s"
+          calcMode="linear"
+          dur="0.8s"
+          from="15"
+          repeatCount="indefinite"
+          to="15"
+          values="15;9;15"
+        />
+        <animate
+          attributeName="fill-opacity"
+          begin="0s"
+          calcMode="linear"
+          dur="0.8s"
+          from="1"
+          repeatCount="indefinite"
+          to="1"
+          values="1;.5;1"
+        />
+      </circle>
+    </svg>
+  </div>
 </div>
 `;
 
@@ -793,7 +891,7 @@ exports[`Storyshots Molecules/Comment Comment Example 1`] = `
 >
   <img
     alt="fallback user avatar"
-    class="sc-kDvujY bWcqhu"
+    class="sc-kDvujY bWcqhu avatar"
     src="[object Object]"
   />
   <h5
@@ -875,7 +973,7 @@ exports[`Storyshots Molecules/Create comment Create Comment Example 1`] = `
 >
   <img
     alt="fallback user avatar"
-    class="sc-kDvujY bWcqhu"
+    class="sc-kDvujY bWcqhu avatar"
     src="[object Object]"
   />
   <textarea
@@ -1013,6 +1111,7 @@ exports[`Storyshots Molecules/Edit article Article Row Buttons Example 1`] = `
 exports[`Storyshots Molecules/Edit article Article Row Example 1`] = `
 <tr
   class="sc-jrcTuL ikvuNf edit-article"
+  data-testid="edit-article-row"
 >
   <td
     class="edit-article__checkbox"
@@ -1043,9 +1142,7 @@ exports[`Storyshots Molecules/Edit article Article Row Example 1`] = `
   </td>
   <td
     class="edit-article__nr-comments"
-  >
-    0
-  </td>
+  />
   <td
     class="edit-article__actions-container"
   >
@@ -1053,7 +1150,7 @@ exports[`Storyshots Molecules/Edit article Article Row Example 1`] = `
       class="edit-article__actions"
     >
       <button
-        class="sc-pyfCe jQaHbN"
+        class="sc-pyfCe jQaHbN edit-article__button-edit"
       >
         <svg
           fill="none"
@@ -1072,7 +1169,7 @@ exports[`Storyshots Molecules/Edit article Article Row Example 1`] = `
         </svg>
       </button>
       <button
-        class="sc-pyfCe jQaHbN"
+        class="sc-pyfCe jQaHbN edit-article__button-delete"
       >
         <svg
           fill="currentColor"
@@ -1161,7 +1258,7 @@ exports[`Storyshots Molecules/Login Status Login Status Example 1`] = `
   >
     <img
       alt="fallback user avatar"
-      class="sc-kDvujY dqfeUi"
+      class="sc-kDvujY dqfeUi avatar"
       src="[object Object]"
     />
   </button>
@@ -1380,69 +1477,104 @@ exports[`Storyshots Organisms/Article Feed Article Feed Loading 1`] = `
     <div
       class="sc-gYbzsP jhkjfy"
     >
-      <svg
+      <div
         aria-busy="true"
-        aria-label="progress-bar-loading"
-        class=""
-        data-testid="progress-bar-svg"
-        height="80"
-        preserveAspectRatio="xMidYMid"
+        aria-label="three-dots-loading"
+        data-testid="three-dots-loading"
         role="status"
-        viewBox="0 0 100 100"
-        width="80"
-        xmlns="http://www.w3.org/2000/svg"
+        style="display: flex;"
       >
-        <defs>
-          <clippath
-            height="100"
-            id="lds-progress-cpid-5009611b8a418"
-            ng-attr-id="{{config.cpid}}"
-            width="100"
-            x="0"
-            y="0"
-          >
-            <rect
-              height="100"
-              width="66.6667"
-              x="0"
-              y="0"
-            >
-              <animate
-                attributeName="width"
-                begin="0s"
-                calcMode="linear"
-                dur="1"
-                keyTimes="0;0.5;1"
-                repeatCount="indefinite"
-                values="0;100;100"
-              />
-              <animate
-                attributeName="x"
-                begin="0s"
-                calcMode="linear"
-                dur="1"
-                keyTimes="0;0.5;1"
-                repeatCount="indefinite"
-                values="0;0;100"
-              />
-            </rect>
-          </clippath>
-        </defs>
-        <path
-          d="M82,63H18c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h64c7.2,0,13,5.8,13,13v0C95,57.2,89.2,63,82,63z"
-          fill="none"
-          ng-attr-stroke="{{config.c1}}"
-          stroke="#DFDFDF"
-          stroke-width="2.7928"
-        />
-        <path
-          clip-path="url(#lds-progress-cpid-5009611b8a418)"
-          d="M81.3,58.7H18.7c-4.8,0-8.7-3.9-8.7-8.7v0c0-4.8,3.9-8.7,8.7-8.7h62.7c4.8,0,8.7,3.9,8.7,8.7v0C90,54.8,86.1,58.7,81.3,58.7z"
+        <svg
+          data-testid="three-dots-svg"
           fill="#007BFF"
-          ng-attr-clip-path="url(#{{config.cpid}})"
-          ng-attr-fill="{{config.c2}}"
-        />
-      </svg>
+          height="80"
+          viewBox="0 0 120 30"
+          width="80"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="15"
+            cy="15"
+            r="15"
+          >
+            <animate
+              attributeName="r"
+              begin="0s"
+              calcMode="linear"
+              dur="0.8s"
+              from="15"
+              repeatCount="indefinite"
+              to="15"
+              values="15;9;15"
+            />
+            <animate
+              attributeName="fill-opacity"
+              begin="0s"
+              calcMode="linear"
+              dur="0.8s"
+              from="1"
+              repeatCount="indefinite"
+              to="1"
+              values="1;.5;1"
+            />
+          </circle>
+          <circle
+            attributeName="fill-opacity"
+            cx="60"
+            cy="15"
+            from="1"
+            r="9"
+            to="0.3"
+          >
+            <animate
+              attributeName="r"
+              begin="0s"
+              calcMode="linear"
+              dur="0.8s"
+              from="9"
+              repeatCount="indefinite"
+              to="9"
+              values="9;15;9"
+            />
+            <animate
+              attributeName="fill-opacity"
+              begin="0s"
+              calcMode="linear"
+              dur="0.8s"
+              from="0.5"
+              repeatCount="indefinite"
+              to="0.5"
+              values=".5;1;.5"
+            />
+          </circle>
+          <circle
+            cx="105"
+            cy="15"
+            r="15"
+          >
+            <animate
+              attributeName="r"
+              begin="0s"
+              calcMode="linear"
+              dur="0.8s"
+              from="15"
+              repeatCount="indefinite"
+              to="15"
+              values="15;9;15"
+            />
+            <animate
+              attributeName="fill-opacity"
+              begin="0s"
+              calcMode="linear"
+              dur="0.8s"
+              from="1"
+              repeatCount="indefinite"
+              to="1"
+              values="1;.5;1"
+            />
+          </circle>
+        </svg>
+      </div>
     </div>
   </div>
 </div>
@@ -1457,7 +1589,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
   >
     <img
       alt="fallback user avatar"
-      class="sc-kDvujY bWcqhu"
+      class="sc-kDvujY bWcqhu avatar"
       src="[object Object]"
     />
     <textarea
@@ -1478,7 +1610,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
     >
       <img
         alt="fallback user avatar"
-        class="sc-kDvujY bWcqhu"
+        class="sc-kDvujY bWcqhu avatar"
         src="[object Object]"
       />
       <h5
@@ -1558,7 +1690,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
     >
       <img
         alt="fallback user avatar"
-        class="sc-kDvujY bWcqhu"
+        class="sc-kDvujY bWcqhu avatar"
         src="[object Object]"
       />
       <h5
@@ -1638,7 +1770,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
     >
       <img
         alt="fallback user avatar"
-        class="sc-kDvujY bWcqhu"
+        class="sc-kDvujY bWcqhu avatar"
         src="[object Object]"
       />
       <h5
@@ -1718,7 +1850,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
     >
       <img
         alt="fallback user avatar"
-        class="sc-kDvujY bWcqhu"
+        class="sc-kDvujY bWcqhu avatar"
         src="[object Object]"
       />
       <h5
@@ -1858,7 +1990,7 @@ exports[`Storyshots Organisms/My Articles My Articles Table Example 1`] = `
     class="sc-dIfARi ckvMSP"
   >
     <h1>
-      MyArticles
+      My Articles
     </h1>
     <a
       class="sc-dkrFOg sc-csuSiG eidQVA gBuZIb"
@@ -1994,69 +2126,104 @@ exports[`Storyshots Organisms/My Articles My Articles Table Example 1`] = `
       <div
         class="sc-gYbzsP sc-cabOPr jhkjfy jQQFqM"
       >
-        <svg
+        <div
           aria-busy="true"
-          aria-label="progress-bar-loading"
-          class=""
-          data-testid="progress-bar-svg"
-          height="80"
-          preserveAspectRatio="xMidYMid"
+          aria-label="three-dots-loading"
+          data-testid="three-dots-loading"
           role="status"
-          viewBox="0 0 100 100"
-          width="80"
-          xmlns="http://www.w3.org/2000/svg"
+          style="display: flex;"
         >
-          <defs>
-            <clippath
-              height="100"
-              id="lds-progress-cpid-5009611b8a418"
-              ng-attr-id="{{config.cpid}}"
-              width="100"
-              x="0"
-              y="0"
+          <svg
+            data-testid="three-dots-svg"
+            fill="#007BFF"
+            height="80"
+            viewBox="0 0 120 30"
+            width="80"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="15"
+              cy="15"
+              r="15"
             >
-              <rect
-                height="100"
-                width="66.6667"
-                x="0"
-                y="0"
-              >
-                <animate
-                  attributeName="width"
-                  begin="0s"
-                  calcMode="linear"
-                  dur="1"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="0;100;100"
-                />
-                <animate
-                  attributeName="x"
-                  begin="0s"
-                  calcMode="linear"
-                  dur="1"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="0;0;100"
-                />
-              </rect>
-            </clippath>
-          </defs>
-          <path
-            d="M82,63H18c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h64c7.2,0,13,5.8,13,13v0C95,57.2,89.2,63,82,63z"
-            fill="none"
-            ng-attr-stroke="{{config.c1}}"
-            stroke="#F4442E"
-            stroke-width="2.7928"
-          />
-          <path
-            clip-path="url(#lds-progress-cpid-5009611b8a418)"
-            d="M81.3,58.7H18.7c-4.8,0-8.7-3.9-8.7-8.7v0c0-4.8,3.9-8.7,8.7-8.7h62.7c4.8,0,8.7,3.9,8.7,8.7v0C90,54.8,86.1,58.7,81.3,58.7z"
-            fill="#51E5FF"
-            ng-attr-clip-path="url(#{{config.cpid}})"
-            ng-attr-fill="{{config.c2}}"
-          />
-        </svg>
+              <animate
+                attributeName="r"
+                begin="0s"
+                calcMode="linear"
+                dur="0.8s"
+                from="15"
+                repeatCount="indefinite"
+                to="15"
+                values="15;9;15"
+              />
+              <animate
+                attributeName="fill-opacity"
+                begin="0s"
+                calcMode="linear"
+                dur="0.8s"
+                from="1"
+                repeatCount="indefinite"
+                to="1"
+                values="1;.5;1"
+              />
+            </circle>
+            <circle
+              attributeName="fill-opacity"
+              cx="60"
+              cy="15"
+              from="1"
+              r="9"
+              to="0.3"
+            >
+              <animate
+                attributeName="r"
+                begin="0s"
+                calcMode="linear"
+                dur="0.8s"
+                from="9"
+                repeatCount="indefinite"
+                to="9"
+                values="9;15;9"
+              />
+              <animate
+                attributeName="fill-opacity"
+                begin="0s"
+                calcMode="linear"
+                dur="0.8s"
+                from="0.5"
+                repeatCount="indefinite"
+                to="0.5"
+                values=".5;1;.5"
+              />
+            </circle>
+            <circle
+              cx="105"
+              cy="15"
+              r="15"
+            >
+              <animate
+                attributeName="r"
+                begin="0s"
+                calcMode="linear"
+                dur="0.8s"
+                from="15"
+                repeatCount="indefinite"
+                to="15"
+                values="15;9;15"
+              />
+              <animate
+                attributeName="fill-opacity"
+                begin="0s"
+                calcMode="linear"
+                dur="0.8s"
+                from="1"
+                repeatCount="indefinite"
+                to="1"
+                values="1;.5;1"
+              />
+            </circle>
+          </svg>
+        </div>
       </div>
     </table>
   </form>
@@ -3340,7 +3507,7 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
         class="sc-dIfARi ckvMSP"
       >
         <h1>
-          MyArticles
+          My Articles
         </h1>
         <a
           class="sc-dkrFOg sc-csuSiG eidQVA gBuZIb"
@@ -3476,69 +3643,104 @@ exports[`Storyshots Pages/Admin pages My Articles 1`] = `
           <div
             class="sc-gYbzsP sc-cabOPr jhkjfy jQQFqM"
           >
-            <svg
+            <div
               aria-busy="true"
-              aria-label="progress-bar-loading"
-              class=""
-              data-testid="progress-bar-svg"
-              height="80"
-              preserveAspectRatio="xMidYMid"
+              aria-label="three-dots-loading"
+              data-testid="three-dots-loading"
               role="status"
-              viewBox="0 0 100 100"
-              width="80"
-              xmlns="http://www.w3.org/2000/svg"
+              style="display: flex;"
             >
-              <defs>
-                <clippath
-                  height="100"
-                  id="lds-progress-cpid-5009611b8a418"
-                  ng-attr-id="{{config.cpid}}"
-                  width="100"
-                  x="0"
-                  y="0"
+              <svg
+                data-testid="three-dots-svg"
+                fill="#007BFF"
+                height="80"
+                viewBox="0 0 120 30"
+                width="80"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="15"
+                  cy="15"
+                  r="15"
                 >
-                  <rect
-                    height="100"
-                    width="66.6667"
-                    x="0"
-                    y="0"
-                  >
-                    <animate
-                      attributeName="width"
-                      begin="0s"
-                      calcMode="linear"
-                      dur="1"
-                      keyTimes="0;0.5;1"
-                      repeatCount="indefinite"
-                      values="0;100;100"
-                    />
-                    <animate
-                      attributeName="x"
-                      begin="0s"
-                      calcMode="linear"
-                      dur="1"
-                      keyTimes="0;0.5;1"
-                      repeatCount="indefinite"
-                      values="0;0;100"
-                    />
-                  </rect>
-                </clippath>
-              </defs>
-              <path
-                d="M82,63H18c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h64c7.2,0,13,5.8,13,13v0C95,57.2,89.2,63,82,63z"
-                fill="none"
-                ng-attr-stroke="{{config.c1}}"
-                stroke="#F4442E"
-                stroke-width="2.7928"
-              />
-              <path
-                clip-path="url(#lds-progress-cpid-5009611b8a418)"
-                d="M81.3,58.7H18.7c-4.8,0-8.7-3.9-8.7-8.7v0c0-4.8,3.9-8.7,8.7-8.7h62.7c4.8,0,8.7,3.9,8.7,8.7v0C90,54.8,86.1,58.7,81.3,58.7z"
-                fill="#51E5FF"
-                ng-attr-clip-path="url(#{{config.cpid}})"
-                ng-attr-fill="{{config.c2}}"
-              />
-            </svg>
+                  <animate
+                    attributeName="r"
+                    begin="0s"
+                    calcMode="linear"
+                    dur="0.8s"
+                    from="15"
+                    repeatCount="indefinite"
+                    to="15"
+                    values="15;9;15"
+                  />
+                  <animate
+                    attributeName="fill-opacity"
+                    begin="0s"
+                    calcMode="linear"
+                    dur="0.8s"
+                    from="1"
+                    repeatCount="indefinite"
+                    to="1"
+                    values="1;.5;1"
+                  />
+                </circle>
+                <circle
+                  attributeName="fill-opacity"
+                  cx="60"
+                  cy="15"
+                  from="1"
+                  r="9"
+                  to="0.3"
+                >
+                  <animate
+                    attributeName="r"
+                    begin="0s"
+                    calcMode="linear"
+                    dur="0.8s"
+                    from="9"
+                    repeatCount="indefinite"
+                    to="9"
+                    values="9;15;9"
+                  />
+                  <animate
+                    attributeName="fill-opacity"
+                    begin="0s"
+                    calcMode="linear"
+                    dur="0.8s"
+                    from="0.5"
+                    repeatCount="indefinite"
+                    to="0.5"
+                    values=".5;1;.5"
+                  />
+                </circle>
+                <circle
+                  cx="105"
+                  cy="15"
+                  r="15"
+                >
+                  <animate
+                    attributeName="r"
+                    begin="0s"
+                    calcMode="linear"
+                    dur="0.8s"
+                    from="15"
+                    repeatCount="indefinite"
+                    to="15"
+                    values="15;9;15"
+                  />
+                  <animate
+                    attributeName="fill-opacity"
+                    begin="0s"
+                    calcMode="linear"
+                    dur="0.8s"
+                    from="1"
+                    repeatCount="indefinite"
+                    to="1"
+                    values="1;.5;1"
+                  />
+                </circle>
+              </svg>
+            </div>
           </div>
         </table>
       </form>

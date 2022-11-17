@@ -17,8 +17,6 @@ export const MyArticlesTableExample = () => <MyArticlesTable />;
 //   },
 // };
 
-// console.log(NoArticles.parameters);
-
 export default {
   title: "Organisms/My Articles",
   component: MyArticlesTable,

@@ -1,5 +1,5 @@
 import React from "react";
-import { components } from "../../../types";
+
 import Checkbox from "../../atoms/checkbox/Checkbox";
 import {
   StyledEditArticleRow,
@@ -8,9 +8,6 @@ import {
 
 import { FiEdit2 } from "@react-icons/all-files/fi/FiEdit2";
 import { RiDeleteBin7Line } from "@react-icons/all-files/ri/RiDeleteBin7Line";
-import { useAppDispatch } from "../../../store/hooks";
-import { deleteArticleThunk } from "../../../store/thunks/admin.thunks";
-import { deleteArticle } from "../../../services/articlesOperations";
 
 const EditArticleRow = ({
   iteration,
@@ -38,7 +35,10 @@ const EditArticleRow = ({
   }, [props.isChecked]);
 
   return (
-    <StyledEditArticleRow className="edit-article">
+    <StyledEditArticleRow
+      data-testid="edit-article-row"
+      className="edit-article"
+    >
       <td className="edit-article__checkbox">
         <Checkbox
           isChecked={isChecked}
@@ -51,10 +51,16 @@ const EditArticleRow = ({
       <td className="edit-article__nr-comments">{comments}</td>
       <td className="edit-article__actions-container">
         <div className="edit-article__actions">
-          <StyledIconButton onClick={() => editArticle(articleId!)}>
+          <StyledIconButton
+            className="edit-article__button-edit"
+            onClick={editArticle}
+          >
             <FiEdit2 size="1.2em" />
           </StyledIconButton>
-          <StyledIconButton onClick={() => deleteArticle(articleId!)}>
+          <StyledIconButton
+            className="edit-article__button-delete"
+            onClick={() => deleteArticle(articleId!)}
+          >
             <RiDeleteBin7Line size="1.2em" />
           </StyledIconButton>
         </div>
@@ -70,7 +76,7 @@ interface EditArticleRowProps {
   perex?: string;
   comments?: number;
   deleteArticle: Function;
-  editArticle: Function;
+  editArticle: React.MouseEventHandler<HTMLButtonElement>;
   isChecked: boolean;
   setCheckedBoxes: React.SetStateAction<any>;
 }

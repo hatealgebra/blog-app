@@ -60,7 +60,7 @@ export const createArticleHelper = async (
       await uploadImageResponse!.data[0].imageId,
       content
     );
-    return response;
+    return navigate(ADMIN_LINKS.MY_ARTICLES);
   } catch (e) {
     console.log(e);
     throw e;

@@ -11,7 +11,7 @@ import {
 import { RiLogoutBoxFill } from "@react-icons/all-files/ri/RiLogoutBoxFill";
 import { RiAdminFill } from "@react-icons/all-files/ri/RiAdminFill";
 import { useAppDispatch } from "../../../store/hooks";
-import { logout } from "../../../store/slices/auth.slices";
+import { logoutAction } from "../../../store/slices/auth.slices";
 import useClickOutside from "../../../hooks/useClickOutside";
 
 const LoginStatus = () => {
@@ -21,7 +21,7 @@ const LoginStatus = () => {
   useClickOutside(ref, setIsOpen);
 
   const logOut = () => {
-    dispatch(logout);
+    dispatch(logoutAction);
   };
 
   return (

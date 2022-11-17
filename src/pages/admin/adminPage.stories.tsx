@@ -1,9 +1,9 @@
 import React from "react";
 
-import CreateNewArticlePage from "./CreateNewArticlePage";
-import EditArticlePage from "./EditArticlePage";
+import CreateNewArticlePage from "./create-article";
+import EditArticlePage from "./edit-article";
 
-import MyArticlesPage from "./MyArticlesPage";
+import MyArticlesPage from "./my-articles";
 import { Story } from "@storybook/react";
 import { Provider } from "react-redux";
 import mockStore from "../../__mocks__/store.mock";

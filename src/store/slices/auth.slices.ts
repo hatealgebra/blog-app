@@ -15,7 +15,7 @@ export const authInitialState = {
 } as {
   status: "idle" | "loading";
   data: {
-    tenant: components["schemas"]["Tenant"] | null;
+    tenant?: components["schemas"]["Tenant"] | null;
     authorization?: components["schemas"]["AccessToken"];
     login?: {
       email: string;
@@ -29,7 +29,7 @@ export const authSlice = createSlice({
   name: "auth",
   initialState: authInitialState,
   reducers: {
-    logout: (state, { payload }) => {
+    logout: (state) => {
       state.data = {};
     },
   },
@@ -64,18 +64,21 @@ export const authSlice = createSlice({
 
 export const { logout } = authSlice.actions;
 
+export const logoutAction = { type: logout };
+
 export const selectAuthLogin = (state: RootState) =>
-  state.persistedReducer.data.login;
+  state.persistedReducer?.data.login;
 export const selectAuthTenant = (state: RootState) =>
-  state.persistedReducer.data.tenant ?? undefined;
+  state.persistedReducer?.data.tenant;
 export const selectAuthToken = (state: RootState) =>
-  state.persistedReducer.data.authorization?.access_token;
+  state.persistedReducer?.data.authorization?.access_token;
 export const selectAuthStatus = (state: RootState) =>
   state.persistedReducer.status;
 export const selectAuthError = (state: RootState) =>
   state.persistedReducer.error;
 export const selectAuthLogged = (state: RootState) => {
-  const { authorization, login } = state.persistedReducer.data;
+  const authorization = state.persistedReducer?.data.authorization;
+  const login = state.persistedReducer?.data.login;
   return !authorization || Object.keys(authorization!).length === 0 || !login
     ? false
     : true;

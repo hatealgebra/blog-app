@@ -82,7 +82,7 @@ describe("Check create article form inputs", () => {
     ).toBe(true);
   });
   test("Everything is filled correctly error value", () => {
-    validPublishArticleForm(
+    validatePublishArticleForm(
       inputValue,
       markdownPassValue,
       mockFile,

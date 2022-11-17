@@ -14,19 +14,19 @@ const EditArticlePage = () => {
   const article = useAppSelector(selectArticleToEdit);
 
   const setData = async (article: components["schemas"]["ArticleDetail"]) => {
-    const { imageId } = article;
-    const { data } = await showImage(imageId!);
+    const { data } = await showImage(article?.imageId!);
     return setArticleData({
       ...article,
       imageData: data,
     });
   };
+
   React.useEffect(() => {
     setData(article);
   }, []);
 
   return (
-    <PageTemplate>
+    <PageTemplate isProtected>
       <PublishArticleForm
         titleValue={articleData?.title}
         imageFileValue={articleData?.imageData}

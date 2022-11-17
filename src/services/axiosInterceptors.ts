@@ -40,7 +40,6 @@ const setUpInterceptor = (store: Store) => {
     async (response) => response,
     async (error) => {
       console.log(error);
-      console.log(error);
       const { config, response } = error;
       const { status } = response;
       const { dispatch, getState } = store;

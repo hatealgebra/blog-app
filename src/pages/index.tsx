@@ -19,8 +19,7 @@ const IndexPage = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
-    dispatch(getArticlesFeedThunk(authToken));
-    console.log(authToken);
+    dispatch(getArticlesFeedThunk());
   }, []);
 
   return (

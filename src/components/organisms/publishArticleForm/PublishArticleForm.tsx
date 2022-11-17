@@ -29,7 +29,7 @@ const PublishArticleForm = ({
   const [articleId, setArticleId] = React.useState(undefined);
   const [title, setTitle] = React.useState("");
   const [markdownContent, setMarkdownContent] = React.useState("");
-  const [imageFile, setImageFile] = React.useState<Blob | null>(null);
+  const [imageFile, setImageFile] = React.useState<File | null>(null);
   const [isImageChanged, setIsImageChanged] = React.useState(false);
   const [formError, setFormError] = React.useState<EPublishArticleErrors>(
     EPublishArticleErrors.PASSED

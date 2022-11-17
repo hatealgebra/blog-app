@@ -12,11 +12,14 @@ const StyledArticlePreviewContainer = styled.article`
     &__heading {
       margin: 15px 0;
     }
+    &__img {
+      object-fit: cover;
+    }
   }
 
   ${({ theme }) => `${theme.breakpoint.tablet} {
         display: grid;
-    grid-template-columns: 244px auto;
+    grid-template-columns: 272px auto;
     grid-template-rows: repeat(4,auto) 70px;
     grid-column-gap: 20px;
 
@@ -25,6 +28,7 @@ const StyledArticlePreviewContainer = styled.article`
         &__img{
             grid-column: 1/2;
             grid-row: 1/6;
+            height: 244px;
         }
         &__title {
           margin: 0 0 10px 0;
