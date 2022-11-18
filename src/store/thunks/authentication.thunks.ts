@@ -1,9 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Axios, AxiosRequestConfig } from "axios";
+import { navigate } from "gatsby";
 import { ELoginFormValidation } from "../../components/organisms/forms/LoginForm";
 import { loginPOST } from "../../services/authServices";
 import { USER_CONFIG } from "../../services/services.config";
 import { getTenant } from "../../services/tenantServices";
+import { ADMIN_LINKS } from "../../utils/contants";
 
 export const postLoginThunk = createAsyncThunk(
   "auth/login",
@@ -23,6 +25,7 @@ export const postLoginThunk = createAsyncThunk(
       setFormError(ELoginFormValidation.CORRECT_LOGIN);
       const authorizationResponse = await loginPOST(email, pwd);
       const tenantResponse = await getTenant(USER_CONFIG.TENANT_ID);
+      navigate(ADMIN_LINKS.MY_ARTICLES);
       return {
         tenant: tenantResponse.data,
         authorization: authorizationResponse.data,

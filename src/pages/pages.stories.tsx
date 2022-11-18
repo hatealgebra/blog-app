@@ -1,7 +1,7 @@
 import React from "react";
 
 import IndexPage from "./index";
-import ArticlePage from "./ArticlePage";
+import ArticlePage from "../../templates/ArticlePage";
 
 export const ArticleFeedPage = () => <IndexPage />;
 export const ArticleReadPage = () => <ArticlePage />;

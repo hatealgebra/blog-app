@@ -38,8 +38,8 @@ const LoginForm = () => {
       dispatch(
         postLoginThunk({ email: emailTrim, pwd: pwdTrim, setFormError })
       );
+      setEmail("");
       setPwd("");
-      navigate(ADMIN_LINKS.MY_ARTICLES);
     } else {
       setPwd("");
     }

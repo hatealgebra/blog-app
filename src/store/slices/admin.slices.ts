@@ -4,7 +4,7 @@ import { ESortByOptions } from "../../components/molecules/editArticleRow/EditAr
 import { components } from "../../types";
 import type { RootState } from "..";
 import { getArticlesFeedThunk } from "../thunks/articles.thunk";
-import { deleteArticleThunk } from "../thunks/admin.thunks";
+import { createArticleThunk, deleteArticleThunk } from "../thunks/admin.thunks";
 // import { getMyArticles } from "../thunks/articles.thunk";
 
 const initialState = {
@@ -60,6 +60,19 @@ export const adminSlice = createSlice({
       state.status = "idle";
       state.data = initialState.data;
     });
+
+    builder.addCase(createArticleThunk.pending, (state) => {
+      state.status = "loading";
+    });
+    builder.addCase(createArticleThunk.fulfilled, (state, { payload }) => {
+      console.log(payload);
+      state.data.originalSort?.items?.push(payload);
+      state.status = "idle";
+    });
+    builder.addCase(createArticleThunk.rejected, (state, { payload }) => {
+      state.status = "idle";
+    });
+
     builder.addCase(deleteArticleThunk.pending, (state) => {
       state.status = "loading";
     });

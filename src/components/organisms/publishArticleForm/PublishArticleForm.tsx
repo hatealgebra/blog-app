@@ -5,7 +5,7 @@ import InputWithLabel from "../../molecules/inputWithLabel/InputWithLabel";
 import UploadImage from "../../molecules/uploadImage/UploadImage";
 import { StyledPublishArticleForm } from "./publishArticleForm.styled";
 import { ErrorText } from "../../atoms/errorText/error.styled";
-import { useAppSelector } from "../../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 
 import { selectAuthToken } from "../../../store/slices/auth.slices";
 import {
@@ -14,6 +14,7 @@ import {
   validatePublishArticleForm,
 } from "../../../helpers/publishArticle.helper";
 import { cutTextWithElipsis } from "../../../utils/generic.utils";
+import { createArticleThunk } from "../../../store/thunks/admin.thunks";
 
 // FIXME: maybe implement do BIG notation?
 // TODO: Mock for MSW
@@ -25,7 +26,6 @@ const PublishArticleForm = ({
   imageFileValue,
   ...props
 }: PublishArticleProps) => {
-  const access_token = useAppSelector(selectAuthToken);
   const [articleId, setArticleId] = React.useState(undefined);
   const [title, setTitle] = React.useState("");
   const [markdownContent, setMarkdownContent] = React.useState("");
@@ -34,6 +34,9 @@ const PublishArticleForm = ({
   const [formError, setFormError] = React.useState<EPublishArticleErrors>(
     EPublishArticleErrors.PASSED
   );
+
+  const access_token = useAppSelector(selectAuthToken);
+  const dispatch = useAppDispatch();
 
   const handleOnSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -63,12 +66,13 @@ const PublishArticleForm = ({
           isImageChanged
         );
       } else {
-        return createArticleHelper(
-          e,
-          trimmedTitle,
-          perex,
-          trimmedMD,
-          imageFormData
+        return dispatch(
+          createArticleThunk({
+            title: trimmedTitle,
+            perex,
+            content: trimmedMD,
+            imageFormData,
+          })
         );
       }
     }

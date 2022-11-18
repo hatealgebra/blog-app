@@ -4,6 +4,7 @@ import { EPublishArticleErrors } from "../components/organisms/publishArticleFor
 import { createArticle, updateArticle } from "../services/articlesOperations";
 
 import { uploadImage } from "../services/imagesServices";
+import { createArticleThunk } from "../store/thunks/admin.thunks";
 import { ADMIN_LINKS } from "../utils/contants";
 
 export const validatePublishArticleForm: TFormHandling = (
@@ -45,27 +46,6 @@ export const validatePublishArticleForm: TFormHandling = (
   }
 };
 
-export const createArticleHelper = async (
-  e: FormEvent,
-  title: string,
-  perex: string,
-  content: string,
-  imageFormData: FormData
-) => {
-  try {
-    const uploadImageResponse = await uploadImage(imageFormData);
-    const response = createArticle(
-      title,
-      perex,
-      await uploadImageResponse!.data[0].imageId,
-      content
-    );
-    return navigate(ADMIN_LINKS.MY_ARTICLES);
-  } catch (e) {
-    console.log(e);
-    throw e;
-  }
-};
 export const updateArticleHelper = async (
   e: FormEvent,
   articleId: string,

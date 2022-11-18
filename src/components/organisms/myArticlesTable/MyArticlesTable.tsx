@@ -36,6 +36,8 @@ const MyArticlesTable = () => {
   const status = useAppSelector(selectMyArticlesStatus);
   const dispatch = useAppDispatch();
 
+  console.log(articles);
+
   const deleteArticle = (articleId: string) =>
     dispatch(deleteArticleThunk({ articleId, originalArray }));
   const editArticle = (article: components["schemas"]["Article"]) => {
@@ -52,8 +54,8 @@ const MyArticlesTable = () => {
     return setCheckedBoxes(allBoxesUncheck);
   };
   React.useEffect(() => {
-    dispatch(getArticlesFeedThunk());
-  }, []);
+    !originalArray && dispatch(getArticlesFeedThunk());
+  }, [articles]);
 
   return (
     <MyArticlesTableContainer>
