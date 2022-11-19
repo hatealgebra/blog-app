@@ -22,9 +22,9 @@ const ReadArticle = ({
     <ReadArticleContainer className="read-article">
       <h1>{title}</h1>
       <div className="read-article__base-info label">
-        <span>{author}</span>
+        <span className="read-article__author">{author}</span>
         <span>•</span>
-        <span>{articlePublishedFormat}</span>
+        <span className="read-article__date">{articlePublishedFormat}</span>
       </div>
       <img src={britishCat} alt={`${title} image`} />
       <ReadArticleContent className="read-article__markdown">
