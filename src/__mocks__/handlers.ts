@@ -12,7 +12,7 @@ import imageMockJSON from "./responses/postImage.mock.json";
 import createArticleResponseJSON from "./responses/postArticleResponse.mock.json";
 import tenantMockJSON from "./responses/tenantResponse.mock.json";
 
-import britishCatJPG from "../images/british-haircat.jpg";
+// import britishCatJPG from "../images/british-haircat.jpg";
 
 export const handlers = [
   /* POST handling */
@@ -42,7 +42,7 @@ export const handlers = [
     return res(ctx.status(200), ctx.json(articlesJSON));
   }),
   // Article detail
-  rest.get(`${BASE_API_URL}/articles/:articleId`, (req, res, ctx) => {
+  rest.get(`${BASE_API_URL}/articles/:articleId`, async (req, res, ctx) => {
     return res(
       ctx.set({
         "X-API-KEY": API_KEY,

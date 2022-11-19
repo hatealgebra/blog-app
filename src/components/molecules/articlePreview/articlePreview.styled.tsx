@@ -20,7 +20,7 @@ const StyledArticlePreviewContainer = styled.article`
   ${({ theme }) => `${theme.breakpoint.tablet} {
         display: grid;
     grid-template-columns: 272px auto;
-    grid-template-rows: repeat(4,auto) 70px;
+    grid-template-rows: repeat(4,auto);
     grid-column-gap: 20px;
 
     

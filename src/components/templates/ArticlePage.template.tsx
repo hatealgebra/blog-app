@@ -2,15 +2,13 @@ import React from "react";
 import ReadArticle from "../organisms/readArticle/ReadArticle";
 import PageTemplate from "./Page.template";
 
-import articleMockJSON from "../../__mocks__/responses/articleDetailResponse.mock.json";
 import relatedArticlesMock from "../../__mocks__/responses/articlesResponse.mock.json";
 import RelatedArticles from "../organisms/relatedArticles/RelatedArticles";
 import Discussion from "../organisms/discussion/Discussion";
 import { StyledArticlePageContainer } from "./templates.styled";
 
-const ArticlePage = () => {
-  const { title, imageId, author, createdAt, content, comments } =
-    articleMockJSON;
+const ArticlePage = ({ pageContext: { article } }) => {
+  const { articleId, createdAt, title, imageId, content, comments } = article;
 
   return (
     <PageTemplate isArticle>
@@ -18,7 +16,7 @@ const ArticlePage = () => {
         <ReadArticle
           title={title}
           imageId={imageId}
-          author={author}
+          author={"Pavel Vondra"}
           createdAt={createdAt}
           content={content}
           comments={comments}

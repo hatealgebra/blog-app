@@ -14,6 +14,7 @@ import { getDate } from "../../../utils/date.utils";
 
 // FIXME: Max char at the heading
 const ArticlePreview = ({
+  articleId,
   imageId,
   title,
   createdAt,
@@ -37,7 +38,9 @@ const ArticlePreview = ({
       </StyledArticleRow>
       <p className="article-preview__text">{perex}</p>
       <StyledArticleRow className="article-preview__row-two">
-        <StyledLink to="#">Read whole article</StyledLink>
+        <StyledLink to={`/articles/${articleId}`}>
+          Read whole article
+        </StyledLink>
         <span>{`${comments!.length ?? "0"} comments`}</span>
       </StyledArticleRow>
     </StyledArticlePreviewContainer>

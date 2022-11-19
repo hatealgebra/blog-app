@@ -11,11 +11,9 @@ import { selectAuthToken } from "../store/slices/auth.slices";
 
 import { getArticlesFeedThunk } from "../store/thunks/articles.thunk";
 
-const IndexPage = () => {
+const RecentArticles = () => {
   const feedStatus = useAppSelector(selectArticleFeedStatus);
   const feedData = useAppSelector(selectArticleFeedItems);
-  const feedItems = useAppSelector(selectArticleFeedItems);
-  const authToken = useAppSelector(selectAuthToken);
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
@@ -29,4 +27,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default RecentArticles;
