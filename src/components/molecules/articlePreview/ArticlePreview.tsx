@@ -41,7 +41,7 @@ const ArticlePreview = ({
         <StyledLink to={`/articles/${articleId}`}>
           Read whole article
         </StyledLink>
-        <span>{`${comments!.length ?? "0"} comments`}</span>
+        <span>{`${comments?.length || "0"} comments`}</span>
       </StyledArticleRow>
     </StyledArticlePreviewContainer>
   );

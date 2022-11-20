@@ -2,13 +2,36 @@ import React from "react";
 import ReadArticle from "../organisms/readArticle/ReadArticle";
 import PageTemplate from "./Page.template";
 
-import relatedArticlesMock from "../../__mocks__/responses/articlesResponse.mock.json";
 import RelatedArticles from "../organisms/relatedArticles/RelatedArticles";
 import Discussion from "../organisms/discussion/Discussion";
 import { StyledArticlePageContainer } from "./templates.styled";
+import { listArticles } from "../../services/articlesOperations";
+import { components } from "../../types";
 
-const ArticlePage = ({ pageContext: { article } }) => {
+const ArticlePage = ({
+  pageContext: { article },
+}: {
+  pageContext: {
+    article: components["schemas"]["Article"] &
+      components["schemas"]["ArticleDetail"];
+  };
+}) => {
   const { articleId, createdAt, title, imageId, content, comments } = article;
+  const [relatedArticles, setRelatedArticles] = React.useState(null);
+
+  console.log(relatedArticles);
+  React.useEffect(() => {
+    const getRelatedArticles = async () => {
+      const response = await listArticles();
+      const articlesFiltered = response.data.items.filter(
+        (article: components["schemas"]["Article"]) =>
+          article.articleId !== articleId
+      );
+      setRelatedArticles(articlesFiltered);
+    };
+
+    getRelatedArticles();
+  }, []);
 
   return (
     <PageTemplate isArticle>
@@ -21,8 +44,8 @@ const ArticlePage = ({ pageContext: { article } }) => {
           content={content}
           comments={comments}
         />
-        <Discussion comments={comments} />
-        <RelatedArticles articles={relatedArticlesMock.items} />
+        <Discussion commentsArray={comments} />
+        <RelatedArticles articles={relatedArticles} />
       </StyledArticlePageContainer>
     </PageTemplate>
   );

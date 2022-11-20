@@ -5,14 +5,19 @@ import {
   USER_CONFIG,
 } from "../services/services.config";
 
-import articlesJSON from "./responses/articlesResponse.mock.json";
-import loginResponseJSON from "./responses/loginResponse.mock.json";
-import articleDetailJSON from "./responses/articleDetailResponse.mock.json";
-import imageMockJSON from "./responses/postImage.mock.json";
-import createArticleResponseJSON from "./responses/postArticleResponse.mock.json";
-import tenantMockJSON from "./responses/tenantResponse.mock.json";
-
+import loginResponseJSON from "../__mocks__/asyncData/post/login.mock.json";
+import createArticleResponseJSON from "../__mocks__/asyncData/post/createArticleResponse.mock.json";
+import imageResponseJSON from "../__mocks__/asyncData/post/postImageResponse.mock.json";
+import articlesResponseJSON from "../__mocks__/asyncData/get/allArticlesResponse.mock.json";
+import articlesDetailResponseJSON from "../__mocks__/asyncData/get/articlesDetailsResponse.mock.json";
 // import britishCatJPG from "../images/british-haircat.jpg";
+
+const getArticleDetail = (articleId: readonly string[]) => {
+  const articleDetailData = articlesDetailResponseJSON.find(
+    (article) => article.articleId === articleId
+  );
+  return articleDetailData;
+};
 
 export const handlers = [
   /* POST handling */
@@ -31,7 +36,7 @@ export const handlers = [
   }),
   // Upload image
   rest.post(`${BASE_API_URL}/images`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(imageMockJSON));
+    return res(ctx.status(200), ctx.json(imageResponseJSON));
   }),
 
   /* GET handling*/
@@ -39,34 +44,35 @@ export const handlers = [
   // List Articles
   // FIXME: Fix the reauthorize, the dispatch is called multiple
   rest.get(`${BASE_API_URL}/articles`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(articlesJSON));
+    return res(ctx.status(200), ctx.json(articlesResponseJSON));
   }),
   // Article detail
-  rest.get(`${BASE_API_URL}/articles/:articleId`, async (req, res, ctx) => {
+  rest.get(`${BASE_API_URL}/articles/:articleId`, (req, res, ctx) => {
+    const { articleId } = req.params;
     return res(
       ctx.set({
         "X-API-KEY": API_KEY,
         Authorization: loginResponseJSON.access_token,
       }),
       ctx.status(200),
-      ctx.json(articleDetailJSON)
+      ctx.json(getArticleDetail(articleId))
     );
   }),
-  // Images
-  rest.get(`${BASE_API_URL}/images/:imageId`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.body(britishCatJPG));
-  }),
-  // Tenant
-  rest.get(`${BASE_API_URL}/tenants/:tenantId`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(tenantMockJSON));
-  }),
+  // // Images
+  // rest.get(`${BASE_API_URL}/images/:imageId`, (req, res, ctx) => {
+  //   return res(ctx.status(200), ctx.body(britishCatJPG));
+  // }),
+  // // Tenant
+  // rest.get(`${BASE_API_URL}/tenants/:tenantId`, (req, res, ctx) => {
+  //   return res(ctx.status(200), ctx.json(tenantMockJSON));
+  // }),
 
   /* DELETE */
   // Delete article
   rest.delete(`${BASE_API_URL}/articles/:articleId`, (req, res, ctx) => {
     const { articleId } = req.params;
 
-    const getDeletedArticle = articlesJSON.items.filter(
+    const getDeletedArticle = articlesResponseJSON.items.filter(
       ({ articleId: id }: { articleId: string }) => id === articleId
     )[0];
     return res(ctx.status(200), ctx.body(getDeletedArticle));
@@ -74,7 +80,8 @@ export const handlers = [
 
   /* PATCH */
   // Update article
-  rest.patch(`${BASE_API_URL}/articles/:articleId`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(articleDetailJSON));
+  rest.patch(`${BASE_API_URL}/articles/:articleId`, async (req, res, ctx) => {
+    const { articleId } = await req.json();
+    return res(ctx.status(200), ctx.json(getArticleDetail(articleId)));
   }),
 ];

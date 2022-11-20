@@ -5,7 +5,7 @@ import { reducer, persistedReducer, persistConfig } from "../store";
 // REDUX-PERSIST
 import { persistStore } from "redux-persist";
 
-import articleDetailReponseJSON from "../__mocks__/responses/articleDetailResponse.mock.json";
+// import articleDetailReponseJSON from "../__mocks__/responses/articlesDetailsResponse.mock.json";
 
 const { TENANT_ID, CREATED_AT, LAST_USED_AT, NAME } = USER_CONFIG;
 
@@ -26,7 +26,7 @@ const mockStore = configureStore({
         status: "idle",
         error: false,
         data: {
-          articleToEdit: articleDetailReponseJSON,
+          articleToEdit: null,
           originalSort: {},
           nowSort: {},
         },

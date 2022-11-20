@@ -9,31 +9,33 @@ import {
 } from "./discussion.styled";
 
 // FIXME: Date-time to timestamp to get the string
-const Discussion = ({ comments }: DiscussionProps) => {
+const Discussion = ({ commentsArray }: DiscussionProps) => {
+  const [comments, setComments] = React.useState(commentsArray);
   return (
     <StyledDiscussion className="discussion">
       <CreateComment dispatch={() => console.log("add comment")} />
       <StyledDiscussionComments>
-        {comments.map((comment, i) => {
-          const { author, postedAt, score, content, articleId } = comment;
-          return (
-            <Comment
-              key={`${articleId}-${i}`}
-              articleId={articleId}
-              author={author}
-              postedAt={postedAt}
-              score={score}
-              content={content}
-            ></Comment>
-          );
-        })}
+        {comments &&
+          comments.map((comment, i) => {
+            const { author, postedAt, score, content, articleId } = comment;
+            return (
+              <Comment
+                key={`${articleId}-${i}`}
+                articleId={articleId}
+                author={author}
+                postedAt={postedAt}
+                score={score}
+                content={content}
+              ></Comment>
+            );
+          })}
       </StyledDiscussionComments>
     </StyledDiscussion>
   );
 };
 // TODO: Create typing for comments from API
 export interface DiscussionProps {
-  comments: components["schemas"]["Comment"][];
+  commentsArray: components["schemas"]["Comment"][] | undefined;
 }
 
 export default Discussion;

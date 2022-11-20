@@ -28,7 +28,7 @@ const ArticleFeed = ({
           </CenterContainer>
         ) : (
           <ArticlesContainer>
-            {items!.map(
+            {items.map(
               ({
                 articleId,
                 title,

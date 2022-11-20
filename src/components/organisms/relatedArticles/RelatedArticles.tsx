@@ -8,11 +8,16 @@ const RelatedArticles = ({ articles }: RelatedArticlesProps) => {
     <RelatedArticlesContainer className="related-articles">
       <h3>Related Articles</h3>
       <div className="related-articles__articles">
-        {articles.map((article) => (
-          <ArticlePreviewSmall heading={article.title!}>
-            {article.perex!}
-          </ArticlePreviewSmall>
-        ))}
+        {articles && articles.length !== 0
+          ? articles.map((article) => (
+              <ArticlePreviewSmall
+                key={article.articleId}
+                heading={article.title!}
+              >
+                {article.perex!}
+              </ArticlePreviewSmall>
+            ))
+          : "No articles to show"}
       </div>
     </RelatedArticlesContainer>
   );
@@ -21,7 +26,7 @@ const RelatedArticles = ({ articles }: RelatedArticlesProps) => {
 // TODO: Article Props
 
 interface RelatedArticlesProps {
-  articles: components["schemas"]["Article"][];
+  articles: components["schemas"]["Article"][] | null;
 }
 
 export default RelatedArticles;
