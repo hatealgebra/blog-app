@@ -18,7 +18,7 @@ export const authInitialState = {
     tenant?: components["schemas"]["Tenant"] | null;
     authorization?: components["schemas"]["AccessToken"];
     login?: {
-      email: string;
+      username: string;
       pwd: string;
     };
   };
@@ -66,8 +66,8 @@ export const { logout } = authSlice.actions;
 
 export const logoutAction = { type: logout };
 
-export const selectAuthLogin = (state: RootState) =>
-  state.persistedReducer?.data.login;
+export const selectAuthName = (state: RootState) =>
+  state.persistedReducer?.data.login?.username;
 export const selectAuthTenant = (state: RootState) =>
   state.persistedReducer?.data.tenant;
 export const selectAuthToken = (state: RootState) =>

@@ -967,9 +967,31 @@ exports[`Storyshots Molecules/Comment Comment Example 1`] = `
 </div>
 `;
 
-exports[`Storyshots Molecules/Create comment Create Comment Example 1`] = `
+exports[`Storyshots Molecules/Create comment Create Comment Disabled 1`] = `
 <form
-  class="sc-cwSeag imLJsM"
+  class="sc-cwSeag kLniVP"
+>
+  <img
+    alt="fallback user avatar"
+    class="sc-kDvujY bWcqhu avatar"
+    src="[object Object]"
+  />
+  <textarea
+    class="sc-eDvSVe kbEInC"
+    disabled=""
+    name="comment"
+    placeholder="Join the discussion"
+    rows="1"
+  />
+  <span
+    class="sc-ipEyDJ CPuoT"
+  />
+</form>
+`;
+
+exports[`Storyshots Molecules/Create comment Create Commment Authorized 1`] = `
+<form
+  class="sc-cwSeag kLniVP"
 >
   <img
     alt="fallback user avatar"
@@ -1585,7 +1607,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
   class="sc-jcMfQk discussion"
 >
   <form
-    class="sc-cwSeag imLJsM"
+    class="sc-cwSeag kLniVP"
   >
     <img
       alt="fallback user avatar"
@@ -1636,86 +1658,6 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
         >
           +
           4
-        </span>
-        <button
-          aria-label="vote-up"
-        >
-          <svg
-            fill="currentColor"
-            height="100%"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 24 24"
-            width="100%"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g>
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z"
-              />
-            </g>
-          </svg>
-        </button>
-        <button
-          aria-label="vote-down"
-        >
-          <svg
-            fill="currentColor"
-            height="100%"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 24 24"
-            width="100%"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g>
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"
-              />
-            </g>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      class="sc-iveFHk brboMR comment"
-    >
-      <img
-        alt="fallback user avatar"
-        class="sc-kDvujY bWcqhu avatar"
-        src="[object Object]"
-      />
-      <h5
-        class="comment__author"
-      >
-        Annette Bell
-      </h5>
-      <span
-        class="comment__time-diff label"
-      >
-        Just now
-      </span>
-      <p
-        class="comment__text"
-      >
-        A cat has absolute emotional honesty: human beings, for one reason or another, may hide their feelings, but a cat does not
-      </p>
-      <div
-        class="sc-bBABsx bdMrOV comment__voting-counter"
-      >
-        <span
-          data-testid="reactionCounter"
-        >
-          +
-          16
         </span>
         <button
           aria-label="vote-up"

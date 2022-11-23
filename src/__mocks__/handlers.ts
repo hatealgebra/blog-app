@@ -10,6 +10,7 @@ import createArticleResponseJSON from "../__mocks__/asyncData/post/createArticle
 import imageResponseJSON from "../__mocks__/asyncData/post/postImageResponse.mock.json";
 import articlesResponseJSON from "../__mocks__/asyncData/get/allArticlesResponse.mock.json";
 import articlesDetailResponseJSON from "../__mocks__/asyncData/get/articlesDetailsResponse.mock.json";
+import tenantMockJSON from "../__mocks__/asyncData/get/tenantResponse.mock.json";
 // import britishCatJPG from "../images/british-haircat.jpg";
 
 const getArticleDetail = (articleId: readonly string[]) => {
@@ -38,6 +39,9 @@ export const handlers = [
   rest.post(`${BASE_API_URL}/images`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(imageResponseJSON));
   }),
+  rest.post(`${BASE_API_URL}/comments`, (req, res, ctx) => {
+    console.log(req);
+  }),
 
   /* GET handling*/
 
@@ -62,10 +66,10 @@ export const handlers = [
   // rest.get(`${BASE_API_URL}/images/:imageId`, (req, res, ctx) => {
   //   return res(ctx.status(200), ctx.body(britishCatJPG));
   // }),
-  // // Tenant
-  // rest.get(`${BASE_API_URL}/tenants/:tenantId`, (req, res, ctx) => {
-  //   return res(ctx.status(200), ctx.json(tenantMockJSON));
-  // }),
+  // Tenant
+  rest.get(`${BASE_API_URL}/tenants/:tenantId`, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(tenantMockJSON));
+  }),
 
   /* DELETE */
   // Delete article

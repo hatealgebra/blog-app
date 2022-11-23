@@ -1,6 +1,6 @@
 import React from "react";
 import RelatedArticles from "./RelatedArticles";
-import relatedArticlesJSON from "../../../__mocks__/responses/articlesResponse.mock.json";
+import relatedArticlesJSON from "../../../__mocks__/asyncData/get/allArticlesResponse.mock.json";
 
 export const RelatedArticlesSection = () => (
   <RelatedArticles articles={relatedArticlesJSON.items} />

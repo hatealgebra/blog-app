@@ -1,6 +1,5 @@
 import React from "react";
 import { components } from "../../../types";
-import { timeDifference } from "../../../utils/date.utils";
 import Comment from "../../molecules/comment/Comment";
 import CreateComment from "../../molecules/createComment/CreateComment";
 import {
@@ -9,11 +8,14 @@ import {
 } from "./discussion.styled";
 
 // FIXME: Date-time to timestamp to get the string
-const Discussion = ({ commentsArray }: DiscussionProps) => {
+const Discussion = ({ articleId, commentsArray }: DiscussionProps) => {
   const [comments, setComments] = React.useState(commentsArray);
+
+  const addComment = (commment: components["schemas"]["Comment"]) => {};
+
   return (
     <StyledDiscussion className="discussion">
-      <CreateComment dispatch={() => console.log("add comment")} />
+      <CreateComment articleId={articleId} addComment={addComment} />
       <StyledDiscussionComments>
         {comments &&
           comments.map((comment, i) => {
@@ -26,7 +28,7 @@ const Discussion = ({ commentsArray }: DiscussionProps) => {
                 postedAt={postedAt}
                 score={score}
                 content={content}
-              ></Comment>
+              />
             );
           })}
       </StyledDiscussionComments>
@@ -35,6 +37,7 @@ const Discussion = ({ commentsArray }: DiscussionProps) => {
 };
 // TODO: Create typing for comments from API
 export interface DiscussionProps {
+  articleId: string;
   commentsArray: components["schemas"]["Comment"][] | undefined;
 }
 

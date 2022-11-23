@@ -1,7 +1,7 @@
 import React from "react";
 import ArticleFeed from "./ArticleFeed";
 
-import articlesJSON from "../../../__mocks__/responses/articlesResponse.mock.json";
+import articlesJSON from "../../../__mocks__/asyncData/get/allArticlesResponse.mock.json";
 
 export const ArticleFeedLoading = () => (
   <ArticleFeed isLoading="loading" items={[]} />

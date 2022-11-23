@@ -32,6 +32,7 @@ export const postLoginThunk = createAsyncThunk(
         login: { email, pwd },
       };
     } catch (error) {
+      console.log(error);
       const { status, data } = error.response;
       if (status === 400) {
         setFormError(ELoginFormValidation.INCORRECT_LOGIN);

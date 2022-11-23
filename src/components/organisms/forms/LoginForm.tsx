@@ -32,8 +32,10 @@ const LoginForm = () => {
     const pwdTrim = pwd.trim();
     if (emailTrim.length === 0 || !emailValidation(emailTrim)) {
       setFormError(ELoginFormValidation.INVALID_EMAIL);
-    } else if (!pwdValidation(pwdTrim)) {
+    } else if (pwdTrim.length === 0) {
       setFormError(ELoginFormValidation.EMPTY_PASSWORD);
+    } else if (!pwdValidation(pwdTrim)) {
+      setFormError(ELoginFormValidation.INCORRECT_LOGIN);
     } else if (emailValidation(emailTrim) && pwdValidation(pwdTrim)) {
       dispatch(
         postLoginThunk({ email: emailTrim, pwd: pwdTrim, setFormError })

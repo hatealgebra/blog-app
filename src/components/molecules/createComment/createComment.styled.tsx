@@ -20,6 +20,9 @@ export const StyledCreateCommentForm = styled.form`
 
   textarea {
     grid-column: 1/3;
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
   span {
     grid-row: 3/4;

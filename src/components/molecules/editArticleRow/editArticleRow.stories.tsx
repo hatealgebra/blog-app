@@ -3,7 +3,7 @@ import React from "react";
 import EditArticleRow from "./EditArticleRow";
 import EditArticleRowButtons from "./EditArticleRowButtons";
 
-import articlesMockJSON from "../../../__mocks__/responses/articlesResponse.mock.json";
+import articlesMockJSON from "../../../__mocks__/asyncData/get/allArticlesResponse.mock.json";
 import { action } from "@storybook/addon-actions";
 
 const { title, perex, comments } = articlesMockJSON.items[0];

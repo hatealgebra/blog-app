@@ -44,7 +44,7 @@ const ArticlePage = ({
           content={content}
           comments={comments}
         />
-        <Discussion commentsArray={comments} />
+        <Discussion articleId={articleId!} commentsArray={comments} />
         <RelatedArticles articles={relatedArticles} />
       </StyledArticlePageContainer>
     </PageTemplate>
