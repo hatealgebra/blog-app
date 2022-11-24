@@ -13,7 +13,7 @@ const Comment = ({
   postedAt,
   content,
 }: components["schemas"]["Comment"]) => {
-  console.log(content);
+  console.log(postedAt);
   const [counterValue, setCounterValue] = React.useState(score);
   const timestampNow = Date.now();
   return (

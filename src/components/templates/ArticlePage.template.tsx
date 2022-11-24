@@ -19,7 +19,6 @@ const ArticlePage = ({
   const { articleId, createdAt, title, imageId, content, comments } = article;
   const [relatedArticles, setRelatedArticles] = React.useState(null);
 
-  console.log(relatedArticles);
   React.useEffect(() => {
     const getRelatedArticles = async () => {
       const response = await listArticles();

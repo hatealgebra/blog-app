@@ -7,6 +7,7 @@ export const timeDifference = (
   timestampNow: EpochTimeStamp,
   dateCreated: string
 ) => {
+  console.log(timestampNow, dateCreated);
   const nowDate = new Date(timestampNow);
   const commentDate = new Date(dateCreated);
 

@@ -16,6 +16,7 @@ const CreateComment = ({ articleId, addComment }: CreateCommentProps) => {
     FormValidation.PASSED
   );
   const loggedUser = useAppSelector(selectAuthName);
+  console.log(loggedUser);
 
   const onSubmit = (
     e: React.FormEvent,
