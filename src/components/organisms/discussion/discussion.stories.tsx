@@ -9,7 +9,10 @@ export const DiscussionExample = () => {
   const comments = articleMockJSON[4].comments;
   return (
     <Provider store={mockStore}>
-      <Discussion commentsArray={comments} />
+      <Discussion
+        articleId="234u1890rjf189hj891j4891j43"
+        commentsArray={comments}
+      />
     </Provider>
   );
 };

@@ -19,7 +19,6 @@ const Checkbox = ({
     </StyledCheckboxContainer>
   );
 };
-// TODO: TS definition  of dispatch action
 export interface CheckboxProps {
   isChecked: boolean;
   onChange: any;

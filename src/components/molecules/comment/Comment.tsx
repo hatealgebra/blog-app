@@ -6,16 +6,36 @@ import { StyledCommentContainer, StyledCommentCounter } from "./comment.styled";
 import { RiArrowUpSLine } from "@react-icons/all-files/ri/RiArrowUpSLine";
 import { RiArrowDownSLine } from "@react-icons/all-files/ri/RiArrowDownSLine";
 import { components } from "../../../types";
+import { voteDown, voteUp } from "../../../services/commentsServices";
 
 const Comment = ({
+  commentId,
   author,
   score,
   postedAt,
   content,
+  articleId,
 }: components["schemas"]["Comment"]) => {
-  console.log(postedAt);
-  const [counterValue, setCounterValue] = React.useState(score);
+  const [counterValue, setCounterValue] = React.useState(score ?? 0);
   const timestampNow = Date.now();
+
+  const increaseScore = async () => {
+    try {
+      voteUp(commentId!);
+      setCounterValue((prev) => prev++);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const decreaseScore = async () => {
+    try {
+      voteDown(commentId!);
+      setCounterValue((prev) => prev--);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <StyledCommentContainer className="comment">
       <Avatar size="lg" />
@@ -29,16 +49,10 @@ const Comment = ({
           {counterValue! > 0 ? "+" : ""}
           {counterValue}
         </span>
-        <button
-          aria-label="vote-up"
-          onClick={() => setCounterValue((prev) => prev! + 1)}
-        >
+        <button aria-label="vote-up" onClick={increaseScore}>
           <RiArrowUpSLine size="100%" />
         </button>
-        <button
-          aria-label="vote-down"
-          onClick={() => setCounterValue((prev) => prev! - 1)}
-        >
+        <button aria-label="vote-down" onClick={decreaseScore}>
           <RiArrowDownSLine size="100%" />
         </button>
       </StyledCommentCounter>

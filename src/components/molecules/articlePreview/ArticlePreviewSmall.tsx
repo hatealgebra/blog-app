@@ -9,7 +9,7 @@ const ArticlePreviewSmall = ({
   return (
     <StyledArticlePreviewSmall>
       <h5>{heading}</h5>
-      {/* FIXME: Elipsis calculated by number of chars or with css overflow & height> */}
+
       <p>{cutTextWithElipsis(children, 220)}</p>
     </StyledArticlePreviewSmall>
   );

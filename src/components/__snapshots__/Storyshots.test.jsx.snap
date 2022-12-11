@@ -1643,7 +1643,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
       <span
         class="comment__time-diff label"
       >
-        1 month ago
+        2 months ago
       </span>
       <p
         class="comment__text"
@@ -1723,7 +1723,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
       <span
         class="comment__time-diff label"
       >
-        2 months ago
+        3 months ago
       </span>
       <p
         class="comment__text"
@@ -1803,7 +1803,7 @@ exports[`Storyshots Organisms/Discussion Discussion Example 1`] = `
       <span
         class="comment__time-diff label"
       >
-        8 months ago
+        9 months ago
       </span>
       <p
         class="comment__text"

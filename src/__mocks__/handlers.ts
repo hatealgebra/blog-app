@@ -13,7 +13,7 @@ import articlesDetailResponseJSON from "../__mocks__/asyncData/get/articlesDetai
 import tenantMockJSON from "../__mocks__/asyncData/get/tenantResponse.mock.json";
 // import britishCatJPG from "../images/british-haircat.jpg";
 
-const getArticleDetail = (articleId: readonly string[]) => {
+const getArticleDetail = (articleId: string | readonly string[]) => {
   const articleDetailData = articlesDetailResponseJSON.find(
     (article) => article.articleId === articleId
   );
@@ -39,8 +39,20 @@ export const handlers = [
   rest.post(`${BASE_API_URL}/images`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(imageResponseJSON));
   }),
-  rest.post(`${BASE_API_URL}/comments`, (req, res, ctx) => {
-    console.log(req);
+  rest.post(`${BASE_API_URL}/comments`, async (req, res, ctx) => {
+    const request = await req.json();
+    const { articleId, author, content } = request.headers.data;
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        articleId,
+        author,
+        content,
+        postedAt: "2022-03-25T16:15:50.42655",
+        score: 0,
+      })
+    );
   }),
 
   /* GET handling*/

@@ -7,7 +7,6 @@ import {
   reAuthorizeThunk,
 } from "../thunks/authentication.thunks";
 
-// FIXME: Name of the keys
 export const authInitialState = {
   status: "idle",
   data: {},
@@ -18,7 +17,7 @@ export const authInitialState = {
     tenant?: components["schemas"]["Tenant"] | null;
     authorization?: components["schemas"]["AccessToken"];
     login?: {
-      username: string;
+      email: string;
       pwd: string;
     };
   };
@@ -67,7 +66,7 @@ export const { logout } = authSlice.actions;
 export const logoutAction = { type: logout };
 
 export const selectAuthName = (state: RootState) =>
-  state.persistedReducer?.data.login?.username;
+  state.persistedReducer?.data.login?.email;
 export const selectAuthTenant = (state: RootState) =>
   state.persistedReducer?.data.tenant;
 export const selectAuthToken = (state: RootState) =>

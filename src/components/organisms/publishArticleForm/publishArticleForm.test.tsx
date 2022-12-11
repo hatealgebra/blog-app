@@ -7,7 +7,6 @@ import { screen, waitFor } from "@testing-library/react";
 import PublishArticleForm from "./PublishArticleForm";
 import { server } from "../../../__mocks__/server";
 
-// TODO: Why
 describe("Create new article suite", () => {
   global.URL.createObjectURL = jest.fn();
   let titleInput: HTMLElement;

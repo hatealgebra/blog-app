@@ -9,7 +9,6 @@ import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 
 import { selectAuthToken } from "../../../store/slices/auth.slices";
 import {
-  createArticleHelper,
   updateArticleHelper,
   validatePublishArticleForm,
 } from "../../../helpers/publishArticle.helper";
@@ -17,7 +16,6 @@ import { cutTextWithElipsis } from "../../../utils/generic.utils";
 import { createArticleThunk } from "../../../store/thunks/admin.thunks";
 
 // FIXME: maybe implement do BIG notation?
-// TODO: Mock for MSW
 // TODO: Testing
 // FIXME: When editing the article, get the loading screen maybe?
 const PublishArticleForm = ({

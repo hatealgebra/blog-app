@@ -39,6 +39,7 @@ const ArticleFeed = ({
               }: components["schemas"]["Article"] &
                 components["schemas"]["ArticleDetail"]) => (
                 <ArticlePreview
+                  key={articleId}
                   articleId={articleId}
                   title={title}
                   perex={perex}

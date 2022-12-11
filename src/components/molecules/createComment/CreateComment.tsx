@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { publishComment } from "../../../helpers/commenting.helper";
 import { useAppSelector } from "../../../store/hooks";
 import { selectAuthName } from "../../../store/slices/auth.slices";
@@ -9,26 +9,27 @@ import { ErrorText } from "../../atoms/errorText/error.styled";
 import { StyledTextArea } from "../../atoms/input/input.styled";
 import { StyledCreateCommentForm } from "./createComment.styled";
 
-const CreateComment = ({ articleId, addComment }: CreateCommentProps) => {
+const CreateComment = ({ articleId, setComments }: CreateCommentProps) => {
   const [isActive, setIsActive] = React.useState(false);
   const [content, setContent] = React.useState("");
   const [formHandling, setFormHandling] = React.useState<FormValidation>(
     FormValidation.PASSED
   );
   const loggedUser = useAppSelector(selectAuthName);
-  console.log(loggedUser);
 
   const onSubmit = (
     e: React.FormEvent,
-    addComment: (commment: components["schemas"]["Comment"]) => void
+    setComments: React.Dispatch<
+      React.SetStateAction<components["schemas"]["Comment"][]>
+    >
   ) => {
     e.preventDefault();
     if (content.length < 25) {
       setFormHandling(FormValidation.EMPTY);
     } else if (content.length > 250) {
       setFormHandling(FormValidation.TOO_LONG);
-    } else {
-      publishComment(articleId);
+    } else if (loggedUser) {
+      publishComment(articleId, loggedUser, content, setComments);
       setIsActive(false);
       setFormHandling(FormValidation.PASSED);
       setContent("");
@@ -37,7 +38,7 @@ const CreateComment = ({ articleId, addComment }: CreateCommentProps) => {
 
   return (
     <StyledCreateCommentForm
-      onSubmit={(e) => onSubmit(e, addComment)}
+      onSubmit={(e) => onSubmit(e, setComments)}
       onClick={() => {
         if (!loggedUser) {
           window.alert("You need to be signed in to comment this article!");
@@ -71,7 +72,9 @@ export enum FormValidation {
 
 interface CreateCommentProps {
   articleId: string;
-  addComment: (commment: components["schemas"]["Comment"]) => void;
+  setComments: React.Dispatch<
+    React.SetStateAction<components["schemas"]["Comment"][]>
+  >;
 }
 
 export default CreateComment;

@@ -23,8 +23,6 @@ const RelatedArticles = ({ articles }: RelatedArticlesProps) => {
   );
 };
 
-// TODO: Article Props
-
 interface RelatedArticlesProps {
   articles: components["schemas"]["Article"][] | null;
 }
