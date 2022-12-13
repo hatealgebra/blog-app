@@ -19,7 +19,7 @@ import {
   selectMyArticlesStatus,
   setArticleToEdit,
 } from "../../../store/slices/admin.slices";
-import { components } from "../../../types";
+import { components } from "../../../types/custom";
 
 import { deleteArticleThunk } from "../../../store/thunks/admin.thunks";
 

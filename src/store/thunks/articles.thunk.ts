@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getArticle, listArticles } from "../../services/articlesOperations";
-import { components } from "../../types";
+import { components } from "../../types/declarations";
 
 // Big O notation
 export const getArticlesFeedThunk = createAsyncThunk(

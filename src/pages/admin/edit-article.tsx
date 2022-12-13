@@ -4,7 +4,7 @@ import PageTemplate from "../../components/templates/Page.template";
 import { showImage } from "../../services/imagesServices";
 import { useAppSelector } from "../../store/hooks";
 import { selectArticleToEdit } from "../../store/slices/admin.slices";
-import { components } from "../../types";
+import { components } from "../../types/custom";
 
 const EditArticlePage = () => {
   const [articleData, setArticleData] =

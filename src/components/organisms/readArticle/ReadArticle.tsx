@@ -1,5 +1,5 @@
 import React from "react";
-import { components } from "../../../types";
+import { components } from "../../../types/custom";
 import { ReadArticleContainer, ReadArticleContent } from "./readArticle.styled";
 
 import ReactMarkdown from "react-markdown";

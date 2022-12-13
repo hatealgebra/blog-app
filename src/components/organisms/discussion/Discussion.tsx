@@ -1,5 +1,5 @@
 import React from "react";
-import { components } from "../../../types";
+import { components } from "../../../types/declarations";
 import Comment from "../../molecules/comment/Comment";
 import CreateComment from "../../molecules/createComment/CreateComment";
 import {

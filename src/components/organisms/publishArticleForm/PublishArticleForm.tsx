@@ -18,6 +18,7 @@ import { createArticleThunk } from "../../../store/thunks/admin.thunks";
 // FIXME: maybe implement do BIG notation?
 // TODO: Testing
 // FIXME: When editing the article, get the loading screen maybe?
+// TODO: useEffect for for error handling
 const PublishArticleForm = ({
   titleValue,
   markdownContentValue,

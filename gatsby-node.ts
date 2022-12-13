@@ -1,6 +1,6 @@
 import path from "path";
 import { getArticle, listArticles } from "./src/services/articlesOperations";
-import { components } from "./src/types";
+import { components } from "./src/types/declarations";
 
 export const createPages = async ({ actions: { createPage } }) => {
   // list all of the articles that are published

@@ -103,7 +103,8 @@
   },
   "include": [
     "src",
-    ".d.ts",
+    "src/types/declarations.d.ts",
+    "src/__mocks__/images",
     "./gatsby-node.ts",
     "./gatsby-config.ts",
     "./plugins/**/*"

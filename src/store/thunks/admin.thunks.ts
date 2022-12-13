@@ -5,7 +5,7 @@ import {
   deleteArticle,
 } from "../../services/articlesOperations";
 import { uploadImage } from "../../services/imagesServices";
-import { components } from "../../types";
+import { components } from "../../types/declarations";
 import { ADMIN_LINKS } from "../../utils/contants";
 
 export const getMyArticlesThunk = createAsyncThunk(

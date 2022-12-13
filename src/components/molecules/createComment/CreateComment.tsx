@@ -2,13 +2,14 @@ import React, { useCallback } from "react";
 import { publishComment } from "../../../helpers/commenting.helper";
 import { useAppSelector } from "../../../store/hooks";
 import { selectAuthName } from "../../../store/slices/auth.slices";
-import { components } from "../../../types";
+import { components } from "../../../types/declarations";
 import Avatar from "../../atoms/avatar/Avatar";
 import Button from "../../atoms/button/Button";
 import { ErrorText } from "../../atoms/errorText/error.styled";
 import { StyledTextArea } from "../../atoms/input/input.styled";
 import { StyledCreateCommentForm } from "./createComment.styled";
 
+// TODO: UseEffect for form handling
 const CreateComment = ({ articleId, setComments }: CreateCommentProps) => {
   const [isActive, setIsActive] = React.useState(false);
   const [content, setContent] = React.useState("");
@@ -44,7 +45,7 @@ const CreateComment = ({ articleId, setComments }: CreateCommentProps) => {
           window.alert("You need to be signed in to comment this article!");
         }
       }}
-      onBlur={(e: React.MouseEvent<HTMLElement>) =>
+      onBlur={(e: React.FocusEvent<HTMLFormElement>) =>
         e.relatedTarget === null && setIsActive(false)
       }
     >
@@ -56,7 +57,9 @@ const CreateComment = ({ articleId, setComments }: CreateCommentProps) => {
         rows={isActive ? 8 : 1}
         name="comment"
         value={content}
-        onChange={(e) => setContent(e.target.value)}
+        onChange={(e) => {
+          return setContent(e.target.value);
+        }}
       />
       {isActive && <Button type="submit">Send comment</Button>}
       <ErrorText>{formHandling}</ErrorText>

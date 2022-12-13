@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ESortByOptions } from "../../components/molecules/editArticleRow/EditArticleRowButtons";
 
-import { components } from "../../types";
+import { components } from "../../types/declarations";
 import type { RootState } from "..";
 import { getArticlesFeedThunk } from "../thunks/articles.thunk";
 import { createArticleThunk, deleteArticleThunk } from "../thunks/admin.thunks";

@@ -1,22 +1,25 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { setupTest } from "../../../utils/testing.utils";
+import { setupWithLoggedInUser } from "../../../utils/testing.utils";
 import { DiscussionExample } from "./discussion.stories";
-import { waitFor } from "@testing-library/dom";
+
 import { USER_CONFIG } from "../../../services/services.config";
+import { screen, waitFor } from "@testing-library/dom";
 
 // TODO: Write tests
 describe("Discussion handling", () => {
-  const commentExample = "This is my new comment!";
   test("Create comment", async () => {
-    const { getByRole, getByText, findByRole } = setupTest(
+    const commentExample =
+      "This is my new comment! It needs to be little bit longer. Yup, here you go";
+    const { getByRole, getByText, findByRole } = setupWithLoggedInUser(
       <DiscussionExample />
     );
-    userEvent.type(getByRole("textbox"), commentExample);
+
+    await userEvent.type(getByRole("textbox"), commentExample);
+
     userEvent.click(await findByRole("button", { name: "Send comment" }));
     await waitFor(() => {
-      screen.debug();
       expect(getByText(commentExample)).toBeInTheDocument();
       expect(getByText(USER_CONFIG.NAME)).toBeInTheDocument();
     });

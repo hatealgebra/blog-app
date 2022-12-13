@@ -1,5 +1,5 @@
 import React from "react";
-import { components } from "../../../types";
+import { components } from "../../../types/custom";
 import ArticlePreviewSmall from "../../molecules/articlePreview/ArticlePreviewSmall";
 import { RelatedArticlesContainer } from "./relatedArticles.styled";
 

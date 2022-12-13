@@ -19,14 +19,14 @@ export const createComment = async (
 
 export const voteUp = async (commentId: string) => {
   try {
-    return appLiftingAxiosProtected.post(`${commentId}/vote/up`);
+    return appLiftingAxiosProtected.post(`/comments/${commentId}/vote/up`);
   } catch (e) {
     throw e;
   }
 };
 export const voteDown = async (commentId: string) => {
   try {
-    return appLiftingAxiosProtected.post(`${commentId}/vote/down`);
+    return appLiftingAxiosProtected.post(`/comments/${commentId}/vote/down`);
   } catch (e) {
     throw e;
   }

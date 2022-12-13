@@ -20,6 +20,7 @@ describe("cut text with elipsis", () => {
 describe("time difference util", () => {
   // Sun Oct 02 2022 23:33:23 GMT+0000
   const timestampNow = 1664753603 * 1000;
+
   test("1 year difference ", () => {
     expect(timeDifference(timestampNow, "2021-10-01T19:44:11.577668")).toEqual(
       "1 year ago"

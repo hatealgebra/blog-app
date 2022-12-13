@@ -6,7 +6,7 @@ import RelatedArticles from "../organisms/relatedArticles/RelatedArticles";
 import Discussion from "../organisms/discussion/Discussion";
 import { StyledArticlePageContainer } from "./templates.styled";
 import { listArticles } from "../../services/articlesOperations";
-import { components } from "../../types";
+import { components } from "../../types/custom";
 
 const ArticlePage = ({
   pageContext: { article },

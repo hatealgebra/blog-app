@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { components } from "../../types";
+import { components } from "../../types/declarations";
 import { RootState } from "..";
 
 import {

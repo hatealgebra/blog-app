@@ -1,6 +1,6 @@
 import React from "react";
 import { createComment } from "../services/commentsServices";
-import { components } from "../types";
+import { components } from "../types/declarations";
 
 export const publishComment = async (
   articleId: string,

@@ -7,7 +7,7 @@ import StyledArticlePreviewContainer, {
 
 import { GoPrimitiveDot } from "@react-icons/all-files/go/GoPrimitiveDot";
 import StyledLink from "../../atoms/links/link.styled";
-import { components } from "../../../types";
+import { components } from "../../../types/declarations";
 
 import britishHaircat from "../../../images/british-haircat.jpg";
 import { getDate } from "../../../utils/date.utils";

@@ -1,5 +1,5 @@
 import React, { Dispatch } from "react";
-import { components } from "../../../types";
+import { components } from "../../../types/declarations";
 import Checkbox from "../../atoms/checkbox/Checkbox";
 import { StyledEditArticleRow } from "./editArticleRow.styled";
 

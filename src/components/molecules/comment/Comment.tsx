@@ -5,7 +5,7 @@ import { StyledCommentContainer, StyledCommentCounter } from "./comment.styled";
 
 import { RiArrowUpSLine } from "@react-icons/all-files/ri/RiArrowUpSLine";
 import { RiArrowDownSLine } from "@react-icons/all-files/ri/RiArrowDownSLine";
-import { components } from "../../../types";
+import { components } from "../../../types/declarations";
 import { voteDown, voteUp } from "../../../services/commentsServices";
 
 const Comment = ({
@@ -20,9 +20,10 @@ const Comment = ({
   const timestampNow = Date.now();
 
   const increaseScore = async () => {
+    console.log("increase");
     try {
       voteUp(commentId!);
-      setCounterValue((prev) => prev++);
+      setCounterValue((prev) => prev + 1);
     } catch (e) {
       console.log(e);
     }
@@ -30,7 +31,7 @@ const Comment = ({
   const decreaseScore = async () => {
     try {
       voteDown(commentId!);
-      setCounterValue((prev) => prev--);
+      setCounterValue((prev) => prev - 1);
     } catch (e) {
       console.log(e);
     }
