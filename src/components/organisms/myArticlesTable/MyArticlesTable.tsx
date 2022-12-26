@@ -26,6 +26,7 @@ import { deleteArticleThunk } from "../../../store/thunks/admin.thunks";
 import noArticles from "../../../images/no-articles.png";
 import Loading from "../../atoms/loadingIcon/Loading";
 import { navigate } from "gatsby";
+import { selectAuthToken } from "../../../store/slices/auth.slices";
 
 // TODO: Finish the my Articles
 // TODO: Multiple delete action?
@@ -35,11 +36,12 @@ const MyArticlesTable = () => {
   const articles = useAppSelector(selectMyArticlesItems);
   const status = useAppSelector(selectMyArticlesStatus);
   const dispatch = useAppDispatch();
+  const access_token = useAppSelector(selectAuthToken);
 
   console.log(articles);
 
   const deleteArticle = (articleId: string) =>
-    dispatch(deleteArticleThunk({ articleId, originalArray }));
+    dispatch(deleteArticleThunk({ articleId, originalArray, access_token }));
   const editArticle = (article: components["schemas"]["Article"]) => {
     dispatch(setArticleToEdit(article));
     navigate(ADMIN_LINKS.EDIT_ARTICLE);

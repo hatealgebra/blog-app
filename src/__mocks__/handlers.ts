@@ -11,7 +11,7 @@ import imageResponseJSON from "../__mocks__/asyncData/post/postImageResponse.moc
 import articlesResponseJSON from "../__mocks__/asyncData/get/allArticlesResponse.mock.json";
 import articlesDetailResponseJSON from "../__mocks__/asyncData/get/articlesDetailsResponse.mock.json";
 import tenantMockJSON from "../__mocks__/asyncData/get/tenantResponse.mock.json";
-import britishCatJPG from "../images/british-haircat.jpg";
+// import britishCatJPG from "../images/british-haircat.jpg";
 
 const getArticleDetail = (articleId: string | readonly string[]) => {
   const articleDetailData = articlesDetailResponseJSON.find(
@@ -86,7 +86,7 @@ export const handlers = [
   }),
   // Images
   rest.get(`${BASE_API_URL}/images/:imageId`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.body(britishCatJPG));
+    return res(ctx.status(200), ctx.body());
   }),
   // Tenant
   rest.get(`${BASE_API_URL}/tenants/:tenantId`, (req, res, ctx) => {

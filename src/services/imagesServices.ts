@@ -4,11 +4,15 @@ import {
   appLiftingAxiosProtected,
 } from "./services.config";
 
-export const uploadImage = async (imageFile: FormData) => {
+export const uploadImage = async (
+  imageFile: FormData,
+  access_token: string
+) => {
   try {
     const response = await appLiftingAxiosProtected.post("/images", imageFile, {
       headers: {
         "Content-Type": "multipart/form-data",
+        Authorization: access_token,
       },
     });
     console.log(response);

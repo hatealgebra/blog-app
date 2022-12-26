@@ -41,7 +41,7 @@ const CreateComment = ({ articleId, setComments }: CreateCommentProps) => {
     <StyledCreateCommentForm
       onSubmit={(e) => onSubmit(e, setComments)}
       onClick={() => {
-        if (!loggedUser) {
+        if (!loggedUser && typeof window !== `undefined`) {
           window.alert("You need to be signed in to comment this article!");
         }
       }}

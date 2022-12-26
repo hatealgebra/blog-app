@@ -3,7 +3,6 @@ import { combineReducers } from "redux";
 
 import authReducer from "./slices/auth.slices";
 import articleFeedReducer from "./slices/articleFeed.slice";
-import adminReducer from "./slices/admin.slices";
 
 // REDUX-PERSIST
 import { persistStore, persistReducer } from "redux-persist";
@@ -16,14 +15,8 @@ export const persistConfig = {
 
 export const persistedReducer = persistReducer(persistConfig, authReducer);
 
-export const reducer = combineReducers({
-  // FIXME: Just store the data where it is needed, use multiple stores
-  articleFeed: articleFeedReducer,
-  admin: adminReducer,
-});
-
 const store = configureStore({
-  reducer: { reducer, persistedReducer },
+  reducer: { articleFeedReducer, persistedReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,

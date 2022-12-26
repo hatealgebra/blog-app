@@ -9,7 +9,6 @@ import { GoPrimitiveDot } from "@react-icons/all-files/go/GoPrimitiveDot";
 import StyledLink from "../../atoms/links/link.styled";
 import { components } from "../../../types/declarations";
 
-import britishHaircat from "../../../images/british-haircat.jpg";
 import { getDate } from "../../../utils/date.utils";
 
 // FIXME: Max char at the heading
@@ -27,7 +26,7 @@ const ArticlePreview = ({
     <StyledArticlePreviewContainer className="article-preview">
       <StyledArticlePreviewImage
         className="article-preview__img"
-        src={britishHaircat}
+        src={""}
         alt={`${title} preview image`}
       />
       <h3 className="article-preview__title">{title}</h3>

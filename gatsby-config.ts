@@ -1,6 +1,12 @@
 import type { GatsbyConfig } from "gatsby";
+import { API_KEY, BASE_API_URL } from "./src/services/services.config";
+
+import { components } from "./src/types/declarations";
 
 const config: GatsbyConfig = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `blog-app`,
     siteUrl: `https://www.yourdomain.tld`,
@@ -32,6 +38,39 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/pages/`,
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Gatsby flavor plugins configs
+        plugins: [],
+        // Remark plugins
+        remarkPlugins: [],
+        // Rehype plugins
+        rehypePlugins: [],
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: `${BASE_API_URL}/articles`,
+        headers: { "X-API-KEY": API_KEY },
+        rootKey: "articles",
+        schemas: {
+          items: `items: [article]`,
+          article: `       
+          articleId: String
+          perex: String
+          title: String
+          imageId: String
+          createdAt: String
+          lastUpdatedAt: String`,
+        },
+      },
     },
   ],
 };

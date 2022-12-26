@@ -23,21 +23,27 @@ export const createArticleThunk = createAsyncThunk(
       perex,
       imageFormData,
       content,
+      access_token,
     }: {
       title: string;
       perex: string;
       imageFormData: FormData;
       content: string;
+      access_token: string;
     },
     thunkAPI
   ) => {
     try {
-      const uploadImageResponse = await uploadImage(imageFormData);
+      const uploadImageResponse = await uploadImage(
+        imageFormData,
+        access_token
+      );
       const response = await createArticle(
         title,
         perex,
         await uploadImageResponse!.data[0].imageId,
-        content
+        content,
+        access_token
       );
       navigate(ADMIN_LINKS.MY_ARTICLES);
       return response.data;
@@ -54,14 +60,16 @@ export const deleteArticleThunk = createAsyncThunk(
     {
       articleId,
       originalArray,
+      access_token,
     }: {
       articleId: string;
       originalArray: components["schemas"]["ArticleDetail"][];
+      access_token: string | undefined;
     },
     thunkAPI
   ) => {
     try {
-      deleteArticle(articleId);
+      deleteArticle(articleId, access_token!);
       const newOriginalArray = originalArray.filter(
         ({ articleId: id }) => id !== articleId
       );

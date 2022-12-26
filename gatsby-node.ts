@@ -1,31 +1,36 @@
+import { graphql } from "gatsby";
 import path from "path";
 import { getArticle, listArticles } from "./src/services/articlesOperations";
 import { components } from "./src/types/declarations";
 
-export const createPages = async ({ actions: { createPage } }) => {
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
   // list all of the articles that are published
-  const articlesResponse = await listArticles();
-  const { items } = articlesResponse.data;
-  const newArticlesArray = await Promise.all(
-    items.map(async (article: components["schemas"]["Article"]) => {
-      const { articleId, createdAt } = article;
-      const getArticleResponse = await getArticle(articleId!);
-      const { comments, content } = getArticleResponse.data;
-      return { ...article, comments, content };
-    })
-  );
 
-  // // Create a page with recent articles feed
-  // createPage({
-  //   path: `/`,
-  //   component: path.resolve(
-  //     "./src/components/templates/RecentArticles.template.tsx"
-  //   ),
-  //   context: { allArticles },
-  // });
+  const articles = await graphql(`
+    query {
+      allItems {
+        nodes {
+          articleId
+          perex
+          title
+          imageId
+          createdAt
+          lastUpdatedAt
+        }
+      }
+    }
+  `);
+
+  // Create a page with recent articles feed
+  createPage({
+    path: `/`,
+    component: path.resolve("./src/pages/index.tsx"),
+    context: { articles },
+  });
 
   //  Create page for each article
-  newArticlesArray.forEach((article) => {
+  articles.data.allItems.nodes.forEach((article) => {
+    console.log(article);
     createPage({
       path: `/articles/${article.articleId}`,
       component: path.resolve(
@@ -35,7 +40,8 @@ export const createPages = async ({ actions: { createPage } }) => {
     });
   });
 };
-if (process.env.NODE_ENV === "development") {
-  const { server } = require("./src/__mocks__/server");
-  server.listen();
-}
+
+// if (process.env.NODE_ENV === "development") {
+//   const { server } = require("./src/__mocks__/server");
+//   server.listen();
+// }

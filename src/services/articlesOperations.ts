@@ -19,19 +19,22 @@ export const createArticle = async (
   title: string,
   perex: string,
   imageId: string,
-  content: string
+  content: string,
+  access_token: string
 ) => {
   const data = {
     title,
     perex,
     imageId,
     content,
+    access_token,
   };
 
   try {
     const response = await appLiftingAxiosProtected.post("/articles", data, {
       headers: {
         "Content-Type": "application/json",
+        Authorization: access_token,
       },
     });
     return response;
@@ -49,9 +52,14 @@ export const getArticle = async (articleId: string) => {
   }
 };
 
-export const deleteArticle = async (articleId: string) => {
+export const deleteArticle = async (
+  articleId: string,
+  access_token: string
+) => {
   try {
-    return await appLiftingAxiosProtected.delete(`/articles/${articleId}`);
+    return await appLiftingAxiosProtected.delete(`/articles/${articleId}`, {
+      headers: { Authorization: access_token },
+    });
   } catch (e) {
     throw e;
   }

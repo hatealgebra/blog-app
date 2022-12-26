@@ -71,6 +71,7 @@ const PublishArticleForm = ({
             perex,
             content: trimmedMD,
             imageFormData,
+            access_token,
           })
         );
       }

@@ -1,10 +1,10 @@
 import React from "react";
-import { components } from "../../../types/custom";
+import { components } from "../../../types/declarations";
 import { ReadArticleContainer, ReadArticleContent } from "./readArticle.styled";
 
 import ReactMarkdown from "react-markdown";
 
-import britishCat from "../../../images/british-haircat.jpg";
+// TODO: Render image from the fetched image
 
 const ReadArticle = ({
   title,
@@ -26,7 +26,7 @@ const ReadArticle = ({
         <span>•</span>
         <span className="read-article__date">{articlePublishedFormat}</span>
       </div>
-      <img src={britishCat} alt={`${title} image`} />
+      <img src={""} alt={`${title} image`} />
       <ReadArticleContent className="read-article__markdown">
         <ReactMarkdown children={content!} />
       </ReadArticleContent>
