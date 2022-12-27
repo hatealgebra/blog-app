@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, PageProps, useStaticQuery } from "gatsby";
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import ArticleFeed from "../components/organisms/articleFeed/ArticleFeed";
@@ -12,7 +12,7 @@ import { selectAuthToken } from "../store/slices/auth.slices";
 
 import { getArticlesFeedThunk } from "../store/thunks/articles.thunk";
 
-const RecentArticles = ({ pageContext }) => {
+const RecentArticles = ({ pageContext }: PageProps) => {
   const feedStatus = useAppSelector(selectArticleFeedStatus);
   const feedData = useAppSelector(selectArticleFeedItems);
   const dispatch = useAppDispatch();
