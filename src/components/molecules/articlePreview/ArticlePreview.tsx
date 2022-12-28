@@ -10,6 +10,7 @@ import StyledLink from "../../atoms/links/link.styled";
 import { components } from "../../../types/declarations";
 
 import { getDate } from "../../../utils/date.utils";
+import { showImage } from "../../../services/imagesServices";
 
 // FIXME: Max char at the heading
 const ArticlePreview = ({
@@ -21,12 +22,29 @@ const ArticlePreview = ({
   comments,
   author,
 }: components["schemas"]["ArticleDetail"] & { author: string }) => {
+  const [image, setImage] = React.useState(null);
   const createdDate = getDate(createdAt);
+
+  React.useEffect(() => {
+    const getBlob = async (imageId: string) => {
+      try {
+        const { data } = await showImage(imageId!);
+        const result = await data;
+        console.log(URL.createObjectURL(result));
+        setImage(URL.createObjectURL(result));
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    getBlob(imageId!);
+  }, [imageId]);
+
   return (
     <StyledArticlePreviewContainer className="article-preview">
       <StyledArticlePreviewImage
         className="article-preview__img"
-        src={""}
+        src={image}
         alt={`${title} preview image`}
       />
       <h3 className="article-preview__title">{title}</h3>

@@ -1,5 +1,5 @@
 import React from "react";
-import { components } from "../../../types/custom";
+import { components } from "../../../types/declarations";
 import Loading from "../../atoms/loadingIcon/Loading";
 import ArticlePreview from "../../molecules/articlePreview/ArticlePreview";
 import {

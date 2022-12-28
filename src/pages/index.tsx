@@ -17,6 +17,8 @@ const RecentArticles = ({ pageContext }: PageProps) => {
   const feedData = useAppSelector(selectArticleFeedItems);
   const dispatch = useAppDispatch();
 
+  console.log(pageContext);
+
   React.useEffect(() => {
     dispatch(getArticlesFeedThunk());
   }, []);
