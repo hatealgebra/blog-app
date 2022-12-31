@@ -15,7 +15,6 @@ export const uploadImage = async (
         Authorization: access_token,
       },
     });
-    console.log(response);
     return response;
   } catch (e) {
     console.log(e);
@@ -25,7 +24,7 @@ export const uploadImage = async (
 export const showImage = async (imageId: string) => {
   try {
     const response = await appLiftingAxios.get(`/images/${imageId}`, {
-      responseType: "blob",
+      responseType: "arraybuffer",
     });
     return response;
   } catch (e) {

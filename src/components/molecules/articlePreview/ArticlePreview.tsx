@@ -12,6 +12,8 @@ import { components } from "../../../types/declarations";
 import { getDate } from "../../../utils/date.utils";
 import { showImage } from "../../../services/imagesServices";
 
+import { Buffer } from "buffer";
+
 // FIXME: Max char at the heading
 const ArticlePreview = ({
   articleId,
@@ -20,32 +22,31 @@ const ArticlePreview = ({
   createdAt,
   perex,
   comments,
+  imageBlob,
   author,
 }: components["schemas"]["ArticleDetail"] & { author: string }) => {
   const [image, setImage] = React.useState<null | string>(null);
   const createdDate = getDate(createdAt);
 
+  const file = "data:image/png;base64," + imageBlob;
   React.useEffect(() => {
     const getBlob = async (imageId: string) => {
       try {
-        const { data } = await showImage(imageId!);
-        const result = await data;
-        console.log(result);
-        console.log(URL.createObjectURL(result));
-        setImage(URL.createObjectURL(result));
       } catch (e) {
         console.log(e);
       }
     };
 
     getBlob(imageId!);
+    // const base64 = Buffer.from(imageBlob, "base64");
+    console.log(image);
   }, [imageId]);
 
   return (
     <StyledArticlePreviewContainer className="article-preview">
       <StyledArticlePreviewImage
         className="article-preview__img"
-        src={image}
+        src={file}
         alt={`${title} preview image`}
       />
       <h3 className="article-preview__title">{title}</h3>
