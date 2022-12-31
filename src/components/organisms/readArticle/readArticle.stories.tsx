@@ -1,11 +1,12 @@
 import React from "react";
 
 import ReadArticle from "./ReadArticle";
+import britishCat from "../../../images/british-haircat.jpg";
 
 export const ReadArticleExample = () => (
   <ReadArticle
     title="Why do cats have Whiskers?"
-    imageId="hey"
+    imageSrc={britishCat}
     author="Elizabeth whatever"
     createdAt="12.04.2019"
     content={content}

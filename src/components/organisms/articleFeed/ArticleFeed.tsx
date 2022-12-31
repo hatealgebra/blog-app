@@ -35,11 +35,11 @@ const ArticleFeed = ({
                 perex,
                 createdAt,
                 imageId,
-                imageBlob,
+                imageBase64,
                 comments,
               }: components["schemas"]["Article"] &
                 components["schemas"]["ArticleDetail"] & {
-                  imageBlob: "string";
+                  imageBase64: "string";
                 }) => (
                 <ArticlePreview
                   key={articleId}
@@ -49,7 +49,7 @@ const ArticleFeed = ({
                   createdAt={createdAt}
                   imageId={imageId}
                   comments={comments}
-                  imageBlob={imageBlob}
+                  imageBase64={imageBase64}
                   author="Unknow author"
                 />
               )

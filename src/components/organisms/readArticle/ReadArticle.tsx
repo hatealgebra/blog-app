@@ -8,11 +8,15 @@ import ReactMarkdown from "react-markdown";
 
 const ReadArticle = ({
   title,
-  imageId,
+  imageSrc,
   author,
   createdAt,
   content,
-}: components["schemas"]["ArticleDetail"] & { author: string }) => {
+}: components["schemas"]["ArticleDetail"] & {
+  author: string;
+  imageSrc: string;
+}) => {
+  console.log(imageSrc);
   const articlePublishedFormat = new Date(createdAt!)
     .toLocaleString()
     .split(" ")
@@ -26,7 +30,7 @@ const ReadArticle = ({
         <span>•</span>
         <span className="read-article__date">{articlePublishedFormat}</span>
       </div>
-      <img src={""} alt={`${title} image`} />
+      <img src={imageSrc} alt={`${title} image`} />
       <ReadArticleContent className="read-article__markdown">
         <ReactMarkdown children={content!} />
       </ReadArticleContent>

@@ -20,7 +20,7 @@ exports.sourceNodes = async ({
         const { imageId } = article;
         const { data, headers } = await showImage(imageId);
         const responseData = Buffer.from(data, "binary").toString("base64");
-        return { ...article, imageBlob: responseData };
+        return { ...article, imageBase64: responseData };
       })
     );
 
@@ -52,7 +52,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         nodes {
           id
           imageId
-          imageBlob
+          imageBase64
           articleId
           title
           createdAt

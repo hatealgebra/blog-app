@@ -15,32 +15,21 @@ import { showImage } from "../../../services/imagesServices";
 import { Buffer } from "buffer";
 
 // FIXME: Max char at the heading
+// TODO: Fallback image
 const ArticlePreview = ({
   articleId,
-  imageId,
   title,
   createdAt,
   perex,
   comments,
-  imageBlob,
+  imageBase64,
   author,
-}: components["schemas"]["ArticleDetail"] & { author: string }) => {
-  const [image, setImage] = React.useState<null | string>(null);
+}: components["schemas"]["ArticleDetail"] & {
+  author: string;
+  imageBase64: String;
+}) => {
   const createdDate = getDate(createdAt);
-
-  const file = "data:image/png;base64," + imageBlob;
-  React.useEffect(() => {
-    const getBlob = async (imageId: string) => {
-      try {
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    getBlob(imageId!);
-    // const base64 = Buffer.from(imageBlob, "base64");
-    console.log(image);
-  }, [imageId]);
+  const file = "data:image/png;base64," + imageBase64;
 
   return (
     <StyledArticlePreviewContainer className="article-preview">

@@ -13,10 +13,10 @@ const ArticlePage = ({
 }: {
   pageContext: {
     article: components["schemas"]["Article"] &
-      components["schemas"]["ArticleDetail"];
+      components["schemas"]["ArticleDetail"] & { imageBase64: string };
   };
 }) => {
-  const { articleId, createdAt, title, imageId, content, comments } =
+  const { articleId, createdAt, title, imageBase64, content, comments } =
     pageContext.article;
   const [relatedArticles, setRelatedArticles] = React.useState(null);
 
@@ -38,7 +38,7 @@ const ArticlePage = ({
       <StyledArticlePageContainer>
         <ReadArticle
           title={title}
-          imageId={imageId}
+          imageSrc={`data:image/png;base64,${imageBase64}`}
           author={"Pavel Vondra"}
           createdAt={createdAt}
           content={content}

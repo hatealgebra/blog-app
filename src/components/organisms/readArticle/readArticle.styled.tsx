@@ -8,6 +8,8 @@ export const ReadArticleContainer = styled.article`
 
   img {
     width: 100%;
+    height: 60vh;
+    max-height: 550px;
     object-fit: cover;
     margin-top: 10px;
   }
