@@ -6,17 +6,18 @@ import RelatedArticles from "../organisms/relatedArticles/RelatedArticles";
 import Discussion from "../organisms/discussion/Discussion";
 import { StyledArticlePageContainer } from "./templates.styled";
 import { listArticles } from "../../services/articlesOperations";
-import { components } from "../../types/custom";
+import { components } from "../../types/declarations";
 
 const ArticlePage = ({
-  pageContext: { article },
+  pageContext,
 }: {
   pageContext: {
     article: components["schemas"]["Article"] &
       components["schemas"]["ArticleDetail"];
   };
 }) => {
-  const { articleId, createdAt, title, imageId, content, comments } = article;
+  const { articleId, createdAt, title, imageId, content, comments } =
+    pageContext.article;
   const [relatedArticles, setRelatedArticles] = React.useState(null);
 
   React.useEffect(() => {

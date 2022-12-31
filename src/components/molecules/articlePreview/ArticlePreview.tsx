@@ -22,7 +22,7 @@ const ArticlePreview = ({
   comments,
   author,
 }: components["schemas"]["ArticleDetail"] & { author: string }) => {
-  const [image, setImage] = React.useState(null);
+  const [image, setImage] = React.useState<null | string>(null);
   const createdDate = getDate(createdAt);
 
   React.useEffect(() => {
@@ -30,6 +30,7 @@ const ArticlePreview = ({
       try {
         const { data } = await showImage(imageId!);
         const result = await data;
+        console.log(result);
         console.log(URL.createObjectURL(result));
         setImage(URL.createObjectURL(result));
       } catch (e) {

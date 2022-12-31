@@ -38,8 +38,6 @@ const MyArticlesTable = () => {
   const dispatch = useAppDispatch();
   const access_token = useAppSelector(selectAuthToken);
 
-  console.log(articles);
-
   const deleteArticle = (articleId: string) =>
     dispatch(deleteArticleThunk({ articleId, originalArray, access_token }));
   const editArticle = (article: components["schemas"]["Article"]) => {

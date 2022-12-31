@@ -65,7 +65,6 @@ export const adminSlice = createSlice({
       state.status = "loading";
     });
     builder.addCase(createArticleThunk.fulfilled, (state, { payload }) => {
-      console.log(payload);
       state.data.originalSort?.items?.push(payload);
       state.status = "idle";
     });

@@ -20,7 +20,6 @@ const Comment = ({
   const timestampNow = Date.now();
 
   const increaseScore = async () => {
-    console.log("increase");
     try {
       voteUp(commentId!);
       setCounterValue((prev) => prev + 1);

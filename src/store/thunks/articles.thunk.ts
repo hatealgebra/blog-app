@@ -18,7 +18,6 @@ export const getArticlesFeedThunk = createAsyncThunk(
           return { ...article, comments, content };
         })
       );
-      console.log(newArticlesArray);
       return { ...articlesResponse.data, items: newArticlesArray };
     } catch (e) {
       return thunkAPI.rejectWithValue(e);

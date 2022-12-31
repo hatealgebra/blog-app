@@ -54,24 +54,24 @@ const config: GatsbyConfig = {
         rehypePlugins: [],
       },
     },
-    {
-      resolve: "gatsby-source-custom-api",
-      options: {
-        url: `${BASE_API_URL}/articles`,
-        headers: { "X-API-KEY": API_KEY },
-        rootKey: "articles",
-        schemas: {
-          items: `items: [article]`,
-          article: `       
-          articleId: String
-          perex: String
-          title: String
-          imageId: String
-          createdAt: String
-          lastUpdatedAt: String`,
-        },
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-custom-api",
+    //   options: {
+    //     url: `${BASE_API_URL}/articles`,
+    //     headers: { "X-API-KEY": API_KEY },
+    //     rootKey: "articles",
+    //     schemas: {
+    //       items: `items: [article]`,
+    //       article: `
+    //       articleId: String
+    //       perex: String
+    //       title: String
+    //       imageId: String
+    //       createdAt: String
+    //       lastUpdatedAt: String`,
+    //     },
+    //   },
+    // },
   ],
 };
 
