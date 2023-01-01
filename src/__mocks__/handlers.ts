@@ -11,7 +11,7 @@ import imageResponseJSON from "../__mocks__/asyncData/post/postImageResponse.moc
 import articlesResponseJSON from "../__mocks__/asyncData/get/allArticlesResponse.mock.json";
 import articlesDetailResponseJSON from "../__mocks__/asyncData/get/articlesDetailsResponse.mock.json";
 import tenantMockJSON from "../__mocks__/asyncData/get/tenantResponse.mock.json";
-// import britishCatJPG from "../images/british-haircat.jpg";
+import imageBase64 from "./base64.mock";
 
 const getArticleDetail = (articleId: string | readonly string[]) => {
   const articleDetailData = articlesDetailResponseJSON.find(
@@ -75,18 +75,26 @@ export const handlers = [
   // Article detail
   rest.get(`${BASE_API_URL}/articles/:articleId`, (req, res, ctx) => {
     const { articleId } = req.params;
+    const getArticle = articlesDetailResponseJSON.filter(
+      ({ articleId: id }: { articleId: string }) => id === articleId
+    )[0];
     return res(
       ctx.set({
         "X-API-KEY": API_KEY,
         Authorization: loginResponseJSON.access_token,
       }),
       ctx.status(200),
-      ctx.json(getArticleDetail(articleId))
+      ctx.json(getArticle)
     );
   }),
   // Images
-  rest.get(`${BASE_API_URL}/images/:imageId`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.body());
+  rest.get(`${BASE_API_URL}/images/:imageId`, async (req, res, ctx) => {
+    const imageBuffer = Buffer.from(imageBase64, "base64");
+    return res(
+      ctx.status(200),
+      ctx.set("responseType", "arrayBuffer"),
+      ctx.body(imageBuffer)
+    );
   }),
   // Tenant
   rest.get(`${BASE_API_URL}/tenants/:tenantId`, (req, res, ctx) => {
@@ -97,7 +105,6 @@ export const handlers = [
   // Delete article
   rest.delete(`${BASE_API_URL}/articles/:articleId`, (req, res, ctx) => {
     const { articleId } = req.params;
-
     const getDeletedArticle = articlesResponseJSON.items.filter(
       ({ articleId: id }: { articleId: string }) => id === articleId
     )[0];

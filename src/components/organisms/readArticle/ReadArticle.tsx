@@ -16,7 +16,6 @@ const ReadArticle = ({
   author: string;
   imageSrc: string;
 }) => {
-  console.log(imageSrc);
   const articlePublishedFormat = new Date(createdAt!)
     .toLocaleString()
     .split(" ")

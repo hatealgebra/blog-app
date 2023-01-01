@@ -17,7 +17,6 @@ exports.sourceNodes = async ({
 
     const completeArticleData = await Promise.all(
       articles.map(async (article) => {
-        console.log(article);
         const { imageId, articleId } = article;
         // fetches the image
         const { data } = await showImage(imageId);
@@ -33,10 +32,10 @@ exports.sourceNodes = async ({
     );
 
     completeArticleData.forEach(async (article, index) => {
-      const { imageId } = article;
+      const { articleId } = article;
       createNode({
         ...article,
-        id: createNodeId(`${POST_NODE_TYPE}-${imageId}`),
+        id: createNodeId(`${POST_NODE_TYPE}-${articleId}`),
         children: [],
         parent: null,
         internal: {
@@ -95,7 +94,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
 // // constants for your GraphQL Post and Author types
 
-// if (process.env.NODE_ENV === "development") {
-//   const { server } = require("./src/__mocks__/server");
-//   server.listen();
-// }
+if (process.env.NODE_ENV === "development") {
+  const { server } = require("./src/__mocks__/server");
+  server.listen();
+}
