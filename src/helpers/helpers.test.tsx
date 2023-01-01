@@ -2,7 +2,8 @@ import { EPublishArticleErrors } from "../components/organisms/publishArticleFor
 import { validatePublishArticleForm } from "./publishArticle.helper";
 
 describe("Check create article form inputs", () => {
-  const inputValue = "Input value";
+  const titleTooShort = "Title value";
+  const inputValue = "Input value, yup this is it";
   const markdownShortValue = "Input value";
   const markdownPassValue =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsum id dolor ad, incidunt odio, a fugiat totam nemo officia nobis excepturi similique! Vel blanditiis explicabo unde placeat veniam non! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsum id dolor ad, incidunt odio, a fugiat totam nemo officia nobis excepturi similique! Vel blanditiis explicabo unde placeat veniam non!";
@@ -19,6 +20,12 @@ describe("Check create article form inputs", () => {
   test("Everything is empty error value", () => {
     validatePublishArticleForm("", "", null, mockDispatchError);
     expect(mockDispatchError).toBeCalledWith(EPublishArticleErrors.TITLE_EMPTY);
+  });
+  test("Title is too short", () => {
+    validatePublishArticleForm(titleTooShort, "", null, mockDispatchError);
+    expect(mockDispatchError).toBeCalledWith(
+      EPublishArticleErrors.MARKDOWN_EMPY
+    );
   });
   test("Markdown is empty", () => {
     expect(

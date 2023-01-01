@@ -15,6 +15,7 @@ export const validatePublishArticleForm: TFormHandling = (
 ) => {
   const {
     TITLE_EMPTY,
+    TITLE_LENGTH,
     IMAGE_EMPTY,
     MARKDOWN_EMPY,
     MARKDOWN_TOO_SHORT,
@@ -23,6 +24,9 @@ export const validatePublishArticleForm: TFormHandling = (
   } = EPublishArticleErrors;
   if (title === "") {
     setFormError(TITLE_EMPTY);
+    return false;
+  } else if (title.length < 25 || title.length > 100) {
+    setFormError(TITLE_LENGTH);
     return false;
   } else if (markdownContent === "") {
     setFormError(MARKDOWN_EMPY);
@@ -58,7 +62,10 @@ export const updateArticleHelper = async (
 ) => {
   try {
     if (isImageChanged) {
-      const uploadImageResponse = await uploadImage(imageFormData);
+      const uploadImageResponse = await uploadImage(
+        imageFormData,
+        access_token!
+      );
       return updateArticle(articleId, access_token, {
         title,
         perex,
@@ -82,7 +89,7 @@ type TFormHandling = (
   | {
       trimmedTitle: string;
       trimmedMarkdownContent: string;
-      imageFile: string | Blob;
+      imageFile: string | Blob | null;
       perex: string;
     }
   | boolean;
