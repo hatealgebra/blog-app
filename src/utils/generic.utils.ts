@@ -1,8 +1,6 @@
-import { ArticleFeedLoading } from "../components/organisms/articleFeed/articleFeed.stories";
 import { deleteArticle, listArticles } from "../services/articlesOperations";
-import { deleteImage } from "../services/imagesServices";
-import { components } from "../types/declarations";
 
+// TODO: Make tooltip component
 export const cutTextWithElipsis = (text: string, limit: number) => {
   if (text.length <= limit) {
     return text;

@@ -13,6 +13,7 @@ import { getDate } from "../../../utils/date.utils";
 import { showImage } from "../../../services/imagesServices";
 
 import { Buffer } from "buffer";
+import { cutTextWithElipsis } from "../../../utils/generic.utils";
 
 // FIXME: Max char at the heading
 // TODO: Fallback image
@@ -38,7 +39,9 @@ const ArticlePreview = ({
         src={file}
         alt={`${title} preview image`}
       />
-      <h3 className="article-preview__title">{title}</h3>
+      <h3 className="article-preview__title">
+        {cutTextWithElipsis(title, 50)}
+      </h3>
       <StyledArticleRow className="article-preview__row-one">
         <span>{author}</span>
         <GoPrimitiveDot />

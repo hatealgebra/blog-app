@@ -872,6 +872,67 @@ exports[`Storyshots Molecules/Admin Heading Admin Heading Example 1`] = `
 </div>
 `;
 
+exports[`Storyshots Molecules/Article Preview Article Preview Long Title 1`] = `null`;
+
+exports[`Storyshots Molecules/Article Preview Article Preview Mobile 1`] = `
+<article
+  class="sc-hHTYSt bYFLUW article-preview"
+>
+  <img
+    alt="Article heading preview image"
+    class="sc-dmctIk gOhnMR article-preview__img"
+    src="data:image/png;base64,"
+  />
+  <h3
+    class="article-preview__title"
+  >
+    Article heading
+  </h3>
+  <div
+    class="sc-kgTSHT jblhdC article-preview__row-one"
+  >
+    <span>
+      Random Author
+    </span>
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 8 16"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"
+        fill-rule="evenodd"
+      />
+    </svg>
+    <span>
+      07/00/21
+    </span>
+  </div>
+  <p
+    class="article-preview__text"
+  >
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro beatae quod qui id dolorum nam, sapiente rem debitis ad illo doloribus ab! Dolorem aliquam facilis labore fugit rem, dolores quasi.
+  </p>
+  <div
+    class="sc-kgTSHT jblhdC article-preview__row-two"
+  >
+    <a
+      class="sc-eDWCr RmwYw"
+      href="/articles/undefined"
+    >
+      Read whole article
+    </a>
+    <span>
+      1 comments
+    </span>
+  </div>
+</article>
+`;
+
 exports[`Storyshots Molecules/Article Preview Article Preview Small Example 1`] = `
 <div
   class="sc-fLcnxK kAHQnN"
