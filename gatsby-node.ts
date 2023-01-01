@@ -15,16 +15,24 @@ exports.sourceNodes = async ({
     const result = await listArticles();
     const { items: articles } = result.data;
 
-    const articleImage = await Promise.all(
+    const completeArticleData = await Promise.all(
       articles.map(async (article) => {
-        const { imageId } = article;
-        const { data, headers } = await showImage(imageId);
-        const responseData = Buffer.from(data, "binary").toString("base64");
-        return { ...article, imageBase64: responseData };
+        console.log(article);
+        const { imageId, articleId } = article;
+        // fetches the image
+        const { data } = await showImage(imageId);
+        const imageData = Buffer.from(data, "binary").toString("base64");
+        // fetches the additional details like comment and content
+        const { data: articleDetailData } = await getArticle(articleId);
+        return {
+          ...articleDetailData,
+          comments: JSON.stringify(articleDetailData.comments),
+          imageBase64: imageData,
+        };
       })
     );
 
-    articleImage.forEach(async (article, index) => {
+    completeArticleData.forEach(async (article, index) => {
       const { imageId } = article;
       createNode({
         ...article,
@@ -51,12 +59,15 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       allPosts {
         nodes {
           id
-          imageId
-          imageBase64
           articleId
-          title
           createdAt
           lastUpdatedAt
+          imageId
+          imageBase64
+          title
+          perex
+          content
+          comments
         }
       }
     }

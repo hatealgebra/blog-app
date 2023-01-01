@@ -19,6 +19,8 @@ const ArticlePage = ({
   const { articleId, createdAt, title, imageBase64, content, comments } =
     pageContext.article;
   const [relatedArticles, setRelatedArticles] = React.useState(null);
+  const commentsArray =
+    typeof comments === "string" ? JSON.parse(comments) : [];
 
   React.useEffect(() => {
     const getRelatedArticles = async () => {
@@ -44,7 +46,7 @@ const ArticlePage = ({
           content={content}
           comments={comments}
         />
-        <Discussion articleId={articleId!} commentsArray={comments} />
+        <Discussion articleId={articleId!} commentsArray={commentsArray} />
         <RelatedArticles articles={relatedArticles} />
       </StyledArticlePageContainer>
     </PageTemplate>

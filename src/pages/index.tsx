@@ -5,7 +5,7 @@ import ArticleFeed from "../components/organisms/articleFeed/ArticleFeed";
 import PageTemplate from "../components/templates/Page.template";
 
 const RecentArticles = ({ pageContext }: PageProps) => {
-  // console.log(pageContext);
+  console.log(pageContext);
   const { nodes } = pageContext.articles.data.allPosts;
   return (
     <PageTemplate>
