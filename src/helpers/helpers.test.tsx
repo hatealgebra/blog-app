@@ -24,7 +24,13 @@ describe("Check create article form inputs", () => {
   test("Title is too short", () => {
     validatePublishArticleForm(titleTooShort, "", null, mockDispatchError);
     expect(mockDispatchError).toBeCalledWith(
-      EPublishArticleErrors.MARKDOWN_EMPY
+      EPublishArticleErrors.TITLE_LENGTH
+    );
+  });
+  test("Title is too long", () => {
+    validatePublishArticleForm(markdownPassValue, "", null, mockDispatchError);
+    expect(mockDispatchError).toBeCalledWith(
+      EPublishArticleErrors.TITLE_LENGTH
     );
   });
   test("Markdown is empty", () => {
