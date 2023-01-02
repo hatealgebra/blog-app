@@ -7,7 +7,10 @@ import Discussion from "../organisms/discussion/Discussion";
 import { StyledArticlePageContainer } from "./templates.styled";
 import { listArticles } from "../../services/articlesOperations";
 import { components } from "../../types/declarations";
+import { graphql, useStaticQuery } from "gatsby";
 
+// TODO: Clicakble other posts
+// FIXME: order of the hooks warning
 const ArticlePage = ({
   pageContext,
 }: {
@@ -22,17 +25,36 @@ const ArticlePage = ({
   const commentsArray =
     typeof comments === "string" ? JSON.parse(comments) : [];
 
-  React.useEffect(() => {
-    const getRelatedArticles = async () => {
-      const response = await listArticles();
-      const articlesFiltered = response.data.items.filter(
-        (article: components["schemas"]["Article"]) =>
-          article.articleId !== articleId
-      );
-      setRelatedArticles(articlesFiltered);
-    };
+  const articles = React.useMemo(
+    () =>
+      useStaticQuery(graphql`
+        query {
+          allPosts {
+            nodes {
+              id
+              articleId
+              createdAt
+              lastUpdatedAt
+              imageId
+              imageBase64
+              title
+              perex
+              content
+              comments
+            }
+          }
+        }
+      `),
+    []
+  );
 
-    getRelatedArticles();
+  React.useEffect(() => {
+    const { nodes } = articles.allPosts;
+    const articlesFiltered = nodes.filter(
+      (article: components["schemas"]["Article"]) =>
+        article.articleId !== articleId
+    );
+    setRelatedArticles(articlesFiltered);
   }, []);
 
   return (

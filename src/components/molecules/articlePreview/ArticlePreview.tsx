@@ -13,7 +13,10 @@ import { getDate } from "../../../utils/date.utils";
 import { showImage } from "../../../services/imagesServices";
 
 import { Buffer } from "buffer";
-import { cutTextWithElipsis } from "../../../utils/generic.utils";
+import {
+  createArticleLink,
+  cutTextWithElipsis,
+} from "../../../utils/generic.utils";
 
 // FIXME: Max char at the heading
 // TODO: Fallback image
@@ -31,6 +34,7 @@ const ArticlePreview = ({
 }) => {
   const createdDate = getDate(createdAt);
   const file = "data:image/png;base64," + imageBase64;
+  const commentsArray = JSON.parse(comments);
 
   return (
     <StyledArticlePreviewContainer className="article-preview">
@@ -43,16 +47,16 @@ const ArticlePreview = ({
         {cutTextWithElipsis(title, 50)}
       </h3>
       <StyledArticleRow className="article-preview__row-one">
-        <span>{author}</span>
+        <span>{author ?? "Unknown author"}</span>
         <GoPrimitiveDot />
         <span>{createdDate}</span>
       </StyledArticleRow>
       <p className="article-preview__text">{perex}</p>
       <StyledArticleRow className="article-preview__row-two">
-        <StyledLink to={`/articles/${articleId}`}>
+        <StyledLink to={createArticleLink(articleId)}>
           Read whole article
         </StyledLink>
-        <span>{`${comments?.length || "0"} comments`}</span>
+        <span>{`${commentsArray?.length || "0"} comments`}</span>
       </StyledArticleRow>
     </StyledArticlePreviewContainer>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { components } from "../../../types/custom";
+import { components } from "../../../types/declarations";
 import ArticlePreviewSmall from "../../molecules/articlePreview/ArticlePreviewSmall";
 import { RelatedArticlesContainer } from "./relatedArticles.styled";
 
@@ -12,6 +12,7 @@ const RelatedArticles = ({ articles }: RelatedArticlesProps) => {
           ? articles.map((article) => (
               <ArticlePreviewSmall
                 key={article.articleId}
+                articleId={article.articleId!}
                 heading={article.title!}
               >
                 {article.perex!}

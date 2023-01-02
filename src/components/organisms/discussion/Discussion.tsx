@@ -7,6 +7,7 @@ import {
   StyledDiscussionComments,
 } from "./discussion.styled";
 
+// TODO: Add state to inform the user that there are no comments yet
 const Discussion = ({ articleId, commentsArray }: DiscussionProps) => {
   const [comments, setComments] = React.useState<
     Array<components["schemas"]["Comment"]>

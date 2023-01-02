@@ -2,6 +2,7 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 const StyledArticlePreviewContainer = styled.article`
   display: flex;
@@ -58,13 +59,19 @@ export const StyledArticleRow = styled.div`
   color: ${({ theme }) => theme.color.secondary};
 `;
 
-export const StyledArticlePreviewSmall = styled.div`
+export const StyledArticlePreviewSmall = styled(Link)`
   max-width: 600px;
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.black};
   h5 {
     margin: 0;
   }
   p {
     font-size: ${({ theme }) => theme.typography.size.label};
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 

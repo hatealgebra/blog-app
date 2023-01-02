@@ -23,3 +23,6 @@ export const clearDataAPI = async (access_token: string) => {
     }
   }
 };
+
+export const createArticleLink = (articleId: string) =>
+  `/articles/${articleId}`;

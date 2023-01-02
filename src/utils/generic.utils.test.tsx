@@ -1,5 +1,5 @@
 import { timeDifference } from "./date.utils";
-import { cutTextWithElipsis } from "./generic.utils";
+import { createArticleLink, cutTextWithElipsis } from "./generic.utils";
 
 describe("cut text with elipsis", () => {
   const textToTest = "Hello world!";
@@ -65,5 +65,13 @@ describe("time difference util", () => {
     expect(timeDifference(timestampNow, "2022-10-02T23:33:11.577668")).toEqual(
       "Just now"
     );
+  });
+});
+
+describe("article links", () => {
+  const articleId = "djij1u34821u30913i129ur9f1";
+
+  test("if result is correct", () => {
+    expect(createArticleLink(articleId)).toBe(`/articles/${articleId}`);
   });
 });
