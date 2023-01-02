@@ -46,7 +46,6 @@ const StyledArticlePreviewContainer = styled.article`
 export const StyledArticlePreviewImage = styled.img`
   box-shadow: ${({ theme }) => theme.shadow.border_shadow};
   width: 100%;
-  max-width:
   object-fit: cover;
   height: 100%;
 `;
